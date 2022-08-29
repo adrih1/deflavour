@@ -7,6 +7,18 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
 
+# Search
+gem "pg_search"
+
+#Pundit
+gem "pundit"
+
+#Cloudinary
+gem "cloudinary"
+
+# Geocoding
+gem "geocoder"
+
 # Devise - Authentification
 gem "devise"
 
