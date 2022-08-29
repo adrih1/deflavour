@@ -2,7 +2,6 @@ class SpiritsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-
     @markers = @spirits.geocoded.map do |spirit|
       {
         lat: spirit.latitude,
@@ -11,7 +10,7 @@ class SpiritsController < ApplicationController
     end
   end
 
-  # GET /van/1
+  # GET /spirit/1
   def show
     @van = Spirit.find(params[:id])
     @order = Order.new
@@ -36,7 +35,7 @@ class SpiritsController < ApplicationController
   def create
     @spirit = Spirit.new(van_params)
     @spirit.user = current_user
-    @van.save
+    @spirit.save
     if @spirit.save
       sleep 2
       redirect_to spirit_path(@spirit)
@@ -49,7 +48,7 @@ class SpiritsController < ApplicationController
   def update
     authorize @spirit
     if @spirit.update(spirit_params)
-      redirect_to van_path(@spirit)
+      redirect_to spirit_path(@spirit)
     else
       render :new, status: :unprocessable_entity
     end
@@ -57,7 +56,7 @@ class SpiritsController < ApplicationController
 
   def destroy
     authorize @spirit
-    @van.destroy
+    @spirit.destroy
     redirect_to spirits_path, status: :see_other
   end
 
