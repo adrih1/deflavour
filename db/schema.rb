@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_131146) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_152144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,46 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_131146) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "alcool_profiles", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float "total_price"
+    t.bigint "user_id", null: false
+    t.bigint "spirit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spirit_id"], name: "index_orders_on_spirit_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
+  end
+
+  create_table "spirits", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.float "price"
+    t.string "producer"
+    t.text "description"
+    t.string "color"
+    t.string "country"
+    t.float "degrees"
+    t.boolean "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,4 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_131146) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "spirits"
+  add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
 end

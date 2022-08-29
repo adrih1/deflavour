@@ -1,0 +1,2 @@
+class AlcoolProfile < ApplicationRecord
+end
