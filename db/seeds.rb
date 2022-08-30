@@ -23,30 +23,30 @@ puts "DB cleaned"
 
 data = {
 
-  "Vineux" => { description: "coucou",
-    aromas: ["Résine",	"Sherry",	"Balsamique",	"Porto",	"Xeres"]},
-  "Epicée"	=> { description: "coucou",
+  "vineux" => { description: "coucou",
+    aromas: ["résine",	"serry",	"Balsamique",	"Porto",	"Xeres","Vineux"]},
+  "epicee"	=> { description: "coucou",
     aromas: ["Canelle",	"Clou de girofle",	"Graine de coriandre",	"Noix de muscade",	"Poivre",	"Gingembre ",	"Anis",	"Curry",	"Safran",	"Piment",	"Epice"]},
-  "Boisé" => { description: "coucou",
-    aromas: [	"Pin ",	"Cedre",	"Bois de santal",	"Chêne",	"Encens",	"bote à cigare",	"Bois brulé",	"Tannique",	"Réglisse"]},
-  "Animale" => { description: "coucou",
-    aromas:	["Cuir",	"Musc"]},
-  "Noix" => { description: "coucou",
-    aromas:	["Noix de muscade",	"Noisette",	"amande",	"Nois de coco"]},
-  "Sucré" =>	{ description: "coucou",
-    aromas: ["Cacahuette",	"Vanille",	"Miel",	"Caramel"]},
-  "Fruité" =>	{ description: "coucou",
-    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade"]},
-  "Floral" =>	{ description: "coucou",
-    aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille"]},
-  "Herbacé"	=> { description: "coucou",
-    aromas: ["Herbe coupée",	"Fougère",	"Menthe",	"Eucalyptus",	"Genévrier",	"Feuille de cassis",	"Feuille de laurier",	"Basilique",	"Herbe fraiche",	"Canne fraiche",	"Sous-bois",	"Feuillage",	"Fenouille",	"Celery",	"Aneth"]},
-  "Céréale" =>	{ description: "coucou",
-    aromas: ["Pomme de terre",	"Foin",	"Malt",	"Biscuit",	"Maïs"]},
-  "Empyreumatique" =>	{ description: "coucou",
-    aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain"]},
-  "Tourbé" =>	{ description: "coucou",
-    aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène",	"Fumé"]},
+  "boise" => { description: "coucou",
+    aromas: [	"Pin ",	"Cedre",	"Bois de santal",	"Chêne",	"Encens",	"boite à cigare",	"Bois brulé",	"Tannique",	"Réglisse","Boisé"]},
+  "animale" => { description: "coucou",
+    aromas:	["Cuir",	"Musc","Animale"]},
+  "noix" => { description: "coucou",
+    aromas:	["Noix de muscade",	"Noisette",	"amande",	"Noix de coco","Noix"]},
+  "sucre" =>	{ description: "coucou",
+    aromas: ["Cacahuette",	"Vanille",	"Miel",	"Caramel","Sucré"]},
+  "fruite" =>	{ description: "coucou",
+    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade", "Fruité"]},
+  "floral" =>	{ description: "coucou",
+    aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille", "Floral"]},
+  "herbace"	=> { description: "coucou",
+    aromas: ["Herbe coupée",	"Fougère",	"Menthe",	"Eucalyptus",	"Genévrier",	"Feuille de cassis",	"Feuille de laurier",	"Basilique",	"Herbe fraiche",	"Canne fraiche",	"Sous-bois",	"Feuillage",	"Fenouille",	"Celery",	"Aneth","Herbacé","herbe"]},
+  "cereale" =>	{ description: "coucou",
+    aromas: ["Pomme de terre",	"Foin",	"Malt",	"Biscuit",	"Maïs", "Céréale"]},
+  "empyreumatique" =>	{ description: "coucou",
+    aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain", "Empyreumatique"]},
+  "tourbe" =>	{ description: "coucou",
+    aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène",	"Fumé", "Tourbé"]},
 
 }
 
@@ -55,7 +55,7 @@ puts "Creating Families and Aromas"
 data.each do |family, infos|
   family = Family.create!(name: family, description: infos[:description])
   infos[:aromas].each do |aroma|
-    Aroma.create!(name: aroma, family: family)
+    Aroma.create!(name: aroma.downcase, family: family)
   end
 end
 puts "Families and Aromas created"
@@ -159,19 +159,33 @@ while i <= 1
       degrees: scrape_liquor_degrees(liquor_url).to_i,
 
     })
-    spirit.save!
 
+    spirit.save!
     spirit_aroma = scrape_liquor_aromas(liquor_url).downcase
 
     Aroma.all.each do |aroma|
-      if  spirit_aroma.include?(aroma.name.downcase)
+      if  spirit_aroma.downcase.include?(aroma.name.downcase)
         SpiritAroma.create(spirit: spirit, aroma: aroma)
       end
     end
+
+
+    puts "family things"
+
+    spirit.families.each do |element|
+      spirit[:"#{element.name}"] += 1 if spirit.has_attribute?(element.name)
+      p spirit[:"#{element.name}"]
+      p element.name
+      p element
+    end
+    spirit.save!
     # bio = bio?(liquor_url)
     # p aromas
   end
   i += 1
 end
+
+Spirit.all
+
 
 puts 'Finished!'
