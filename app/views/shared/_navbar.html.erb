@@ -2,13 +2,13 @@
   <div class="navbar-content">
     <ul class="navbar-nav me-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Liquors</a>
+        <%=link_to "Liquors", spirits_path, class:"nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Producers</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" id="DeFlavour-name" href="#"><strong>DeFlavour</strong></a>
+        <%=link_to "DeFlavor", root_path, id:"DeFlavour-name" %>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">How it works</a>
