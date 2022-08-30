@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-around;
   margin: 20px 25%;
-  background:  linear-gradient(#ceebfc3b, #80acff37); //rgba(255, 255, 255, 0.254);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background:  linear-gradient(#1c110900, #47271069);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   backdrop-filter: blur(5px);
   border-radius: 15px;
 }
@@ -28,5 +28,10 @@ abbr[title] {
 }
 
 .form-control {
-  border-radius: 15px;
+  border-right: none;
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-left: none;
+  background: transparent;
+  border-radius: 3px;
 }
