@@ -9,9 +9,56 @@ require "open-uri"
 require "nokogiri"
 
 puts "Cleaning DB"
+SpiritAroma.destroy_all
+Aroma.destroy_all
+Family.destroy_all
 Spirit.destroy_all
 puts "DB cleaned"
 
+
+
+
+
+# Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
+
+data = {
+
+  "Vineux" => { description: "coucou",
+    aromas: ["Résine",	"Sherry",	"Balsamique",	"Porto",	"Xeres"]},
+  "Epicée"	=> { description: "coucou",
+    aromas: ["Canelle",	"Clou de girofle",	"Graine de coriandre",	"Noix de muscade",	"Poivre",	"Gingembre ",	"Anis",	"Curry",	"Safran",	"Piment",	"Epice"]},
+  "Boisé" => { description: "coucou",
+    aromas: [	"Pin ",	"Cedre",	"Bois de santal",	"Chêne",	"Encens",	"bote à cigare",	"Bois brulé",	"Tannique",	"Réglisse"]},
+  "Animale" => { description: "coucou",
+    aromas:	["Cuir",	"Musc"]},
+  "Noix" => { description: "coucou",
+    aromas:	["Noix de muscade",	"Noisette",	"amande",	"Nois de coco"]},
+  "Sucré" =>	{ description: "coucou",
+    aromas: ["Cacahuette",	"Vanille",	"Miel",	"Caramel"]},
+  "Fruité" =>	{ description: "coucou",
+    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade"]},
+  "Floral" =>	{ description: "coucou",
+    aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille"]},
+  "Herbacé"	=> { description: "coucou",
+    aromas: ["Herbe coupée",	"Fougère",	"Menthe",	"Eucalyptus",	"Genévrier",	"Feuille de cassis",	"Feuille de laurier",	"Basilique",	"Herbe fraiche",	"Canne fraiche",	"Sous-bois",	"Feuillage",	"Fenouille",	"Celery",	"Aneth"]},
+  "Céréale" =>	{ description: "coucou",
+    aromas: ["Pomme de terre",	"Foin",	"Malt",	"Biscuit",	"Maïs"]},
+  "Empyreumatique" =>	{ description: "coucou",
+    aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain"]},
+  "Tourbé" =>	{ description: "coucou",
+    aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène",	"Fumé"]},
+
+}
+
+puts "Creating Families and Aromas"
+# Iterating through the hash to create the family and the aroma.
+data.each do |family, infos|
+  family = Family.create!(name: family, description: infos[:description])
+  infos[:aromas].each do |aroma|
+    Aroma.create!(name: aroma, family: family)
+  end
+end
+puts "Families and Aromas created"
 
 puts 'Scraping spirits'
 i = 1
@@ -38,13 +85,13 @@ while i <= 1
 
 
   # Scrap aromas
-  # def scrape_liquor_aromas(url)
-  #   html = URI.open(url)
-  #   doc = Nokogiri::HTML(html)
-  #   doc.search("#elaboration-collapsible").each do |element|
-  #     return "#{element.at('meta').attribute('content').value.split(":")[4].strip}"
-  #   end
-  # end
+  def scrape_liquor_aromas(url)
+    html = URI.open(url)
+    doc = Nokogiri::HTML(html)
+    doc.search("#elaboration-collapsible").each do |element|
+      return "#{element.at('meta').attribute('content').value.split(":")[4].strip}"
+    end
+  end
 
   # #scrap if bio
   # def bio?(url)
@@ -110,9 +157,17 @@ while i <= 1
       image_url: liquor_image(element),
       country: scrape_liquor_country(liquor_url),
       degrees: scrape_liquor_degrees(liquor_url).to_i,
-      # aromas = scrape_liquor_aromas(liquor_url)
+
     })
     spirit.save!
+
+    spirit_aroma = scrape_liquor_aromas(liquor_url).downcase
+
+    Aroma.all.each do |aroma|
+      if  spirit_aroma.include?(aroma.name.downcase)
+        SpiritAroma.create(spirit: spirit, aroma: aroma)
+      end
+    end
     # bio = bio?(liquor_url)
     # p aromas
   end
