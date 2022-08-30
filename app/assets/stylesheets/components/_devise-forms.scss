@@ -1,0 +1,32 @@
+.forms-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 25%;
+  background:  linear-gradient(#ceebfc3b, #80acff37); //rgba(255, 255, 255, 0.254);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+}
+
+.simple_form{
+  padding: 10px 20px;
+}
+
+
+.form-label{
+  color: white;
+}
+
+abbr {
+  color: red;
+  text-decoration: none;
+}
+
+abbr[title] {
+  color: red;
+  text-decoration: none;
+}
+
+.form-control {
+  border-radius: 15px;
+}
