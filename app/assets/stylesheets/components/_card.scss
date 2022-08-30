@@ -1,8 +1,16 @@
 //SPIRIT CARD
+.spirit-card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
 .spirit-card {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 200px;
+  width: 90%;
   border-radius: 7px;
 }
 

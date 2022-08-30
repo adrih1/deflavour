@@ -1,13 +1,14 @@
 class SpiritsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @markers = @spirits.geocoded.map do |spirit|
-      {
-        lat: spirit.latitude,
-        lng: spirit.longitude
-      }
-    end
+    @spirits = policy_scope(Spirit)
+    # @markers = @spirits.geocoded.map do |spirit|
+    #   {
+    #     lat: spirit.latitude,
+    #     lng: spirit.longitude
+    #   }
+    # end
   end
 
   # GET /spirit/1
@@ -34,7 +35,7 @@ class SpiritsController < ApplicationController
   # POST /spirit
   def create
     @spirit = Spirit.new(spirit_params)
-    @spirit.user = current_user
+    @spirit.user = current_user.admin?
     @spirit.save
     if @spirit.save
       sleep 2
