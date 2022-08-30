@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Spirits</h1>
+  <div class="spirit-card-grid">
+    <% @spirits.each do |spirit| %>
+      <div class="spirit-card">
+        <img src="<%=spirit.image_url%>">
+        <div class="spirit-card-infos">
+          <div class="spirit-card-content">
+            <div class="spirit-card-header">
+              <h2><%= spirit.name%></h2>
+              <p>4/5 <i id="rating" class="fa-solid fa-star"></i></p>
+            </div>
+            <p><%= spirit.country%></p>
+            <div class="spirit-card-footer">
+              <h2 class="card-trip-pricing"><%= spirit.price%>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="spirit-card-producer avatar-bordered"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
