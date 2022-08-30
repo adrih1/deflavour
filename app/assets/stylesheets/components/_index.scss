@@ -4,10 +4,15 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "footer";
 @import "button";
 @import "banner";
+@import "card";
 
 a{
   text-decoration: none;
-}
 
+  &:hover{
+    cursor: pointer;
+  }
+}

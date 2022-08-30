@@ -1,0 +1,54 @@
+//SPIRIT CARD
+.spirit-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 200px;
+  border-radius: 7px;
+}
+
+.spirit-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.spirit-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+#rating{
+  color: gold;
+  font-size: 14px;
+}
+
+.spirit-card-content{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+
+.spirit-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.spirit-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin-bottom: 10px;
+}
+
+.spirit-card-footer{
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
