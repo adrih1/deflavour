@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_08_30_100340) do
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +54,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_100340) do
     t.index ["user_id"], name: "index_alcool_profiles_on_user_id"
   end
 
+  create_table "aromas", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "family_id"
+    t.index ["family_id"], name: "index_aromas_on_family_id"
+  end
+
+  create_table "families", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.float "total_price"
     t.bigint "user_id", null: false
@@ -77,6 +95,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_100340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_reviews_on_order_id"
+  end
+
+  create_table "spirit_aromas", force: :cascade do |t|
+    t.bigint "aroma_id", null: false
+    t.bigint "spirit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aroma_id"], name: "index_spirit_aromas_on_aroma_id"
+    t.index ["spirit_id"], name: "index_spirit_aromas_on_spirit_id"
   end
 
   create_table "spirits", force: :cascade do |t|
@@ -109,8 +136,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_100340) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+
+  add_foreign_key "aromas", "families"
+
   add_foreign_key "alcool_profiles", "users"
+
   add_foreign_key "orders", "spirits"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "orders"
+  add_foreign_key "spirit_aromas", "aromas"
+  add_foreign_key "spirit_aromas", "spirits"
 end
