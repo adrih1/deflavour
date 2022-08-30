@@ -12,7 +12,7 @@ class SpiritsController < ApplicationController
 
   # GET /spirit/1
   def show
-    @van = Spirit.find(params[:id])
+    @spirit = Spirit.find(params[:id])
     @order = Order.new
     authorize @spirit
     if @spirit.geocode
@@ -31,9 +31,9 @@ class SpiritsController < ApplicationController
     authorize @spirit
   end
 
-  # POST /van
+  # POST /spirit
   def create
-    @spirit = Spirit.new(van_params)
+    @spirit = Spirit.new(spirit_params)
     @spirit.user = current_user
     @spirit.save
     if @spirit.save
