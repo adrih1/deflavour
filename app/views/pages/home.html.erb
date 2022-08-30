@@ -1,5 +1,10 @@
+
+
+
  <body>
   <div class="banner">
+        <%= render "shared/login" %>
+         <%= render "shared/signup" %>
     <div class="cover">
       <h1>Connect</h1>
       <form  class="flex-form">
@@ -15,9 +20,8 @@
         <%= submit_tag "Search", type: "submit" %>
       <% end %>
       </form>
-    </div
+    </div>
 
-    >
   </div>
   <%= render "shared/navbar" %>
   <div class="big-cards">
