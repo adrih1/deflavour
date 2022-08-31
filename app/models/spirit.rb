@@ -11,4 +11,10 @@ class Spirit < ApplicationRecord
   has_many :experiences
   has_many :users, through: :experiences
 
+  include PgSearch::Model
+
+  pg_search_scope :search_btn, against: :category, using: {
+    tsearch: { prefix: true }
+  }
+
 end
