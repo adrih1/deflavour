@@ -19,6 +19,9 @@ Spirit.destroy_all
 puts "DB cleaned"
 
 
+
+
+
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
 data = {
