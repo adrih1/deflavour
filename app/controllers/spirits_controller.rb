@@ -9,6 +9,11 @@ class SpiritsController < ApplicationController
     #     lng: spirit.longitude
     #   }
     # end
+    if params[:query].present?
+      @spirits = Spirit.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @spirits = Spirit.all
+    end
   end
 
   # GET /spirit/1
