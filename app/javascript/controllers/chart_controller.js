@@ -1,24 +1,18 @@
-document.addEventListener('click', () => {
-  var ctx = document.getElementById('myChart').getContext('2d');
-  data = document.getElementById("data").innerHTML.split(",");
 
+  var ctx = document.getElementById('myChart').getContext('2d');
+  value = document.getElementById("data").innerHTML;
+  value = value.split("-")
+  bobo = document.getElementById("value").innerHTML;
+  data = bobo.split("-")
 
   var myChart = new Chart(ctx, {
   type: 'radar',
   data: {
-    labels: [
-    'Eating',
-    'Drinking',
-    'Sleeping',
-    'Designing',
-    'Coding',
-    'Cycling',
-    'Running'
-    ],
+    labels: data,
 
     datasets: [{
       label: 'Your alcoholic profile',
-      data: data,
+      data: value,
       fill: true,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgb(255, 99, 132)',
@@ -36,4 +30,3 @@ document.addEventListener('click', () => {
   },
   },
   });
-})
