@@ -32,7 +32,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    test = {
+    @test = {
       vineux: 0,
       epicee: 0,
       boise: 0,
@@ -47,17 +47,20 @@ class PagesController < ApplicationController
       tourbe: 0
     }
 
-    p User.last
+    @user.experiences.each do |el|
 
-    Spirit.all.each { |el | Experience.create(user: User.last, spirit: el)}
-    User.last.experiences.size
-    User.last.experiences.each do |el|
-
-      test.map do |key, value|
-        test[key] += ((el.spirit[:"#{key}"]).fdiv(User.last.experiences.size))
-        p el.spirit[:"#{key}"]
+      @test.map do |key, value|
+        @test[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
-      p test
     end
+    @popo = []
+    @papa = []
+    @test.each do |k, v|
+      @popo << k
+      @papa << v
+    end
+    @value = @popo.join("-")
+    @data = @papa.join("-")
+
   end
 end
