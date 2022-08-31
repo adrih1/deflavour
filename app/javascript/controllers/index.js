@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import SpiritAutocompleteController from "./spirit_autocomplete_controller"
 application.register("spirit-autocomplete", SpiritAutocompleteController)
+
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
