@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_095346) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_115133) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,12 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_095346) do
     t.index ["family_id"], name: "index_aromas_on_family_id"
   end
 
-  create_table "experiences", force: :cascade do |t|
-    t.bigint "spirit_id", null: false
-    t.bigint "user_id", null: false
+  create_table "custom_failures", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "rating", default: 5.0
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "spirit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["spirit_id"], name: "index_experiences_on_spirit_id"
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
@@ -149,19 +153,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_095346) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
-    t.integer "vineux", default: 0
-    t.integer "epicee", default: 0
-    t.integer "boise", default: 0
-    t.integer "animale", default: 0
-    t.integer "noix", default: 0
-    t.integer "sucre", default: 0
-    t.integer "fruite", default: 0
-    t.integer "floral", default: 0
-    t.integer "herbace", default: 0
-    t.integer "cereale", default: 0
-    t.integer "empyreumatique", default: 0
-    t.integer "tourbe", default: 0
-    t.text "experiences", default: [], array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -14,6 +14,10 @@ class SpiritPolicy < ApplicationPolicy
     true
   end
 
+  def recommendation
+    true
+  end
+
   def update?
     record.user == user
   end
