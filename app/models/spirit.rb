@@ -6,7 +6,7 @@ class Spirit < ApplicationRecord
 
 
   geocoded_by :country
-  after_validation :geocode, if: :will_save_change_to_location?
+  after_validation :geocode, if: :will_save_change_to_country?
 
   has_many :experiences
   has_many :users, through: :experiences
