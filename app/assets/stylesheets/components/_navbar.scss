@@ -23,6 +23,10 @@
     color: gold;
     transition: 0.5s ease;
   }
+
+  &:active {
+    color: rgb(255, 255, 255);
+  }
 }
 
 #DeFlavour-name{
