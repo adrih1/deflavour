@@ -9,3 +9,11 @@ application.register("hello", HelloController)
 
 import SpiritAutocompleteController from "./spirit_autocomplete_controller"
 application.register("spirit-autocomplete", SpiritAutocompleteController)
+
+
+
+import { Application } from 'stimulus'
+import Chart from 'stimulus-chartjs'
+
+const application = Application.start()
+application.register('chart', Chart)
