@@ -11,6 +11,8 @@ class SpiritsController < ApplicationController
     end
     if params[:query].present?
       @spirits = Spirit.where("title ILIKE ?", "%#{params[:query]}%")
+    elsif params[:category].present?
+      @spirits = Spirit.search_btn(params[:category])
     else
       @spirits = Spirit.all
     end
