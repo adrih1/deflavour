@@ -1,0 +1,61 @@
+<%= render "shared/navbar" %>
+<div class="">
+
+  <div class="my-5">
+  <h1 class="text-center"><%= @spirit.name %></h1>
+  </div>
+
+  <div class= "d-flex justify-content-around my-5">
+
+    <img src=" <%= @spirit.image_url %>" alt="">
+    <div class="description">
+      <p><%=@spirit.description  %></p>
+    </div>
+
+  </div>
+
+  <div class="panier">
+    <p class="btn-default">Ajouer au Panier</p>
+  </div>
+
+  <div class="detail my-5">
+    <h2>Detail</h2>
+    <div class="d-flex justify-content-around">
+      <div>
+        <p>Producteur: <%= @spirit.producer%></p>
+        <p>Origin: <%= @spirit.country%></p>
+      </div>
+      <div>
+        <p>Prix: <%= @spirit.price%></p>
+        <p>Degrée: <%= @spirit.degrees%></p>
+      </div>
+      <div>
+        <p>Gout: <% @spirit.aromas.each do |aroma|%>
+                  <%= aroma.name %>
+                  <% end %>
+        </p>
+        <p>Famille: <% @spirit.families.each do |family|%>
+                        <%= family.name %>
+                        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5">
+  <h1 class="text-center"><%= @spirit.producer %></h1>
+  </div>
+
+  <div class="producer-description d-flex justify-content-center">
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum similique aliquid ipsam quo, amet nesciunt. Corrupti, alias beatae. Ipsam eius quidem laborum quibusdam? Quibusdam, dignissimos est modi ullam perspiciatis dolore?</p>
+  </div>
+
+
+  <div class="d-flex justify-content-center my-5">
+  <div style="width: 80%; height: 400px;"
+      data-controller="map"
+      data-map-markers-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>

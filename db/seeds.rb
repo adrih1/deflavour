@@ -161,7 +161,6 @@ while i <= 1
       degrees: scrape_liquor_degrees(liquor_url).to_i,
 
     })
-
     spirit.save!
     spirit_aroma = scrape_liquor_aromas(liquor_url).downcase
 

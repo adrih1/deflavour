@@ -3,4 +3,7 @@ class Spirit < ApplicationRecord
   has_many :spirit_aromas
   has_many :aromas, through: :spirit_aromas
   has_many :families, through: :aromas
+
+  geocoded_by :country
+  after_validation :geocode, if: :will_save_change_to_location?
 end
