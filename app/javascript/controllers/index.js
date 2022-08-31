@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import SpiritAutocompleteController from "./spirit_autocomplete_controller"
+application.register("spirit-autocomplete", SpiritAutocompleteController)

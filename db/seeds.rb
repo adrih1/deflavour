@@ -22,7 +22,6 @@ puts "DB cleaned"
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
 data = {
-
   "vineux" => { description: "coucou",
     aromas: ["résine",	"serry",	"Balsamique",	"Porto",	"Xeres","Vineux"]},
   "epicee"	=> { description: "coucou",
@@ -89,7 +88,7 @@ while i <= 1
     html = URI.open(url)
     doc = Nokogiri::HTML(html)
     doc.search("#elaboration-collapsible").each do |element|
-      return "#{element.at('meta').attribute('content').value.split(":")[4].strip}"
+      return "#{element.at('meta').attribute('content').value.split(":")[4]}"
     end
   end
 
