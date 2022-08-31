@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :spirits, only: [:index, :show] do
     resources :orders, only: [:new, :create]
   end
+
+  resources :experiences, only: :create
+
   resources :orders, only: [:destroy, :show, :index] do
     resources :reviews
   end
