@@ -32,14 +32,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-  end
-
-
-
-
-
-  def my_profile
-    
     test = {
       vineux: 0,
       epicee: 0,
