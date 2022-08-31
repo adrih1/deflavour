@@ -14,6 +14,33 @@ class SpiritsController < ApplicationController
     else
       @spirits = Spirit.all
     end
+
+    
+    @chart_data = {
+      labels: %w[January February March April May June July],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'transparent',
+        borderColor: '#3B82F6',
+        data: [37, 83, 78, 54, 12, 5, 99]
+      }]
+    }
+
+    @chart_options = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  end
+
+  def recommendation
+    #put algo here
+    @spirit = Spirit.find(params[:id])
+    authorize @spirit
   end
 
   # GET /spirit/1

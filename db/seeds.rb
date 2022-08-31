@@ -12,6 +12,9 @@ puts "Cleaning DB"
 SpiritAroma.destroy_all
 Aroma.destroy_all
 Family.destroy_all
+Experience.destroy_all
+Review.destroy_all
+Order.destroy_all
 Spirit.destroy_all
 puts "DB cleaned"
 
@@ -168,12 +171,46 @@ while i <= 1
 
     puts "family things"
 
+    #ici on attribue des poids aux familles de chaque spirit
     spirit.families.each do |element|
+      p element
       spirit[:"#{element.name}"] += 1 if spirit.has_attribute?(element.name)
       p spirit[:"#{element.name}"]
       p element.name
       p element
     end
+
+    # ici on linéarise le poid de chaque spirit sur une base 10
+
+    # ici initialize une variable pour jouer avce les valeurs des spirits
+    test = {
+      vineux: 0,
+      epicee: 0,
+      boise: 0,
+      animale: 0,
+      noix: 0,
+      sucre: 0,
+      fruite: 0,
+      floral: 0,
+      herbace: 0,
+      cereale: 0,
+      empyreumatique: 0,
+      tourbe: 0
+    }
+
+    # on cherche la famille la plus lourde de chaque spirit
+    max = 0
+
+    test.each do |key, value|
+      max = spirit[:"#{key}"] if spirit[:"#{key}"] > max
+    end
+
+    # on pose les familles sur une base de 10 pour que les spirits soient comparables
+    test.each do |key, value|
+      spirit[:"#{key}"] = (spirit[:"#{key}"].fdiv(max) * 5) unless max.zero?
+    end
+
+
     spirit.save!
     # bio = bio?(liquor_url)
     # p aromas

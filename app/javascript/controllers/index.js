@@ -9,3 +9,13 @@ application.register("hello", HelloController)
 
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+
+
+
+import { Application } from 'stimulus'
+import Chart from 'stimulus-chartjs'
+
+const application = Application.start()
+application.register('chart', Chart)
+
