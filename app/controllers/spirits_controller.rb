@@ -3,19 +3,19 @@ class SpiritsController < ApplicationController
 
   def index
     @spirits = policy_scope(Spirit)
-    # @markers = @spirits.geocoded.map do |spirit|
-    #   {
-    #     lat: spirit.latitude,
-    #     lng: spirit.longitude
-    #   }
-    # end
+    @markers = @spirits.geocoded.map do |spirit|
+      {
+        lat: spirit.latitude,
+        lng: spirit.longitude
+      }
+    end
     if params[:query].present?
       @spirits = Spirit.where("title ILIKE ?", "%#{params[:query]}%")
     else
       @spirits = Spirit.all
     end
 
-    
+
     @chart_data = {
       labels: %w[January February March April May June July],
       datasets: [{
