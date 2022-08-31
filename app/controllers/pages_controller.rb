@@ -5,9 +5,6 @@ class PagesController < ApplicationController
 
 
 
-
-
-
     # TEST DE MOYENNE D'ECHANTILLONAGE A METTRE DANS PAGE DU QUIZZ (A RETRAVAILLER RAPIDO TU COCO)
     # test = {
     #   vineux: 0,
