@@ -89,7 +89,7 @@ while i <= 1
     html = URI.open(url)
     doc = Nokogiri::HTML(html)
     doc.search("#elaboration-collapsible").each do |element|
-      return "#{element.at('meta').attribute('content').value.split(":")[4].strip}"
+      return "#{element.at('meta').attribute('content').value.split(":")[4]}"
     end
   end
 
