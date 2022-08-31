@@ -22,7 +22,6 @@ puts "DB cleaned"
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
 data = {
-
   "vineux" => { description: "coucou",
     aromas: ["résine",	"serry",	"Balsamique",	"Porto",	"Xeres","Vineux"]},
   "epicee"	=> { description: "coucou",
