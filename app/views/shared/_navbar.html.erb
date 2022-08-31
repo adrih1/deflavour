@@ -1,21 +1,31 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-deflavour">
   <div class="navbar-content">
     <ul class="navbar-nav me-auto">
-      <li class="nav-item active">
-        <%=link_to "Liquors", spirits_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Producers</a>
-      </li>
+      <div class="navbar-left">
+        <li class="nav-item active">
+          <%=link_to "Spiritueux", spirits_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Producteurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Concept</a>
+        </li>
+      </div>
+      <div class="navbar-center">
       <li class="nav-item active">
         <%=link_to "DeFlavor", root_path, id:"DeFlavour-name" %>
       </li>
+
+      </div>
+      <div class="navbar-right">
       <li class="nav-item active">
-        <a class="nav-link" href="#">How it works</a>
+        <a class="nav-link"  href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Sign In</a>
       </li>
+      </div>
     </ul>
   </div>
 </div>
