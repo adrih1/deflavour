@@ -1,23 +1,41 @@
   <%= render "shared/navbar" %>
+
+
+
+
+
+
 <div class="container mt-3">
+  <div class="my-5  d-flex justify-content-between align-items-center">
+    <% if params[:category].present? %>
+    <%=  %>
+    <h1><%=  params[:category].upcase  %> </h1>
+    <% else %>
+    <h1>SPIRITUEUX</h1>
+    <% end %>
+
+    <p><%= @spirits.count %> produits</p>
+  </div>
   <div class="spirit-card-grid">
     <% @spirits.each do |spirit| %>
-      <div class="spirit-card">
-        <img src="<%=spirit.image_url%>">
-        <div class="spirit-card-infos">
-          <div class="spirit-card-content">
-            <div class="spirit-card-header">
-              <h2><%= spirit.name%></h2>
-              <p>4/5 <i id="rating" class="fa-solid fa-star"></i></p>
-            </div>
-            <p><%= spirit.country%></p>
-            <div class="spirit-card-footer">
-              <h2 class="card-trip-pricing"><%= spirit.price%>€</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="spirit-card-producer avatar-bordered"/>
+      <%= link_to spirit_path(spirit), style: "text-decoration: none;" do %>
+        <div class="spirit-card">
+          <img src="<%=spirit.image_url%>">
+          <div class="spirit-card-infos">
+            <div class="spirit-card-content">
+              <div class="spirit-card-header">
+                <h2><%= spirit.name%></h2>
+                <p>4/5 <i id="rating" class="fa-solid fa-star"></i></p>
+              </div>
+              <p><%= spirit.country%></p>
+              <div class="spirit-card-footer">
+                <h2 class="card-trip-pricing"><%= spirit.price%>€</h2>
+                <i class="fa-regular fa-heart spirit-card-producer "></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <%end%>
     <%end%>
   </div>
 
