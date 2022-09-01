@@ -8,6 +8,7 @@
 }
 
 .spirit-card {
+
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 90%;
@@ -59,4 +60,22 @@
   flex-grow: 1;
   align-items: center;
   justify-content: space-between;
+}
+
+// Spirit card RECOMMENDATIONS
+
+.spirit-card-grid-reco{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+
+.spirit-card-header-reco{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
 }
