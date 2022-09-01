@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="chart"
 export default class extends Controller {
   connect() {
+    console.log('hello')
     var ctx = document.getElementById('myChart').getContext('2d');
     value = document.getElementById("data").innerHTML;
     value = value.split("-")

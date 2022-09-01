@@ -81,38 +81,490 @@
 
 
 
+<div class="aromatique-profile">
+
+
+
+  <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
+    <canvas  id="myChartd"></canvas>
+    <div id="datad" class="d-none">
+      <%= @datad  %>
+    </div>
+    <div id="valued" class="d-none">
+      <%= @valued  %>
+    </div>
+  </div>
+
+
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichagew %>'>
+      <canvas  id="myChartw"></canvas>
+      <div id="dataw" class="d-none">
+        <%= @dataw  %>
+      </div>
+      <div id="valuew" class="d-none">
+        <%= @valuew  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandew %>'>
+      <h3> Vous n'avez pas de Whisky</h3>
+      <h2> Commandez</h2>
+    </div>
+
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichageg %>'>
+      <canvas  id="myChartg"></canvas>
+      <div id="datag" class="d-none">
+        <%= @datag  %>
+      </div>
+      <div id="valueg" class="d-none">
+        <%= @valueg  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandeg %>'>
+      <h3> Vous n'avez pas de Gin</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichager %>'>
+      <canvas  id="myChartr"></canvas>
+      <div id="datar" class="d-none">
+        <%= @datar  %>
+      </div>
+      <div id="valuer" class="d-none">
+        <%= @valuer  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demander %>'>
+      <h3> Vous n'avez pas de Rhum</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichaget %>'>
+      <canvas  id="myChartt"></canvas>
+      <div id="datat" class="d-none">
+        <%= @datat  %>
+      </div>
+      <div id="valuet" class="d-none">
+        <%= @valuet  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandet %>'>
+      <h3> Vous n'avez pas de Tequila</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichagec %>'>
+      <canvas  id="myChartc"></canvas>
+      <div id="datac" class="d-none">
+        <%= @datac  %>
+      </div>
+      <div id="valuec" class="d-none">
+        <%= @valuec  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandec %>'>
+      <h3> Vous n'avez pas de Cognac</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichageca %>'>
+      <canvas  id="myChartca"></canvas>
+      <div id="dataca" class="d-none">
+        <%= @dataca  %>
+      </div>
+      <div id="valueca" class="d-none">
+        <%= @valueca  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandeca %>'>
+      <h3> Vous n'avez pas de Calvados</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichagem %>'>
+      <canvas  id="myChartm"></canvas>
+      <div id="datam" class="d-none">
+        <%= @datam  %>
+      </div>
+      <div id="valuem" class="d-none">
+        <%= @valuem  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandem %>'>
+      <h3> Vous n'avez pas de Mezcal</h3>
+      <h2> Commandez</h2>
+    </div>
+
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichagev %>'>
+      <canvas  id="myChartv"></canvas>
+      <div id="datav" class="d-none">
+        <%= @datav  %>
+      </div>
+      <div id="valuev" class="d-none">
+        <%= @valuev  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandev %>'>
+      <h3> Vous n'avez pas de Vodka</h3>
+      <h2> Commandez</h2>
+    </div>
+
+    <div style="width: 350px; height: 350px;" class='<%= @affichagea %>'>
+      <canvas  id="myCharta"></canvas>
+      <div id="dataa" class="d-none">
+        <%= @dataa  %>
+      </div>
+      <div id="valuea" class="d-none">
+        <%= @valuea  %>
+      </div>
+    </div>
+    <div style="width: 350px; height: 350px;" class='<%= @demandea %>'>
+      <h3> Vous n'avez pas d'Armagnac</h3>
+      <h2> Commandez</h2>
+    </div>
+
 
 <script>
 
-  var ctx = document.getElementById('myChart').getContext('2d');
-  value = document.getElementById("data").innerHTML;
+    let ctd = document.getElementById('myChartd').getContext('2d');
+    value = document.getElementById("datad").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valued").innerHTML;
+    data = bobo.split("-")
+    console.log(data)
+
+    let myChartd = new Chart(ctd, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'My alcoholic profile',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgb(255, 99, 132)',
+        pointBackgroundColor: 'rgb(255, 99, 132)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(255, 99, 132)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+  console.log('test')
+    let ctw = document.getElementById('myChartw').getContext('2d');
+    value = document.getElementById("dataw").innerHTML;
+    console.log(value)
+    value = value.split("-")
+    bobo = document.getElementById("valuew").innerHTML;
+    console.log(bobo)
+    data = bobo.split("-")
+
+    let myChartw = new Chart(ctw, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Whisky',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(151, 111, 41, 0.2)',
+        borderColor: 'rgb(151, 111, 41)',
+        pointBackgroundColor: 'rgb(151, 111, 41)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(151, 111, 41)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+  console.log('gin')
+    let ctg = document.getElementById('myChartg').getContext('2d');
+    value = document.getElementById("datag").innerHTML;
+    console.log(value)
+    value = value.split("-")
+    bobo = document.getElementById("valueg").innerHTML;
+    console.log(bobo)
+    data = bobo.split("-")
+
+    let myChartg = new Chart(ctg, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Gin',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(217, 225, 197, 0.2)',
+        borderColor: 'rgb(217, 225, 197)',
+        pointBackgroundColor: 'rgb(217, 225, 197)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(217, 225, 197)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+    console.log('rhum')
+    let ctr = document.getElementById('myChartr').getContext('2d');
+    value = document.getElementById("datar").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valuer").innerHTML;
+    data = bobo.split("-")
+
+    let myChartr = new Chart(ctr, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Rhum',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(253, 206, 167, 0.2)',
+        borderColor: 'rgb(253, 206, 167)',
+        pointBackgroundColor: 'rgb(253, 206, 167)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(253, 206, 167)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+    console.log('tequila')
+    let ctt = document.getElementById('myChartt').getContext('2d');
+    value = document.getElementById("datat").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valuet").innerHTML;
+    data = bobo.split("-")
+
+    let myChartt = new Chart(ctt, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Tequila',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(190, 205, 198, 0.2)',
+        borderColor: 'rgb(190, 205, 198)',
+        pointBackgroundColor: 'rgb(190, 205, 198)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(190, 205, 198)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+
+    console.log('cognac')
+    let ctc = document.getElementById('myChartc').getContext('2d');
+    value = document.getElementById("datac").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valuec").innerHTML;
+    data = bobo.split("-")
+
+    let myChartc = new Chart(ctc, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Cognac',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(187, 97, 68, 0.2)',
+        borderColor: 'rgb(187, 97, 68)',
+        pointBackgroundColor: 'rgb(187, 97, 68)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(187, 97, 68)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+    console.log('calvados')
+    let ctca = document.getElementById('myChartca').getContext('2d');
+    value = document.getElementById("dataca").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valueca").innerHTML;
+    data = bobo.split("-")
+
+    let myChartca = new Chart(ctca, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Calvados',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(169, 142, 121, 0.2)',
+        borderColor: 'rgb(169, 142, 121)',
+        pointBackgroundColor: 'rgb(169, 142, 121)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(169, 142, 121)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+    console.log('mezcal')
+    let ctm = document.getElementById('myChartm').getContext('2d');
+    value = document.getElementById("datam").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valuem").innerHTML;
+    data = bobo.split("-")
+
+    let myChartm = new Chart(ctm, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Mezcal',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(235, 211, 151)',
+        borderColor: 'rgb(235, 211, 151)',
+        pointBackgroundColor: 'rgb(235, 211, 151)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(235, 211, 151)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+    console.log('vodka')
+    let ctv = document.getElementById('myChartv').getContext('2d');
+    value = document.getElementById("datav").innerHTML;
+    value = value.split("-")
+    bobo = document.getElementById("valuev").innerHTML;
+    data = bobo.split("-")
+
+    let myChartv = new Chart(ctv, {
+    type: 'radar',
+    data: {
+      labels: data,
+
+      datasets: [{
+        label: 'Vodka',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(191, 192, 237)',
+        borderColor: 'rgb(191, 192, 237)',
+        pointBackgroundColor: 'rgb(191, 192, 237)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(191, 192, 237)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+    },
+    });
+
+
+
+  console.log('armagnac')
+  let cta = document.getElementById('myCharta').getContext('2d');
+  value = document.getElementById("dataa").innerHTML;
   value = value.split("-")
-  bobo = document.getElementById("value").innerHTML;
+  bobo = document.getElementById("valuea").innerHTML;
   data = bobo.split("-")
 
-  var myChart = new Chart(ctx, {
-  type: 'radar',
-  data: {
-    labels: data,
+let myCharta = new Chart(cta, {
+    type: 'radar',
+    data: {
+      labels: data,
 
-    datasets: [{
-      label: 'Your alcoholic profile',
-      data: value,
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    },],
-    options: {
-    elements: {
-      line: {
-        borderWidth: 3
+      datasets: [{
+        label: 'Armagnac',
+        data: value,
+        fill: true,
+        backgroundColor: 'rgba(134, 108, 120)',
+        borderColor: 'rgb(134, 108, 120)',
+        pointBackgroundColor: 'rgb(134, 108, 120)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(134, 108, 120)'
+      },],
+      options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
       }
-    }
-  },
-  },
-  });
+    },
+    },
+    });
+
+
+
 </script>
