@@ -52,8 +52,11 @@ class PagesController < ApplicationController
       end
       @result[:"#{spirit.id}"] = difference
     end
+    @user.recommendations.each { |el| el.destroy }
     @forbidden = []
     @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
-    @result.reject{ |k, v| @forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each{ |k, v| Recommendation.create(spirit: Spirit.find("#{k}"), user: @user )}
+    @result.reject{ |k, v| @forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
+      Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: "#{(v.to_f * 2).round}" )
+    end
   end
 end
