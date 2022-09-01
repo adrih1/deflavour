@@ -15,6 +15,7 @@
     <% end %>
 
     <%= render "shared/navbar" %>
+</div>
 
     <div class="big-cards">
       <div class="cards">
@@ -102,9 +103,6 @@
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1650261064514-eaeb5a296434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80)">
           VODKA
         </div>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1586315776885-a176ffccbe01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80)">
-          RHUM
-        </div>
       </div>
     </div>
   </div>
@@ -113,10 +111,12 @@
 
   <%# NOT LOGGED IN %>
   <%else%>
+<div class="banner">
     <div class="forms-container">
       <%= render "shared/login" %>
       <%= render "shared/signup" %>
     </div>
+</div>
   <%= render "shared/navbar" %>
   <div class="big-cards">
 
@@ -173,9 +173,6 @@
 
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1650261064514-eaeb5a296434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80)">
         VODKA
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1586315776885-a176ffccbe01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80)">
-        RHUM
       </div>
     </div>
   </div>
