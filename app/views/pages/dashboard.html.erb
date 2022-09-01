@@ -1,30 +1,35 @@
 <%= render "shared/navbar" %>
 
 
-<h1>Profil Aromatique </h1>
+<div class="container mb-5">
+  <h1 class="text-center my-5" >Profil Aromatique </h1>
+  <div class="d-flex justify-content-around flex-row-reverse">
+    <div class="d-flex flex-column" style="width: 40%;">
+      <div class= "m-5">
+      <h2>Synthese</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit possimus cum, saepe soluta nobis inventore rem mollitia veritatis, a sunt, sequi natus rerum repellendus quas. Ea temporibus reprehenderit quisquam harum!</p>
+      </div>
+      <div class= "m-5">
+      <h3>Description</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis ipsam rerum dolorum! Harum eum nostrum aut atque est error at dolorum in ullam cupiditate ab laboriosam, et, voluptas numquam?</p>
+      </div>
+    </div>
 
-
-<h2>Synthese</h2>
-
-
-<h3>Description</h3>
-
-
-
-<%=link_to "Recommendation", recommendation_spirits_path, class:"btn-default" %>
-
-
-<div id="data" class="invisible">
-  <%= @data  %>
-</div>
-<div id="value" class="invisible">
-  <%= @value  %>
-</div>
-
-<div id="test">
+    <div style="width: 500px; height: 500px;">
+      <canvas  id="myChart"></canvas>
+      <div id="data" class="invisible">
+        <%= @data  %>
+      </div>
+      <div id="value" class="invisible">
+        <%= @value  %>
+      </div>
+    </div>
+  </div>
+  <div class="text-center my-5">
+  <%=link_to "Recommendation", recommendation_spirits_path, class:"btn-default" %>
+  </div>
+  <div id="test">
   <%= @result  %>
 </div>
 
-<div>
-  <canvas id="myChart"></canvas>
 </div>
