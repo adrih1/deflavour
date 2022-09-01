@@ -2,30 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    # TEST DE MOYENNE D'ECHANTILLONAGE A METTRE DANS PAGE DU QUIZZ (A RETRAVAILLER RAPIDO TU COCO)
-    # test = {
-    #   vineux: 0,
-    #   epicee: 0,
-    #   boise: 0,
-    #   animale: 0,
-    #   noix: 0,
-    #   sucre: 0,
-    #   fruite: 0,
-    #   floral: 0,
-    #   herbace: 0,
-    #   cereale: 0,
-    #   empyreumatique: 0,
-    #   tourbe: 0
-    # }
-    # [Spirit.find(1),Spirit.find(2),Spirit.find(3)].each do |el|
-    #   test.map do |key, value|
-    #     p key
-    #     p (el[:"#{key}"])
-    #     test[key] += (el[:"#{key}"])
-    #   end
-    #   p test
-    # end
-
 
   end
 
@@ -53,6 +29,9 @@ class PagesController < ApplicationController
         @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
     end
+    profile = @base
+    AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
+    profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v }  unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
     @popo = []
     @papa = []
     @base.each do |k, v|
@@ -73,13 +52,15 @@ class PagesController < ApplicationController
       end
       @result[:"#{spirit.id}"] = difference
     end
-    # forbidden = []
-    # @user.orders.each { |el| forbidden << el.spirit.id }
-    # @result.reject{ |k, v| forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each{ |k, v| Recommendation.create(spirit: Spirit.find(k), user: @user )}
+    @user.recommendations.each { |el| el.destroy }
+    @forbidden = []
+    @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
+    @result.reject{ |k, v| @forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
+      Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: "#{(v.to_f * 2).round}" )
+    end
   end
-
+  
   def maindashboard
     @user = current_user
   end
-
 end

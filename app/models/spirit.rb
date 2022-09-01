@@ -14,6 +14,7 @@ class Spirit < ApplicationRecord
 
   include PgSearch::Model
 
+  # Code pour la search par type d'alcool
   pg_search_scope :search_btn, against: :category, using: {
     tsearch: { prefix: true }
   }
