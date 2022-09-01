@@ -1,6 +1,5 @@
 class RecommendationsController < ApplicationController
   def index
-    @recommendations = Recommendation.all
-
+    @recommendations = policy_scope(Recommendation)
   end
 end
