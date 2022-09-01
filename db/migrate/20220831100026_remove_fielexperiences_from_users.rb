@@ -12,6 +12,5 @@ class RemoveFielexperiencesFromUsers < ActiveRecord::Migration[7.0]
     remove_column :users, :cereale, :integer, default: 0
     remove_column :users, :empyreumatique, :integer, default: 0
     remove_column :users, :tourbe, :integer, default: 0
-    remove_column :users, :experiences, :text, array: true, default: []
   end
 end
