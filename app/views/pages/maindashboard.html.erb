@@ -1,0 +1,118 @@
+<%= render "shared/navbar" %>
+<div class="d-flex ">
+
+  <div class="sommaire_link">
+    <ul class="list-unstyled" >
+      <li class="col-item">
+        <a class="col-link" href="#profil">Profil aromatique</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#bar">Mon bar</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#">Mes commandes</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#">Mes infos</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#">Mes adresses</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#">Mes infos de paiement</a>
+      </li>
+      <li class="col-item">
+        <a class="col-link" href="#">Mes envies</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="m-4">
+    <div id="profil">
+      <h1 class="text-start my-5" >Profil Aromatique </h1>
+      <div class="d-flex justify-content-around flex-row-reverse">
+        <div class="d-flex flex-column" style="width: 40%;">
+          <div class= "m-5">
+            <h2>Synthese</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit possimus cum, saepe soluta nobis inventore rem mollitia veritatis, a sunt, sequi natus rerum repellendus quas. Ea temporibus reprehenderit quisquam harum!</p>
+          </div>
+          <div class= "m-5">
+            <h3>Description</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis ipsam rerum dolorum! Harum eum nostrum aut atque est error at dolorum in ullam cupiditate ab laboriosam, et, voluptas numquam?</p>
+          </div>
+        </div>
+        <div style="width: 500px; height: 500px;">
+          <canvas  id="myChart"></canvas>
+        </div>
+        <div id="data" class="invisible">
+          <%= @data  %>
+        </div>
+        <div id="value" class="invisible">
+          <%= @value  %>
+        </div>
+      </div>
+    </div>
+    <div id="bar">
+      <h1>Mon Bar</h1>
+      <div>
+        <h2>En attente de note</h2>
+      </div>
+      <div>
+        <h2>Mes bouteilles</h2>
+        <div class="spirit-card-grid">
+          <% current_user.spirits.each do |spirit| %>
+          <div class="spirit-card">
+            <img src="<%=spirit.image_url%>">
+            <div class="spirit-card-content">
+              <div class="spirit-card-header">
+                <%= spirit.name %>
+                <%= spirit.producer %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  value = document.getElementById("data").innerHTML;
+  value = value.split("-")
+  bobo = document.getElementById("value").innerHTML;
+  data = bobo.split("-")
+
+  var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: data,
+
+    datasets: [{
+      label: 'Your alcoholic profile',
+      data: value,
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    },],
+    options: {
+    elements: {
+      line: {
+        borderWidth: 3
+      }
+    }
+  },
+  },
+  });
+</script>

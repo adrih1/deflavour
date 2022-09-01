@@ -59,4 +59,8 @@ class PagesController < ApplicationController
       Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: "#{(v.to_f * 2).round}" )
     end
   end
+  
+  def maindashboard
+    @user = current_user
+  end
 end
