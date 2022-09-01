@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_102229) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_123212) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -110,10 +110,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_102229) do
   create_table "recommendations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "spirit_id", null: false
-    t.string "percentage"
-    t.string "float"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "percentages"
     t.index ["spirit_id"], name: "index_recommendations_on_spirit_id"
     t.index ["user_id"], name: "index_recommendations_on_user_id"
   end

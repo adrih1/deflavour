@@ -60,7 +60,7 @@ puts "Families and Aromas created"
 puts 'Scraping spirits'
 i = 1
 # permet de changer de page
-while i <= 1
+while i <= 10
 
   # find image url
   def liquor_image(element)
@@ -207,7 +207,7 @@ while i <= 1
     test.each do |key, value|
       spirit[:"#{key}"] = (spirit[:"#{key}"].fdiv(max) * 5) unless max.zero?
     end
-
+    sleep 1
 #supprimer les différentes conte,ances pour un meme alcool et supprimer là où on a pas de données
     spirit.save!
 
@@ -220,6 +220,7 @@ while i <= 1
     # p aromas
   end
   i += 1
+  sleep 10
 end
 
 
