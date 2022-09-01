@@ -23,19 +23,19 @@
     <div class="d-flex justify-content-around">
       <div>
         <p>Producteur: <%= @spirit.producer%></p>
-        <p>Origin: <%= @spirit.country%></p>
+        <p>Origine: <%= @spirit.country%></p>
       </div>
       <div>
-        <p>Prix: <%= @spirit.price%></p>
-        <p>Degrée: <%= @spirit.degrees%></p>
+        <p>Prix: <%= @spirit.price%> €</p>
+        <p>Degrée: <%= @spirit.degrees%> %</p>
       </div>
       <div>
         <p>Gout: <% @spirit.aromas.each do |aroma|%>
-                  <%= aroma.name %>
+                  <%=aroma.name.capitalize %> ,
                   <% end %>
         </p>
         <p>Famille: <% @spirit.families.each do |family|%>
-                        <%= family.name %>
+                        <%= family.name.capitalize %>
                         <% end %>
         </p>
       </div>
