@@ -39,11 +39,7 @@ class SpiritsController < ApplicationController
     }
   end
 
-  def recommendation
-    #put algo here
-    @spirit = Spirit.find(params[:id])
-    authorize @spirit
-  end
+
 
   # GET /spirit/1
   def show

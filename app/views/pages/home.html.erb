@@ -2,6 +2,7 @@
   <%#  LOGGED IN  %>
   <% if user_signed_in? %>
 
+<<<<<<< HEAD
   <%# PREVIOUS EXPERIENCES ? %>
     <% if current_user.experiences.length < 0%>
     <div class="banner">
@@ -31,6 +32,20 @@
           <%= f.submit 'Save my liquors', class:"experience-button"%>
         <% end %>
       </div>
+=======
+
+    <% if current_user.experiences.length < 0%>
+    <div style="height: 350px;" class="d-flex justify-content-center">
+      <%= link_to "Voir mon profil", dashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+    </div>
+    <% else %>
+      <%= simple_form_for Experience.new do |f| %>
+        <%= f.input :spirit, collection: Spirit.all, input_html: { multiple: true, data: { controller: "tom-select", tom_select_options_value: { tags: true } } } %>
+        <%= link_to dashboard_path, class: "text-decoration-none" do %>
+        <%= f.submit 'Launch my aromatic profile !', class:"btn-default" %>
+        <% end %>
+      <% end %>
+>>>>>>> master
     <% end %>
 
     <%= render "shared/navbar" %>

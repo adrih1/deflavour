@@ -5,12 +5,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :spirits, only: [:index, :show] do
-    collection do
-      get :recommendation
-    end
     resources :orders, only: [:new, :create]
   end
 
+  resources :recommendations, only: :index
   resources :experiences, only: :create
 
   resources :orders, only: [:destroy, :show, :index] do
