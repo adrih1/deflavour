@@ -12,6 +12,5 @@ class AddColumnsToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :cereale, :integer, default: 0
     add_column :users, :empyreumatique, :integer, default: 0
     add_column :users, :tourbe, :integer, default: 0
-    add_column :users, :experiences, :text, array: true, default: []
   end
 end

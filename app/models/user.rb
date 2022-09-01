@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   has_many :experiences
+  has_many :recommendations
   has_many :spirits, through: :experiences
+  has_one :alcool_profile
 
   def create_experiences(params)
     spirit_ids = params.dig(:experience, :spirit).reject(&:blank?)
