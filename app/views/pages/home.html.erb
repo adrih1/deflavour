@@ -10,7 +10,9 @@
     <% else %>
       <%= simple_form_for Experience.new do |f| %>
         <%= f.input :spirit, collection: Spirit.all, input_html: { multiple: true, data: { controller: "tom-select", tom_select_options_value: { tags: true } } } %>
+        <%= link_to dashboard_path, class: "text-decoration-none" do %>
         <%= f.submit 'Launch my aromatic profile !', class:"btn-default" %>
+        <% end %>
       <% end %>
     <% end %>
 </div>
