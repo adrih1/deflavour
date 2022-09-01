@@ -212,15 +212,19 @@ while i <= 1
       spirit[:"#{key}"] = (spirit[:"#{key}"].fdiv(max) * 5) unless max.zero?
     end
 
-
+#supprimer les différentes conte,ances pour un meme alcool et supprimer là où on a pas de données
     spirit.save!
+
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil?
+      spirit.destroy!
+    elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
+      spirit.destroy!
+    end
     # bio = bio?(liquor_url)
     # p aromas
   end
   i += 1
 end
-
-Spirit.all
 
 
 puts 'Finished!'

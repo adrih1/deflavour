@@ -32,7 +32,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @test = {
+    @base = {
       vineux: 0,
       epicee: 0,
       boise: 0,
@@ -49,18 +49,31 @@ class PagesController < ApplicationController
 
     @user.experiences.each do |el|
 
-      @test.map do |key, value|
-        @test[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+      @base.map do |key, value|
+        @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
     end
     @popo = []
     @papa = []
-    @test.each do |k, v|
+    @base.each do |k, v|
       @popo << k
       @papa << v
     end
     @value = @popo.join("-")
     @data = @papa.join("-")
 
+
+    @result = {}
+    Spirit.all.each do |spirit|
+      difference = 0
+      @base.each do |key, value|
+        spirit[:"#{key}"] == 0 ? diff = 1 : diff = (((value - spirit[:"#{key}"]) / spirit[:"#{key}"]) * (value.zero? ? 1 : value))
+        diff * (-1) if diff < 0
+        difference += diff
+      end
+      @result[:"#{spirit.id}"] = difference
+    end
+
   end
+
 end
