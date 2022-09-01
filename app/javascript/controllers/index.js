@@ -20,9 +20,6 @@ application.register("map", MapController)
 import SearchToggleController from "./search_toggle_controller"
 application.register("search-toggle", SearchToggleController)
 
-import SpiritAutocompleteController from "./spirit_autocomplete_controller"
-application.register("spirit-autocomplete", SpiritAutocompleteController)
-
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
 
