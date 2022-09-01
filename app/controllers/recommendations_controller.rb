@@ -3,6 +3,6 @@ class RecommendationsController < ApplicationController
     @recommendations = policy_scope(Recommendation)
 
     @user = current_user
-    @recommendation = @user.recommendations.first(5)
+    @recommendation = @user.recommendations.last(5)
   end
 end
