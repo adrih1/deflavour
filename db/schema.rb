@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_123212) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_144914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,8 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_123212) do
     t.integer "epicee", default: 0
     t.integer "boise", default: 0
     t.integer "animale", default: 0
-    t.integer "noix", default: 0
-    t.integer "sucre", default: 0
     t.integer "fruite", default: 0
     t.integer "floral", default: 0
     t.integer "herbace", default: 0
@@ -157,8 +155,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_123212) do
     t.integer "epicee", default: 0
     t.integer "boise", default: 0
     t.integer "animale", default: 0
-    t.integer "noix", default: 0
-    t.integer "sucre", default: 0
     t.integer "fruite", default: 0
     t.integer "floral", default: 0
     t.integer "herbace", default: 0

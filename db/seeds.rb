@@ -60,7 +60,7 @@ puts "Families and Aromas created"
 puts 'Scraping spirits'
 i = 1
 # permet de changer de page
-while i <= 10
+while i <= 4
 
   # find image url
   def liquor_image(element)
@@ -186,8 +186,6 @@ while i <= 10
       epicee: 0,
       boise: 0,
       animale: 0,
-      noix: 0,
-      sucre: 0,
       fruite: 0,
       floral: 0,
       herbace: 0,
