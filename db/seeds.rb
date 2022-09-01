@@ -26,30 +26,25 @@ puts "DB cleaned"
 
 data = {
   "vineux" => { description: "coucou",
-    aromas: ["résine",	"serry",	"Balsamique",	"Porto",	"Xeres","Vineux"]},
+    aromas: ["résine",	"Sherry",	"Balsamique",	"Porto",	"Xeres","Vineux"]},
   "epicee"	=> { description: "coucou",
-    aromas: ["Canelle",	"Clou de girofle",	"Graine de coriandre",	"Noix de muscade",	"Poivre",	"Gingembre ",	"Anis",	"Curry",	"Safran",	"Piment",	"Epice"]},
+    aromas: ["Canelle",	"Clou de girofle",	"Graine de coriandre",	"Noix de muscade",	"Poivre",	"Gingembre ",	"Curry",	"Safran",	"Piment",	"Epice"]},
   "boise" => { description: "coucou",
-    aromas: [	"Pin ",	"Cedre",	"Bois de santal",	"Chêne",	"Encens",	"boite à cigare",	"Bois brulé",	"Tannique",	"Réglisse","Boisé"]},
+    aromas: [	"Pin ",	"Cedre",	"Bois de santal",	"Chêne",	"Encens",	"boite à cigare",	"Bois brulé",	"Tannique",	"Réglisse","Boisé","Bois"]},
   "animale" => { description: "coucou",
-    aromas:	["Cuir",	"Musc","Animale"]},
-  "noix" => { description: "coucou",
-    aromas:	["Noix de muscade",	"Noisette",	"amande",	"Noix de coco","Noix"]},
-  "sucre" =>	{ description: "coucou",
-    aromas: ["Cacahuette",	"Vanille",	"Miel",	"Caramel","Sucré"]},
+    aromas:	["Cuir",	"Musc","Animale", "Foururre", "Ecurie"]},
   "fruite" =>	{ description: "coucou",
-    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade", "Fruité"]},
+    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade", "Fruité","Fruit","Baies"]},
   "floral" =>	{ description: "coucou",
-    aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille", "Floral"]},
+    aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille", "Floral", "Miel","Erable",]},
   "herbace"	=> { description: "coucou",
-    aromas: ["Herbe coupée",	"Fougère",	"Menthe",	"Eucalyptus",	"Genévrier",	"Feuille de cassis",	"Feuille de laurier",	"Basilique",	"Herbe fraiche",	"Canne fraiche",	"Sous-bois",	"Feuillage",	"Fenouille",	"Celery",	"Aneth","Herbacé","herbe"]},
+    aromas: ["Herbe coupée",	"Fougère",	"Menthe",	"Eucalyptus",	"Genévrier",	"Feuille de cassis",	"Feuille de laurier",	"Basilique",	"Herbe fraiche",	"Canne fraiche",	"Sous-bois",	"Feuillage",	"Fenouille",	"Celery",	"Aneth","Herbacé","herbe", "Anis", "Plante","Concombre", "Thé", "Mélisse", "Camomille", "Coriandre", "Angélique"]},
   "cereale" =>	{ description: "coucou",
     aromas: ["Pomme de terre",	"Foin",	"Malt",	"Biscuit",	"Maïs", "Céréale"]},
   "empyreumatique" =>	{ description: "coucou",
-    aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain", "Empyreumatique"]},
+    aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain", "Empyreumatique", "Cacahuette",	"Vanille",	"Miel",	"Caramel","Sucré"]},
   "tourbe" =>	{ description: "coucou",
     aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène",	"Fumé", "Tourbé"]},
-
 }
 
 puts "Creating Families and Aromas"
@@ -143,6 +138,7 @@ while i <= 1
 
 
   # scrap drinksco
+
   html_content = URI.open("https://www.drinksco.fr/spiritueux:#{i}").read
   doc = Nokogiri::HTML(html_content)
 
