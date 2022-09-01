@@ -1,7 +1,6 @@
 <%= render "shared/navbar" %>
-<div class="d-flex ">
-
-  <div class="sommaire_link">
+<div class="d-flex m-5 ">
+  <div class="sommaire_link d-flex">
     <ul class="list-unstyled" >
       <li class="col-item">
         <a class="col-link" href="#profil">Profil aromatique</a>
@@ -28,7 +27,7 @@
   </div>
 
   <div class="m-4">
-    <div id="profil">
+    <div id="profil" class="d-flex flex-column">
       <h1 class="text-start my-5" >Profil Aromatique </h1>
       <div class="d-flex justify-content-around flex-row-reverse">
         <div class="d-flex flex-column" style="width: 40%;">
@@ -41,15 +40,153 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis ipsam rerum dolorum! Harum eum nostrum aut atque est error at dolorum in ullam cupiditate ab laboriosam, et, voluptas numquam?</p>
           </div>
         </div>
-        <div style="width: 500px; height: 500px;">
-          <canvas  id="myChart"></canvas>
+        <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
+          <canvas  id="myChartd"></canvas>
+          <div id="datad" class="d-none">
+            <%= @datad  %>
+          </div>
+          <div id="valued" class="d-none">
+            <%= @valued  %>
+          </div>
         </div>
-        <div id="data" class="invisible">
-          <%= @data  %>
+      </div>
+      <div>
+        <div class="aromatique-profile">
+
+
+
+
+            <div style="width: 350px; height: 350px;" class=' m-1 <%= @affichagew %>'>
+              <canvas  id="myChartw"></canvas>
+              <div id="dataw" class="d-none">
+                <%= @dataw  %>
+              </div>
+              <div id="valuew" class="d-none">
+                <%= @valuew  %>
+              </div>
+            </div>
+            <div style="width: 350px; height: 350px;" class="<%= @demandew %>">
+              <h3> Vous n'avez pas de Whisky</h3>
+              <h2> Commandez</h2>
+            </div>
+
+
+
+            <div style="width: 350px; height: 350px;" class='<%=  %>'>
+              <canvas  id="myChartg"></canvas>
+              <div id="datag" class="d-none">
+                <%= @datag  %>
+              </div>
+              <div id="valueg" class="d-none">
+                <%= @valueg  %>
+              </div>
+            </div>
+            <div style="width: 350px; height: 350px;" class='<%= @demandeg %>'>
+              <h3> Vous n'avez pas de Gin</h3>
+              <h2 class="btn-default"> Commandez</h2>
+            </div>
+
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichager %>'>
+            <canvas  id="myChartr"></canvas>
+            <div id="datar" class="d-none">
+              <%= @datar  %>
+            </div>
+            <div id="valuer" class="d-none">
+              <%= @valuer  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demander %>'>
+            <h3> Vous n'avez pas de Rhum</h3>
+            <h2> Commandez</h2>
+          </div>
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichaget %>'>
+            <canvas  id="myChartt"></canvas>
+            <div id="datat" class="d-none">
+              <%= @datat  %>
+            </div>
+            <div id="valuet" class="d-none">
+              <%= @valuet  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandet %>'>
+            <h3> Vous n'avez pas de Tequila</h3>
+            <h2> Commandez</h2>
+          </div>
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichagec %>'>
+            <canvas  id="myChartc"></canvas>
+            <div id="datac" class="d-none">
+              <%= @datac  %>
+            </div>
+            <div id="valuec" class="d-none">
+              <%= @valuec  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandec %>'>
+            <h3> Vous n'avez pas de Cognac</h3>
+            <h2> Commandez</h2>
+          </div>
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichageca %>'>
+            <canvas  id="myChartca"></canvas>
+            <div id="dataca" class="d-none">
+              <%= @dataca  %>
+            </div>
+            <div id="valueca" class="d-none">
+              <%= @valueca  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandeca %>'>
+            <h3> Vous n'avez pas de Calvados</h3>
+            <h2> Commandez</h2>
+          </div>
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichagem %>'>
+            <canvas  id="myChartm"></canvas>
+            <div id="datam" class="d-none">
+              <%= @datam  %>
+            </div>
+            <div id="valuem" class="d-none">
+              <%= @valuem  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandem %>'>
+            <h3> Vous n'avez pas de Mezcal</h3>
+            <h2> Commandez</h2>
+          </div>
+
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichagev %>'>
+            <canvas  id="myChartv"></canvas>
+            <div id="datav" class="d-none">
+              <%= @datav  %>
+            </div>
+            <div id="valuev" class="d-none">
+              <%= @valuev  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandev %>'>
+            <h3> Vous n'avez pas de Vodka</h3>
+            <h2> Commandez</h2>
+          </div>
+
+          <div style="width: 350px; height: 350px;" class='<%= @affichagea %>'>
+            <canvas  id="myCharta"></canvas>
+            <div id="dataa" class="d-none">
+              <%= @dataa  %>
+            </div>
+            <div id="valuea" class="d-none">
+              <%= @valuea  %>
+            </div>
+          </div>
+          <div style="width: 350px; height: 350px;" class='<%= @demandea %>'>
+            <h3> Vous n'avez pas d'Armagnac</h3>
+            <h2> Commandez</h2>
+          </div>
         </div>
-        <div id="value" class="invisible">
-          <%= @value  %>
-        </div>
+
       </div>
     </div>
     <div id="bar">
@@ -70,10 +207,10 @@
               </div>
             </div>
           </div>
+        <%end %>
         </div>
       </div>
 
-      <%end %>
     </div>
   </div>
 </div>
@@ -81,149 +218,6 @@
 
 
 
-<div class="aromatique-profile">
-
-
-
-  <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
-    <canvas  id="myChartd"></canvas>
-    <div id="datad" class="d-none">
-      <%= @datad  %>
-    </div>
-    <div id="valued" class="d-none">
-      <%= @valued  %>
-    </div>
-  </div>
-
-
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichagew %>'>
-      <canvas  id="myChartw"></canvas>
-      <div id="dataw" class="d-none">
-        <%= @dataw  %>
-      </div>
-      <div id="valuew" class="d-none">
-        <%= @valuew  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandew %>'>
-      <h3> Vous n'avez pas de Whisky</h3>
-      <h2> Commandez</h2>
-    </div>
-
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichageg %>'>
-      <canvas  id="myChartg"></canvas>
-      <div id="datag" class="d-none">
-        <%= @datag  %>
-      </div>
-      <div id="valueg" class="d-none">
-        <%= @valueg  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandeg %>'>
-      <h3> Vous n'avez pas de Gin</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichager %>'>
-      <canvas  id="myChartr"></canvas>
-      <div id="datar" class="d-none">
-        <%= @datar  %>
-      </div>
-      <div id="valuer" class="d-none">
-        <%= @valuer  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demander %>'>
-      <h3> Vous n'avez pas de Rhum</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichaget %>'>
-      <canvas  id="myChartt"></canvas>
-      <div id="datat" class="d-none">
-        <%= @datat  %>
-      </div>
-      <div id="valuet" class="d-none">
-        <%= @valuet  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandet %>'>
-      <h3> Vous n'avez pas de Tequila</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichagec %>'>
-      <canvas  id="myChartc"></canvas>
-      <div id="datac" class="d-none">
-        <%= @datac  %>
-      </div>
-      <div id="valuec" class="d-none">
-        <%= @valuec  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandec %>'>
-      <h3> Vous n'avez pas de Cognac</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichageca %>'>
-      <canvas  id="myChartca"></canvas>
-      <div id="dataca" class="d-none">
-        <%= @dataca  %>
-      </div>
-      <div id="valueca" class="d-none">
-        <%= @valueca  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandeca %>'>
-      <h3> Vous n'avez pas de Calvados</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichagem %>'>
-      <canvas  id="myChartm"></canvas>
-      <div id="datam" class="d-none">
-        <%= @datam  %>
-      </div>
-      <div id="valuem" class="d-none">
-        <%= @valuem  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandem %>'>
-      <h3> Vous n'avez pas de Mezcal</h3>
-      <h2> Commandez</h2>
-    </div>
-
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichagev %>'>
-      <canvas  id="myChartv"></canvas>
-      <div id="datav" class="d-none">
-        <%= @datav  %>
-      </div>
-      <div id="valuev" class="d-none">
-        <%= @valuev  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandev %>'>
-      <h3> Vous n'avez pas de Vodka</h3>
-      <h2> Commandez</h2>
-    </div>
-
-    <div style="width: 350px; height: 350px;" class='<%= @affichagea %>'>
-      <canvas  id="myCharta"></canvas>
-      <div id="dataa" class="d-none">
-        <%= @dataa  %>
-      </div>
-      <div id="valuea" class="d-none">
-        <%= @valuea  %>
-      </div>
-    </div>
-    <div style="width: 350px; height: 350px;" class='<%= @demandea %>'>
-      <h3> Vous n'avez pas d'Armagnac</h3>
-      <h2> Commandez</h2>
-    </div>
 
 
 <script>
