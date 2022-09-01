@@ -3,7 +3,7 @@
   <% if user_signed_in? %>
 
   <%# PREVIOUS EXPERIENCES ? %>
-    <% if current_user.experiences.length < 0%>
+    <% if current_user.experiences.length > 0%>
     <div class="banner">
       <div style="height: 350px;" class="d-flex justify-content-center">
         <%= link_to "Voir mon profil", dashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
