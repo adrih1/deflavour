@@ -12,15 +12,13 @@ puts "Cleaning DB"
 SpiritAroma.destroy_all
 Aroma.destroy_all
 Family.destroy_all
+AlcoolProfile.destroy_all
+Recommendation.destroy_all
 Experience.destroy_all
 Review.destroy_all
 Order.destroy_all
 Spirit.destroy_all
 puts "DB cleaned"
-
-
-
-
 
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
@@ -165,7 +163,6 @@ while i <= 4
         SpiritAroma.create(spirit: spirit, aroma: aroma)
       end
     end
-
 
     puts "family things"
 
