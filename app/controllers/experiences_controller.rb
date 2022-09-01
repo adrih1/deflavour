@@ -8,6 +8,6 @@ class ExperiencesController < ApplicationController
     # Méthode d'instance codée dans le modèle User
     current_user.create_experiences(params)
     skip_authorization
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 end

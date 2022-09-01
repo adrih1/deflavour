@@ -6,7 +6,7 @@ export default class extends Controller {
   static values = { options: Object }
 
   connect() {
-    // console.log(this.element)
-    new TomSelect(this.element)
+    new TomSelect(this.element,{
+      maxItems: 1})
   }
 }
