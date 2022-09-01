@@ -12,15 +12,13 @@ puts "Cleaning DB"
 SpiritAroma.destroy_all
 Aroma.destroy_all
 Family.destroy_all
+AlcoolProfile.destroy_all
+Recommendation.destroy_all
 Experience.destroy_all
 Review.destroy_all
 Order.destroy_all
 Spirit.destroy_all
 puts "DB cleaned"
-
-
-
-
 
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
@@ -166,7 +164,6 @@ while i <= 4
       end
     end
 
-
     puts "family things"
 
     #ici on attribue des poids aux familles de chaque spirit
@@ -209,7 +206,9 @@ while i <= 4
 #supprimer les différentes conte,ances pour un meme alcool et supprimer là où on a pas de données
     spirit.save!
 
-    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil?
+
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil?
+
       spirit.destroy!
     elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
       spirit.destroy!
