@@ -32,17 +32,15 @@
 .footer-left-socials {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   color: white;
   opacity: 0.5;
   font-size: 20px;
-  margin-bottom: 10px;
 }
 
 .footer-left-socials .nav-link {
   color: white;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 
@@ -55,13 +53,13 @@
 
 .email-container{
   display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 5px 50px 5px 5px;
+  background-color: grey;
+  border-radius: 5px;
 }
 
-
-.email-input{
-  display: flex;
-  align-items: center;
-  padding: 10px 10px;
-  background-color: grey;
-  opacity: 0.7;
+.email-container p {
+  margin: 0;
 }
