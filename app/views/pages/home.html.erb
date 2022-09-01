@@ -1,19 +1,38 @@
-<div class="banner">
+
   <%#  LOGGED IN  %>
   <% if user_signed_in? %>
 
-
-    <% if current_user.experiences.length > 0%>
-    <div style="height: 350px;" class="d-flex justify-content-center">
-      <%= link_to "Voir mon profil", dashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+  <%# PREVIOUS EXPERIENCES ? %>
+    <% if current_user.experiences.length < 0%>
+    <div class="banner">
+      <div style="height: 350px;" class="d-flex justify-content-center">
+        <%= link_to "Voir mon profil", dashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+      </div>
     </div>
     <% else %>
-      <%= simple_form_for Experience.new do |f| %>
-        <%= f.input :spirit, collection: Spirit.all, input_html: { multiple: true, data: { controller: "tom-select", tom_select_options_value: { tags: true } } } %>
-        <%= f.submit 'Launch my aromatic profile !', class:"btn-default" %>
-      <% end %>
+      <div class="banner banner-full">
+        <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+          <h1>Quels spiritueux aimez-vous ?</h1>
+          <template data-nested-form-target="template">
+            <%= f.fields_for :spirits, Experience.new, child_index: 'NEW_RECORD' do |experience_fields| %>
+              <%= render "shared/experience_form", f: experience_fields %>
+            <% end %>
+          </template>
+
+          <%= f.fields_for :spirits do |experience_fields|  %>
+              <%= render "shared/experience_form", f: experience_fields %>
+          <% end %>
+
+          <!-- Inserted elements will be injected before that target. -->
+          <div data-nested-form-target="target"></div>
+
+          <button type="button" data-action="nested-form#add" class="experience-button">Add a liquor</button>
+
+          <%= f.submit 'Save my liquors', class:"experience-button"%>
+        <% end %>
+      </div>
     <% end %>
-</div>
+
     <%= render "shared/navbar" %>
 
     <div class="big-cards">

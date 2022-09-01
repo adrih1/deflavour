@@ -4,8 +4,12 @@
 
 import { application } from "./application"
 
+
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
+
+import ExperienceController from "./experience_controller"
+application.register("experience", ExperienceController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
@@ -16,8 +20,8 @@ application.register("map", MapController)
 import SearchToggleController from "./search_toggle_controller"
 application.register("search-toggle", SearchToggleController)
 
-import SpiritAutocompleteController from "./spirit_autocomplete_controller"
-application.register("spirit-autocomplete", SpiritAutocompleteController)
-
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+import NestedFormController from "./nested_form_controller"
+application.register("nested-form", NestedFormController)
