@@ -31,7 +31,12 @@ export default class extends Controller {
         line: {
           borderWidth: 3
         }
-      }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+    }
     },
     },
     });

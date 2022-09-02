@@ -49,18 +49,20 @@ class PagesController < ApplicationController
     Spirit.all.each do |spirit|
       difference = 0
       @base.each do |key, value|
-        diff = value - spirit[:"#{key}"]
-        diff * (-1) if diff < 0
+        diff = ((value - spirit[:"#{key}"]) * 4)
+        diff = diff * (-1) if diff < 0
         difference += diff
       end
       @result[:"#{spirit.id}"] = difference
     end
+
     @user.recommendations.each { |el| el.destroy }
     unless @user.experiences.empty?
       @forbidden = []
       @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
+      @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
       @result.reject{ |k, v| @forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
-        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - (@result[k] * 2)-30))
+        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
       end
     end
   end
