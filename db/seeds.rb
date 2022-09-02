@@ -58,7 +58,7 @@ puts "Families and Aromas created"
 puts 'Scraping spirits'
 i = 1
 # permet de changer de page
-while i <= 10
+while i <= 20
 
   # find image url
   def liquor_image(element)
@@ -102,7 +102,8 @@ while i <= 10
     html = URI.open(url)
     doc = Nokogiri::HTML(html)
     doc.search("#elaboration-collapsible").each do |element|
-      return "#{element.at('meta').attribute('content').value.split(":")[2].strip.split(".")[0]}"
+      return "#{element.at('meta').attribute('content').value.split(":")[2].strip.split(".")[0]}" if element.at('meta')
+      return nil unless element.at('meta')
     end
   end
 
@@ -149,7 +150,7 @@ while i <= 10
       price:  scrape_liquor_price(liquor_url).to_i,
       producer: element.at('.image-wrapper').children.attribute('data-cellar').value,
       description: scrape_liquor_description(liquor_url),
-      color: scrape_liquor_colors(liquor_url),
+      color: "",#scrape_liquor_colors(liquor_url),
       image_url: liquor_image(element),
       country: scrape_liquor_country(liquor_url),
       degrees: scrape_liquor_degrees(liquor_url).to_i,
@@ -207,25 +208,10 @@ while i <= 10
     spirit.save!
 
 
-    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil? || spirit.image_url.empty? || spirit.country == ""
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil?
+
       spirit.destroy!
     elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
-      spirit.destroy!
-    end
-
-    unless spirit.color || spirit.color.exists?
-      spirit.destroy!
-    end
-
-    unless spirit.degrees || spirit.degrees.exists?
-      spirit.destroy!
-    end
-
-    unless spirit.description || spirit.description.exists?
-      spirit.destroy!
-    end
-
-    unless spirit.price || spirit.price.exists?
       spirit.destroy!
     end
     # bio = bio?(liquor_url)
