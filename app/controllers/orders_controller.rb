@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.spirit = @spirit
     if @order.save
-      sleep 2
+      Experience.create(spirit: @order.spirit, user: @order.user)
       redirect_to dashboard_path(@spirit)
     else
       render 'spirits/show', status: :unprocessable_entity
