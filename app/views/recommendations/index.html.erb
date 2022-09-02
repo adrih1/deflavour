@@ -2,12 +2,11 @@
 
 <div class="container">
 
-  <h1 class="text-center mt-4 mb-5">Recommendation</h1>
-
+  <h3 class="text-center mt-4 mb-5">Voici vos recommendations</h3>
 
 
   <div class="spirit-card-grid-reco">
-    <% @recommendations.each do |reco| %>
+    <% current_user.recommendations.each do |reco| %>
     <div class="spirit-card">
       <img class="mt-2" src="<%=reco.spirit.image_url%>">
       <div class="spirit-card-infos">
@@ -41,8 +40,9 @@
     </div>
     <%end %>
   </div>
+    <p class= "text-center">Commandez vos 5 échantillons (12cl) correspondant à vos goûts pour 25€. <br> Les 25€ vous seront remboursés lors de votre prochain achat.</p>
     <div class="text-center my-5">
-    <%=link_to "Ajouter vos échantillons au panier", maindashboard_path, class:"btn-default" %>
+      <%=link_to "Commandez votre coffret", root_path, class:"btn-default" %>
     </div>
 </div>
 
