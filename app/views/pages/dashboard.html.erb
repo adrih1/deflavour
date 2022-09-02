@@ -10,7 +10,7 @@
     </div>
     <div class= "" style= "position: relative;">
     <h3>Description</h3>
-    <p><strong><%= @choice&[:family] %></strong></p>
+    <p><strong><%= @choice.dig(:family) %></strong></p>
     <p>Vous êtes <strong><%= @choice.dig(:accroche) %></strong></p>
     <p><%= @choice.dig(:description) %></p>
     <p><%= @choice.dig(:stars) %></p>
