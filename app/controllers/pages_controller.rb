@@ -200,9 +200,13 @@ class PagesController < ApplicationController
     }
 
     @families = [epice, boise, animal, fruite, floral, herbace, cereale, empyreumatique, tourbe, vineux]
-    @families.each { |el| @choice = el if el[:clef] == @familie_order[0].to_s }
-
-
+    @families.each do |el|
+      @choice = el if el[:clef] == @familie_order[0].to_s
+    end
+    @choice.each do |k, v|
+      @user.alcool_profile["#{k.to_sym}"] = v
+      @user.alcool_profile.save
+    end
   end
 
 
