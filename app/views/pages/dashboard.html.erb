@@ -10,10 +10,10 @@
     </div>
     <div class= "" style= "position: relative;">
     <h3>Description</h3>
-    <p><strong><%= @choice[:family] %></strong></p>
-    <p>Vous êtes <strong><%= @choice[:accroche] %></strong></p>
-    <p><%= @choice[:description] %></p>
-    <p><%= @choice[:stars] %></p>
+    <p><strong><%= @choice&[:family] %></strong></p>
+    <p>Vous êtes <strong><%= @choice.dig(:accroche) %></strong></p>
+    <p><%= @choice.dig(:description) %></p>
+    <p><%= @choice.dig(:stars) %></p>
     <div class="d-flex">
       <img class="avatar-large photo1" alt="avatar-large" src="<%= @choice[:photo_one] %>" />
       <img class="avatar-large photo2" alt="avatar-large" src="<%= @choice[:photo_two] %>" />
