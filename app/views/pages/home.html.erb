@@ -2,8 +2,8 @@
   <%if user_signed_in? %>
       <% if current_user.experiences.length > 0%>
       <div class="banner">
-        <div style="height: 350px;" class="d-flex justify-content-center">
-          <%= link_to "Voir mon profil", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+        <div style="margin: 0px auto; height: 350px; display:flex; justify-content:center; align-items:center;">
+          <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
         </div>
       </div>
       <% else %>
