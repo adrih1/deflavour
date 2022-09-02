@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    #On met une base à 0
     @base = {
       vineux: 0,
       epicee: 0,
@@ -20,8 +21,9 @@ class PagesController < ApplicationController
       empyreumatique: 0,
       tourbe: 0
     }
-
+    # Recupérer les champs que le USER a rempli sur le form precedent
     @user.experiences.each do |el|
+
 
       @base.map do |key, value|
         @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
@@ -30,6 +32,8 @@ class PagesController < ApplicationController
     profile = @base
     AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
     profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v }  unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
+    @familie_order = []
+    profile.sort_by { |_, v| -v }.each { |k, _| @familie_order << k }
     @popo = []
     @papa = []
     @base.each do |k, v|
@@ -38,7 +42,6 @@ class PagesController < ApplicationController
     end
     @value = @popo.join("-")
     @data = @papa.join("-")
-
 
     @result = {}
     Spirit.all.each do |spirit|
