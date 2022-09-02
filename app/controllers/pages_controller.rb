@@ -49,7 +49,7 @@ class PagesController < ApplicationController
     Spirit.all.each do |spirit|
       difference = 0
       @base.each do |key, value|
-        diff = ((value - spirit[:"#{key}"]) * 4)
+        diff = ((value - spirit[:"#{key}"]) * 3)
         diff = diff * (-1) if diff < 0
         difference += diff
       end

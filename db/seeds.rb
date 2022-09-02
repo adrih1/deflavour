@@ -58,7 +58,7 @@ puts "Families and Aromas created"
 puts 'Scraping spirits'
 i = 1
 # permet de changer de page
-while i <= 4
+while i <= 10
 
   # find image url
   def liquor_image(element)
@@ -207,10 +207,25 @@ while i <= 4
     spirit.save!
 
 
-    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil?
-
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil? || spirit.image_url.empty? || spirit.country == ""
       spirit.destroy!
     elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
+      spirit.destroy!
+    end
+
+    unless spirit.color || spirit.color.exists?
+      spirit.destroy!
+    end
+
+    unless spirit.degrees || spirit.degrees.exists?
+      spirit.destroy!
+    end
+
+    unless spirit.description || spirit.description.exists?
+      spirit.destroy!
+    end
+
+    unless spirit.price || spirit.price.exists?
       spirit.destroy!
     end
     # bio = bio?(liquor_url)
