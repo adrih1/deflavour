@@ -30,6 +30,7 @@ class PagesController < ApplicationController
     profile = @base
     AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
     profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v }  unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
+
     @popo = []
     @papa = []
     @base.each do |k, v|
@@ -61,7 +62,6 @@ class PagesController < ApplicationController
   end
 
   def maindashboard
-
 
     @user = current_user
     @test = {

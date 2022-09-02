@@ -28,6 +28,8 @@
   color: white;
   border-radius: 3px;
   border: none;
+  max-width: 20%;
+  margin: 0 auto;
 
   &:hover{
     background-color: gold;
@@ -61,5 +63,20 @@
 
   &:hover{
     color: black;
+  }
+}
+
+.btn-home-login{
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #1C1F33;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  margin: 0 auto;
+
+  &:hover{
+    background-color: gold;
+    color: white;
   }
 }
