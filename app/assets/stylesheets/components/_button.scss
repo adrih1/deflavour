@@ -35,8 +35,6 @@
 
 
 
-
-
 .btn-vivid{
   text-align: center;
   padding: 20px 10px;
@@ -75,10 +73,25 @@
 }
 
 
+
+.launch-experience{
+  padding: 5px 15px ;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 3px;
+  background-color: #1C1F33;
+  color: white;
+
+  &:hover{
+    color: black;
+  }
+}
+
+
+
 .experience-button-remove{
   padding: 5px 15px ;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-left: 5px;
   border: none;
   border-radius: 3px;
   background-color: #F87060;
