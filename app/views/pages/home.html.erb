@@ -1,6 +1,6 @@
 <div class="banner">
   <%if user_signed_in? %>
-      <% if user.experiences.length > 0%>
+      <% if current_user.experiences.length > 0%>
         <div class="banner">
           <div style="margin: 0px auto; height: 350px; display:flex; justify-content:center; align-items:center;">
             <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
