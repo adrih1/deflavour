@@ -4,13 +4,20 @@
   <h1 class="text-center my-5" >Profil Aromatique </h1>
 <div class="d-flex justify-content-around flex-row-reverse">
   <div class="d-flex flex-column" style="width: 40%;">
-    <div class= "m-5">
+    <div class= "mb-5">
     <h2>Synthese</h2>
     <p><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
     </div>
-    <div class= "m-5">
+    <div class= "" style= "position: relative;">
     <h3>Description</h3>
-    <p><%=%></p>
+    <p><strong><%= @choice[:family] %></strong></p>
+    <p>Vous êtes <strong><%= @choice[:accroche] %></strong></p>
+    <p><%= @choice[:description] %></p>
+    <p><%= @choice[:stars] %></p>
+    <div class="d-flex">
+      <img class="avatar-large photo1" alt="avatar-large" src="<%= @choice[:photo_one] %>" />
+      <img class="avatar-large photo2" alt="avatar-large" src="<%= @choice[:photo_two] %>" />
+    </div>
     </div>
   </div>
 
@@ -72,6 +79,14 @@
         legend: {
             display: false
         },
+      },
+      scales: {
+         r: {
+
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
       }
     },
   });
