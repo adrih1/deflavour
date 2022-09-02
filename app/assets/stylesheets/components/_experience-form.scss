@@ -1,6 +1,6 @@
 // FORM CONTAINER
 .experiences{
-  margin: 0px 25%;
+  margin: 30px 25%;
 }
 
 // TITLE
@@ -8,10 +8,15 @@
   font-size: 25px;
 }
 
-
+.nested-form-wrapper{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
 
 .experiences_spirits_spirit{
   margin-bottom: 1px !important;
+  width: 100%;
 }
 
 
@@ -24,7 +29,7 @@
 
 .ts-control{
   border-radius: 7px;
-
+  width: 100%;
 }
 
 #experiences_spirits_spirit-ts-label{
