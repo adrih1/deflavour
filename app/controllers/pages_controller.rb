@@ -22,8 +22,6 @@ class PagesController < ApplicationController
     }
     # Recupérer les champs que le USER a rempli sur le form precedent
     @user.experiences.each do |el|
-
-
       @base.map do |key, value|
         @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
