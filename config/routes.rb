@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :experiences, only: :create
 
   resources :orders, only: [:destroy, :show, :index] do
+    collection do
+      get :order_recommendation
+    end
     resources :reviews
   end
 
