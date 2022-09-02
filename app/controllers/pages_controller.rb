@@ -199,6 +199,7 @@ class PagesController < ApplicationController
     }
 
     @families = [epice, boise, animal, fruite, floral, herbace, cereale, empyreumatique, tourbe, vineux]
+    @choice = boise
     @families.each do |el|
       @choice = el if el[:clef] == @familie_order[0].to_s
     end
