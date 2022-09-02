@@ -1,13 +1,16 @@
 <%= render "shared/navbar" %>
-<div class="d-flex m-5 ">
-  <div class="sommaire_link d-flex">
+
+<div class="d-flex">
+  <div class="sommaire_link">
     <ul class="list-unstyled" >
-      <li class="col-item">
-        <a class="col-link" href="#profil">Profil aromatique</a>
-      </li>
-      <li class="col-item">
-        <a class="col-link" href="#bar">Mon bar</a>
-      </li>
+      <div class="col-item-main-list">
+        <li class="col-item">
+          <a class="col-link" href="#profil">Profil aromatique</a>
+        </li>
+        <li class="col-item">
+          <a class="col-link" href="#bar">Mon bar</a>
+        </li>
+      </div>
       <li class="col-item">
         <a class="col-link" href="#">Mes commandes</a>
       </li>
@@ -28,8 +31,19 @@
 
   <div class="m-4">
     <div id="profil" class="d-flex flex-column">
-      <h1 class="text-start my-5" >Profil Aromatique </h1>
-      <div class="d-flex justify-content-around flex-row-reverse">
+      <div class="profil-header">
+        <h1 class="text-center my-5" >Profil Aromatique </h1>
+      </div>
+      <div class="d-flex justify-content-around">
+        <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
+          <canvas  id="myChartd"></canvas>
+          <div id="datad" class="d-none">
+            <%= @datad  %>
+          </div>
+          <div id="valued" class="d-none">
+            <%= @valued  %>
+          </div>
+        </div>
         <div class="d-flex flex-column" style="width: 40%;">
           <div class= "m-5">
             <h2>Synthese</h2>
@@ -40,39 +54,28 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis ipsam rerum dolorum! Harum eum nostrum aut atque est error at dolorum in ullam cupiditate ab laboriosam, et, voluptas numquam?</p>
           </div>
         </div>
-        <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
-          <canvas  id="myChartd"></canvas>
-          <div id="datad" class="d-none">
-            <%= @datad  %>
-          </div>
-          <div id="valued" class="d-none">
-            <%= @valued  %>
-          </div>
-        </div>
       </div>
-      <div>
+
+      <div class="alcools-profile">
+        <h1>Roue de vos liqueurs préférées</h1>
         <div class="aromatique-profile">
-
-
-
-
-            <div style="width: 350px; height: 350px;" class=' m-1 <%= @affichagew %>'>
-              <canvas  id="myChartw"></canvas>
-              <div id="dataw" class="d-none">
-                <%= @dataw  %>
-              </div>
-              <div id="valuew" class="d-none">
-                <%= @valuew  %>
-              </div>
+          <div class=' m-1 <%= @affichagew %> grid-element'>
+            <canvas  id="myChartw"></canvas>
+            <div id="dataw" class="d-none">
+              <%= @dataw  %>
             </div>
-            <div style="width: 350px; height: 350px;" class="<%= @demandew %>">
+            <div id="valuew" class="d-none">
+              <%= @valuew  %>
+            </div>
+          </div>
+            <div class="<%= @demandew %> grid-element">
               <h3> Vous n'avez pas de Whisky</h3>
-              <h2> Commandez</h2>
+              <h2 class="btn-default-maindashboard">Commandez</h2>
             </div>
 
 
 
-            <div style="width: 350px; height: 350px;" class='<%= @affichageg %>'>
+            <div class='<%= @affichageg %> grid-element'>
               <canvas  id="myChartg"></canvas>
               <div id="datag" class="d-none">
                 <%= @datag  %>
@@ -81,13 +84,13 @@
                 <%= @valueg  %>
               </div>
             </div>
-            <div style="width: 350px; height: 350px;" class='<%= @demandeg %>'>
+            <div class='<%= @demandeg %> grid-element'>
               <h3> Vous n'avez pas de Gin</h3>
-              <h2 class="btn-default"> Commandez</h2>
+             <h2 class="btn-default-maindashboard">Commandez</h2>
             </div>
 
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichager %>'>
+          <div class='<%= @affichager %> grid-element'>
             <canvas  id="myChartr"></canvas>
             <div id="datar" class="d-none">
               <%= @datar  %>
@@ -96,12 +99,12 @@
               <%= @valuer  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demander %>'>
+          <div class='<%= @demander %> grid-element'>
             <h3> Vous n'avez pas de Rhum</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichaget %>'>
+          <div class='<%= @affichaget %> grid-element'>
             <canvas  id="myChartt"></canvas>
             <div id="datat" class="d-none">
               <%= @datat  %>
@@ -110,12 +113,12 @@
               <%= @valuet  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandet %>'>
+          <div class='<%= @demandet %> grid-element'>
             <h3> Vous n'avez pas de Tequila</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichagec %>'>
+          <div class='<%= @affichagec %> grid-element'>
             <canvas  id="myChartc"></canvas>
             <div id="datac" class="d-none">
               <%= @datac  %>
@@ -124,12 +127,12 @@
               <%= @valuec  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandec %>'>
+          <div class='<%= @demandec %> grid-element'>
             <h3> Vous n'avez pas de Cognac</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichageca %>'>
+          <div class='<%= @affichageca %> grid-element'>
             <canvas  id="myChartca"></canvas>
             <div id="dataca" class="d-none">
               <%= @dataca  %>
@@ -138,12 +141,12 @@
               <%= @valueca  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandeca %>'>
+          <div class='<%= @demandeca %> grid-element'>
             <h3> Vous n'avez pas de Calvados</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichagem %>'>
+          <div class='<%= @affichagem %> grid-element'>
             <canvas  id="myChartm"></canvas>
             <div id="datam" class="d-none">
               <%= @datam  %>
@@ -152,13 +155,13 @@
               <%= @valuem  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandem %>'>
+          <div class='<%= @demandem %> grid-element'>
             <h3> Vous n'avez pas de Mezcal</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichagev %>'>
+          <div class='<%= @affichagev %> grid-element'>
             <canvas  id="myChartv"></canvas>
             <div id="datav" class="d-none">
               <%= @datav  %>
@@ -167,12 +170,12 @@
               <%= @valuev  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandev %>'>
+          <div class='<%= @demandev %> grid-element'>
             <h3> Vous n'avez pas de Vodka</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
 
-          <div style="width: 350px; height: 350px;" class='<%= @affichagea %>'>
+          <div class='<%= @affichagea %> grid-element'>
             <canvas  id="myCharta"></canvas>
             <div id="dataa" class="d-none">
               <%= @dataa  %>
@@ -181,47 +184,42 @@
               <%= @valuea  %>
             </div>
           </div>
-          <div style="width: 350px; height: 350px;" class='<%= @demandea %>'>
+          <div class='<%= @demandea %> grid-element'>
             <h3> Vous n'avez pas d'Armagnac</h3>
-            <h2> Commandez</h2>
+          <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
         </div>
+      </div>
 
-      </div>
-    </div>
-    <div id="bar">
-      <h1>Mon Bar</h1>
-      <div>
-        <h2>En attente de note</h2>
-      </div>
-      <div>
-        <h2>Mes bouteilles</h2>
-        <div class="spirit-card-grid">
-          <% current_user.spirits.each do |spirit| %>
-          <div class="spirit-card">
-            <img src="<%=spirit.image_url%>">
-            <div class="spirit-card-content">
-              <div class="spirit-card-header">
-                <%= spirit.name %>
-                <%= spirit.producer %>
+
+      <div id="bar">
+        <h1>Mon Bar</h1>
+        <div>
+          <h2>En attente de note</h2>
+        </div>
+        <div>
+          <h2>Mes bouteilles</h2>
+          <div class="spirit-card-grid">
+            <% current_user.spirits.each do |spirit| %>
+              <div class="spirit-card">
+                <img src="<%=spirit.image_url%>">
+                <div class="spirit-card-content">
+                  <div class="spirit-card-header">
+                    <%= spirit.name %>
+                    <%= spirit.producer %>
+                  </div>
+                </div>
               </div>
-            </div>
+            <%end %>
           </div>
-        <%end %>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
 
-
-
-
-
 <script>
-
     let ctd = document.getElementById('myChartd').getContext('2d');
     value = document.getElementById("datad").innerHTML;
     value = value.split("-")
