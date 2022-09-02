@@ -1,11 +1,11 @@
 <div class="banner">
   <%if user_signed_in? %>
-      <% if current_user.experiences.length > 0%>
-      <div class="banner">
-        <div style="margin: 0px auto; height: 350px; display:flex; justify-content:center; align-items:center;">
-          <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+      <% if user.experiences.length > 0%>
+        <div class="banner">
+          <div style="margin: 0px auto; height: 350px; display:flex; justify-content:center; align-items:center;">
+            <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+          </div>
         </div>
-      </div>
       <% else %>
         <div class="banner banner-full">
           <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>

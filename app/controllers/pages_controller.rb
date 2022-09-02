@@ -65,6 +65,8 @@ class PagesController < ApplicationController
         Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
       end
     end
+  end
+
 
 
     epice = {
@@ -204,7 +206,6 @@ class PagesController < ApplicationController
 
 
   end
-
 
 
   def maindashboard
