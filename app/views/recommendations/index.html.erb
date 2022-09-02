@@ -41,10 +41,41 @@
     <%end %>
   </div>
     <p class= "text-center">Commandez vos 5 échantillons (12cl) correspondant à vos goûts pour 25€. <br> Les 25€ vous seront remboursés lors de votre prochain achat.</p>
-    <div class="text-center my-5">
-      <%=link_to "Commandez votre coffret", root_path, class:"btn-default" %>
+    <div class="d-flex justify-content-center my-5">
+    <p class="btn-default-reco" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Commandez votre coffret</p>
     </div>
 </div>
 
-<%#
-TEXT %>
+
+      <%# <%= "Commandez votre coffret", order_recommendation_orders_path(spirits: current_user.recommendations.pluck(:spirit_id)), class:"btn-default" %>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mon panier</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-between">
+          <p> <strong>Coffret Deflavour</strong></p>
+          <p><strong>25€</strong></p>
+        </div>
+        <ul class="list-unstyled">
+          <% current_user.recommendations.each do |reco| %>
+          <li>1 x <%= reco.spirit.name %>; 12cl</li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="modal-footer ">
+        <div class="d-flex justify-content-between">
+          <p>Sous-total du panier: 25€<p>
+          <%= link_to "Payer", order_recommendation_orders_path(spirits: current_user.recommendations.pluck(:spirit_id)), class:"btn-home" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

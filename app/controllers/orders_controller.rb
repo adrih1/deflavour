@@ -30,6 +30,13 @@ class OrdersController < ApplicationController
     redirect_to dashboard_path, status: :see_other, notice: "🚨 Order was succesfully deleted 🚨"
   end
 
+  def order_recommendation
+    params[:spirits].each do |spirit|
+      Order.create(spirit_id: spirit, user: current_user)
+    end
+    redirect_to root_path, notice: "🚨 Order confirmed  🚨"
+  end
+
   private
 
   def order_params
