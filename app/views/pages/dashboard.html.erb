@@ -1,7 +1,27 @@
 <%= render "shared/navbar" %>
 
 <div class="container mb-5">
-  <%= render "shared/dashboard_mini" %>
+  <h1 class="text-center my-5" >Profil Aromatique </h1>
+<div class="d-flex justify-content-around flex-row-reverse">
+  <div class="d-flex flex-column" style="width: 40%;">
+    <div class= "m-5">
+    <h2>Synthese</h2>
+    <p><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
+    </div>
+    <div class= "m-5">
+    <h3>Description</h3>
+    <p><%=%></p>
+    </div>
+  </div>
+
+  <div style="width: 500px; height: 500px;">
+    <canvas  id="myChart"></canvas>
+
+  </div>
+</div>
+<div class="text-center">
+  <%=link_to "Recommendation", recommendations_path, class:"btn-default" %>
+</div>
 
 </div>
 
