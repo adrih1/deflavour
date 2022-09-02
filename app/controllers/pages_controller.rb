@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-
   end
 
 
@@ -65,7 +64,7 @@ class PagesController < ApplicationController
         Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
       end
     end
-  end
+
 
 
 
