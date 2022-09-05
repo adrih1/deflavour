@@ -59,7 +59,7 @@ class PagesController < ApplicationController
       @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
       @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
       @result.reject{ |k, v| @forbidden.include?(("#{k}").to_i) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
-        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
+        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round))
       end
     end
 
