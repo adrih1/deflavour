@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_144914) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_124422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_144914) do
     t.integer "cereale", default: 0
     t.integer "empyreumatique", default: 0
     t.integer "tourbe", default: 0
+    t.string "clef"
+    t.string "family"
+    t.string "accroche"
+    t.string "stars"
+    t.string "photo_one_url"
+    t.string "photo_two_url"
+    t.string "photo_one"
+    t.string "photo_two"
     t.index ["user_id"], name: "index_alcool_profiles_on_user_id"
   end
 
@@ -67,11 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_144914) do
     t.datetime "updated_at", null: false
     t.bigint "family_id"
     t.index ["family_id"], name: "index_aromas_on_family_id"
-  end
-
-  create_table "custom_failures", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "experiences", force: :cascade do |t|

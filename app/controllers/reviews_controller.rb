@@ -11,8 +11,6 @@ class ReviewsController < ApplicationController
     @order = Order.find(params[:order_id])
     @review.order = @order
     if @review.save
-      Experience.create(spirit: @review.order.spirit, user: @review.order.user)
-      sleep 2
       redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity

@@ -19,7 +19,7 @@
 
       </div>
       <div class="navbar-right">
-        <% if current_user.experiences.length > 0%>
+        <% if current_user && current_user.experiences.length > 0%>
           <%= link_to "Voir mon profil", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
         <%end%>
         <li class="nav-item active">
@@ -48,7 +48,7 @@
     <div class="modal-content">
       <div class="modal-body">
           <div class="form-container">
-            <h2>Log in</h2>
+            <h2 style="color:white">Log in</h2>
             <%= render "shared/login" %>
           </div>
       </div>

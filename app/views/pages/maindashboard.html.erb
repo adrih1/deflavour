@@ -35,7 +35,7 @@
         <h1 class="text-center my-5" >Profil Aromatique </h1>
       </div>
       <div class="d-flex justify-content-around">
-        <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
+        <div style="width: 500px; height: 500px;">
           <canvas  id="myChartd"></canvas>
           <div id="datad" class="d-none">
             <%= @datad  %>
@@ -45,37 +45,47 @@
           </div>
         </div>
         <div class="d-flex flex-column" style="width: 40%;">
-          <div class= "m-5">
-            <h2>Synthese</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit possimus cum, saepe soluta nobis inventore rem mollitia veritatis, a sunt, sequi natus rerum repellendus quas. Ea temporibus reprehenderit quisquam harum!</p>
+          <div class= "mb-5">
+          <h2>Synthese</h2>
+          <p><%="Famille : Vous aimez les spiritueux majoritairement #{@user.alcool_profile[:family]}."%></p>
           </div>
-          <div class= "m-5">
-            <h3>Description</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis ipsam rerum dolorum! Harum eum nostrum aut atque est error at dolorum in ullam cupiditate ab laboriosam, et, voluptas numquam?</p>
+          <div class= "" style= "position: relative;">
+          <h3>Description</h3>
+          <p><strong><%= @user.alcool_profile[:family] %></strong></p>
+          <p>Vous êtes <strong><%= @user.alcool_profile[:accroche] %></strong></p>
+          <p><%= @user.alcool_profile[:description] %></p>
+          <p><%= @user.alcool_profile[:stars] %></p>
+          <div class="d-flex">
+            <img class="avatar-large photo1" alt="avatar-large" src="<%= @user.alcool_profile[:photo_one] %>" />
+            <img class="avatar-large photo2" alt="avatar-large" src="<%= @user.alcool_profile[:photo_two] %>" />
+          </div>
           </div>
         </div>
       </div>
 
       <div class="alcools-profile">
         <h1>Roue de vos liqueurs préférées</h1>
+
         <div class="aromatique-profile">
-          <div class=' m-1 <%= @affichagew %> grid-element'>
+
+          <div class='grid-element'>
             <canvas  id="myChartw"></canvas>
             <div id="dataw" class="d-none">
-              <%= @dataw  %>
-            </div>
-            <div id="valuew" class="d-none">
-              <%= @valuew  %>
-            </div>
-          </div>
-            <div class="<%= @demandew %> grid-element">
-              <h3> Vous n'avez pas de Whisky</h3>
-              <h2 class="btn-default-maindashboard">Commandez</h2>
+                <%= @dataw  %>
+              </div>
+              <div id="valuew" class="d-none">
+                <%= @valuew  %>
+              </div>
+
+              <div class="<%= @demandew %> grid-element">
+                <h3> Vous n'avez pas de Whisky</h3>
+                <h2 class="btn-default-maindashboard">Commandez</h2>
+              </div>
             </div>
 
 
 
-            <div class='<%= @affichageg %> grid-element'>
+            <div class='grid-element'>
               <canvas  id="myChartg"></canvas>
               <div id="datag" class="d-none">
                 <%= @datag  %>
@@ -83,14 +93,15 @@
               <div id="valueg" class="d-none">
                 <%= @valueg  %>
               </div>
-            </div>
-            <div class='<%= @demandeg %> grid-element'>
-              <h3> Vous n'avez pas de Gin</h3>
-             <h2 class="btn-default-maindashboard">Commandez</h2>
+
+              <div class='<%= @demandeg %> grid-element'>
+                <h3> Vous n'avez pas de Gin</h3>
+               <h2 class="btn-default-maindashboard">Commandez</h2>
+              </div>
             </div>
 
 
-          <div class='<%= @affichager %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartr"></canvas>
             <div id="datar" class="d-none">
               <%= @datar  %>
@@ -98,13 +109,13 @@
             <div id="valuer" class="d-none">
               <%= @valuer  %>
             </div>
-          </div>
-          <div class='<%= @demander %> grid-element'>
-            <h3> Vous n'avez pas de Rhum</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demander %> grid-element'>
+              <h3> Vous n'avez pas de Rhum</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichaget %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartt"></canvas>
             <div id="datat" class="d-none">
               <%= @datat  %>
@@ -112,13 +123,13 @@
             <div id="valuet" class="d-none">
               <%= @valuet  %>
             </div>
-          </div>
-          <div class='<%= @demandet %> grid-element'>
-            <h3> Vous n'avez pas de Tequila</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandet %> grid-element'>
+              <h3> Vous n'avez pas de Tequila</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagec %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartc"></canvas>
             <div id="datac" class="d-none">
               <%= @datac  %>
@@ -126,13 +137,13 @@
             <div id="valuec" class="d-none">
               <%= @valuec  %>
             </div>
-          </div>
-          <div class='<%= @demandec %> grid-element'>
-            <h3> Vous n'avez pas de Cognac</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandec %> grid-element'>
+              <h3> Vous n'avez pas de Cognac</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichageca %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartca"></canvas>
             <div id="dataca" class="d-none">
               <%= @dataca  %>
@@ -140,13 +151,13 @@
             <div id="valueca" class="d-none">
               <%= @valueca  %>
             </div>
-          </div>
-          <div class='<%= @demandeca %> grid-element'>
-            <h3> Vous n'avez pas de Calvados</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandeca %> grid-element'>
+              <h3> Vous n'avez pas de Calvados</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagem %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartm"></canvas>
             <div id="datam" class="d-none">
               <%= @datam  %>
@@ -154,14 +165,13 @@
             <div id="valuem" class="d-none">
               <%= @valuem  %>
             </div>
-          </div>
-          <div class='<%= @demandem %> grid-element'>
-            <h3> Vous n'avez pas de Mezcal</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandem %> grid-element'>
+              <h3> Vous n'avez pas de Mezcal</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-
-          <div class='<%= @affichagev %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartv"></canvas>
             <div id="datav" class="d-none">
               <%= @datav  %>
@@ -169,13 +179,13 @@
             <div id="valuev" class="d-none">
               <%= @valuev  %>
             </div>
-          </div>
-          <div class='<%= @demandev %> grid-element'>
-            <h3> Vous n'avez pas de Vodka</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandev %> grid-element'>
+              <h3> Vous n'avez pas de Vodka</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagea %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myCharta"></canvas>
             <div id="dataa" class="d-none">
               <%= @dataa  %>
@@ -183,19 +193,32 @@
             <div id="valuea" class="d-none">
               <%= @valuea  %>
             </div>
-          </div>
           <div class='<%= @demandea %> grid-element'>
             <h3> Vous n'avez pas d'Armagnac</h3>
           <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
         </div>
       </div>
+    </div>
 
 
       <div id="bar">
         <h1>Mon Bar</h1>
         <div>
           <h2>En attente de note</h2>
+          <div class="spirit-card-grid">
+            <% current_user.recommendations.each do |recomendation| %>
+              <div class="spirit-card">
+                <img src="<%=recomendation.spirit.image_url%>">
+                <div class="spirit-card-content">
+                  <div class="spirit-card-header">
+                    <%= recomendation.spirit.name %>
+                     <button class='btn-default-maindashboard'> Review </button>
+                  </div>
+                </div>
+              </div>
+            <%end %>
+          </div>
         </div>
         <div>
           <h2>Mes bouteilles</h2>
@@ -251,6 +274,27 @@
       }
     },
     },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
+    },
     });
 
   console.log('test')
@@ -285,6 +329,27 @@
         }
       }
     },
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
     },
     });
 
@@ -321,6 +386,28 @@
       }
     },
     },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
+    },
     });
 
     console.log('rhum')
@@ -354,6 +441,27 @@
       }
     },
     },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
+    },
     });
 
     console.log('tequila')
@@ -386,6 +494,27 @@
         }
       }
     },
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
     },
     });
 
@@ -421,6 +550,27 @@
       }
     },
     },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
+    },
     });
 
     console.log('calvados')
@@ -453,6 +603,27 @@
         }
       }
     },
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
     },
     });
 
@@ -487,6 +658,27 @@
       }
     },
     },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
+    },
     });
 
     console.log('vodka')
@@ -519,6 +711,27 @@
         }
       }
     },
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
     },
     });
 
@@ -554,6 +767,27 @@ let myCharta = new Chart(cta, {
         }
       }
     },
+    },
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      },
+      plugins: {
+        legend: {
+            display: false
+        },
+      },
+      scales: {
+         r: {
+          min: 0,
+          max: 5,
+            ticks: {
+                display: false // Hides the labels in the middel (numbers)
+            }
+        }
+      }
     },
     });
 

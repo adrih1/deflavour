@@ -1,11 +1,35 @@
 <div class="banner">
   <%if user_signed_in? %>
       <% if current_user.experiences.length > 0%>
-      <div class="banner">
-        <div style="margin: 0px auto; height: 350px; display:flex; justify-content:center; align-items:center;">
-          <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto" %>
+        <div class="banner" data-controller='banner-change' >
+          <div  class="banner-subcontainer" data-banner-change-target='subcontainer'>
+            <%# <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto", 'data-banner-change-target':"button", 'data-action':"click->banner-change#newexperience" %>
+            <button class="text-decoration-none btn-home mb-auto mt-auto" data-banner-change-target='button' data-action='click->banner-change#newexperience'>Créer de nouvelles expériences</button>
+            <%# FORMULAIRE CACHÉ %>
+            <div class="banner experience-form-container" data-banner-change-target='banner' style="width:100%">
+              <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+                <h1>Quels spiritueux aimez-vous ?</h1>
+                <template data-nested-form-target="template">
+                  <%= f.fields_for :spirits, Experience.new, child_index: 'NEW_RECORD' do |experience_fields| %>
+                    <%= render "shared/experience_form", f: experience_fields %>
+                  <% end %>
+                </template>
+
+                <%= f.fields_for :spirits do |experience_fields|  %>
+                  <%= render "shared/experience_form", f: experience_fields %>
+                <% end %>
+
+                <!-- Inserted elements will be injected before that target. -->
+                <div data-nested-form-target="target"></div>
+
+                <div class="form-footer">
+                  <button type="button" data-action="nested-form#add" class="experience-button">Ajouter un spiritueux</button>
+                  <%= f.submit 'Générer mon profil aromatique', class:"launch-experience"%>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
       <% else %>
         <div class="banner banner-full">
           <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
@@ -23,9 +47,10 @@
             <!-- Inserted elements will be injected before that target. -->
             <div data-nested-form-target="target"></div>
 
-            <button type="button" data-action="nested-form#add" class="experience-button">Add a liquor</button>
-
-            <%= f.submit 'Save my liquors', class:"experience-button"%>
+            <div class="form-footer">
+              <button type="button" data-action="nested-form#add" class="experience-button">Ajouter un spiritueux</button>
+              <%= f.submit 'Générer mon profil aromatique', class:"launch-experience"%>
+            </div>
           <% end %>
         </div>
       <% end %>
@@ -42,6 +67,7 @@
       </div>
     </div>
   <% end %>
+</div>
 
 
 <%= render "shared/navbar" %>
@@ -120,18 +146,5 @@
           GRAPPA
         </div>
         <% end %>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1655786300011-fd83fb824a75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)">
-          WHISKY
-        </div>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1639705529453-18e337dbfa2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-          MEZCAL
-        </div>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1650261064514-eaeb5a296434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80)">
-          VODKA
-        </div>
       </div>
     </div>
-  </div>
