@@ -76,11 +76,42 @@
               <div id="valuew" class="d-none">
                 <%= @valuew  %>
               </div>
+              <div class="<%= @affichageg%>">
+                              <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modalw">
+                  Launch demo modal
+                </button>
 
-              <div class="<%= @demandew %> grid-element">
+                <!-- Modal -->
+                <div class="modal fade" id="Modalw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                          <div class="spirit-card-grid-reco" style="position: relative">
+                            <% @modal_whisky.each do |el| %>
+                            <div class="spirit-card">
+                              <img class="mt-2" src="<%=Spirit.find("#{el}").image_url%>">
+                              <div class="spirit-card-infos">
+                                <div class="spirit-card-content">
+                                  <div class="spirit-card-header-reco">
+                                    <h4 class="text-center"><%= Spirit.find("#{el}").name %></h4>
+                                    <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <%end %>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="<%= @demandew %>">
                 <h3> Vous n'avez pas de Whisky</h3>
                 <h2 class="btn-default-maindashboard">Commandez</h2>
               </div>
+
             </div>
 
 
