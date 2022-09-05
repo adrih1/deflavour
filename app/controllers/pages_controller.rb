@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     end
     profile = @base
     AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
-    profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v }  unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
+    profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v } unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
 
     @familie_order = []
     profile.sort_by { |_, v| -v }.each { |k, _| @familie_order << k }
@@ -58,13 +58,10 @@ class PagesController < ApplicationController
       @forbidden = []
       @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
       @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
-      @result.reject{ |k, v| @forbidden.include?(k) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
+      @result.reject{ |k, v| @forbidden.include?(("#{k}").to_i) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
         Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
       end
     end
-
-
-
 
     epice = {
       clef: "epice",
@@ -460,6 +457,56 @@ class PagesController < ApplicationController
     @valuea = @popo.join("-")
     @dataa = @papa.join("-")
 
+
+
+
+
+
+
+    @base = {
+      vineux: 0,
+      epicee: 0,
+      boise: 0,
+      animale: 0,
+      fruite: 0,
+      floral: 0,
+      herbace: 0,
+      cereale: 0,
+      empyreumatique: 0,
+      tourbe: 0
+    }
+    # Recupérer les champs que le USER a rempli sur le form precedent
+    @user.experiences.each do |el|
+      @base.map do |key, value|
+        @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+      end
+    end
+
+    @result = {}
+    Spirit.all.each do |spirit|
+      difference = 0
+      @base.each do |key, value|
+        diff = ((value - spirit[:"#{key}"]) * 3)
+        diff = diff * (-1) if diff < 0
+        difference += diff
+      end
+      @result[:"#{spirit.id}"] = difference
+    end
+
+
+    def reco_modal(alcool_category)
+      unless @user.experiences.empty?
+        @forbidden = []
+        resueach = @result
+        @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
+        @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
+        @user.recommendations.each { |el| @forbidden << el.spirit.id } unless @user.recommendations.empty?
+        return resueach.reject{ |k, v| @forbidden.include?(k) }.select { |k, v| Spirit.find("#{k}").category == alcool_category }.sort_by { |_, v| v }.first(3).map(&:first).each do |k, v|
+        end
+      end
+    end
+
+    @modal_whisky = reco_modal('Whisky')
 
 
   end

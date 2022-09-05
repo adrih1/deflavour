@@ -208,7 +208,7 @@ while i <= 20
     spirit.save!
 
 
-    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil?
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil? || spirit.degrees == 0
 
       spirit.destroy!
     elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
