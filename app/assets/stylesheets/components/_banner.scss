@@ -24,6 +24,31 @@
   margin-bottom: 15px;
   text-align: center;
 }
-.banner-full{
+
+
+
+// JS PURPOSE
+
+.experience-form-container{
+  display: none;
+  opacity: 0.5;
+}
+
+.banner-subcontainer{
+  margin: 20px auto;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.banner-subcontainer-full{
+  margin: 20px auto;
   height: 90vh;
+  transition: 2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
