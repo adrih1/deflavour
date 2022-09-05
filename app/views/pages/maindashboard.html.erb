@@ -271,6 +271,7 @@
                   <div class="spirit-card-header">
                     <%= spirit.name %>
                     <%= spirit.producer %>
+                    <%= Review.find_by(spirit: spirit, user: current_user).rating %>
                   </div>
                 </div>
               </div>
