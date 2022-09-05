@@ -114,8 +114,8 @@ class PagesController < ApplicationController
       accroche: "Maraicher",
       description: "Les vergers n’ont aucun secret pour vous, vous mangez des salades de
       fruits matin, midi et soir. Attention cependant à ne pas finir en compote.",
-      stars: "Les Maraichers célèbres : Bitney Spears et Nadia",
-      photo_one: 'https://medias.spotern.com/wanted/w640/74/74162-1658386405.jpg',
+      stars: "Les Maraichers célèbres : Britney Spears et Nadia",
+      photo_one: 'https://www.dhnet.be/resizer/QpXlM-j5wwUosOJBo9Fbv3Tl5S0=/0x0:2192x1460/768x512/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/O53EYCBHXBEVJI6KGDXNKTULEY.jpg',
       photo_two: 'https://avatars.githubusercontent.com/u/54894352?v=4'
     }
 

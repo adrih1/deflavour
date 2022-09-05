@@ -23,9 +23,10 @@
             <!-- Inserted elements will be injected before that target. -->
             <div data-nested-form-target="target"></div>
 
-            <button type="button" data-action="nested-form#add" class="experience-button">Ajouter un spiritueux</button>
-
-            <%= f.submit 'Lancer mon profil aromatique', class:"launch-experience"%>
+            <div class="form-footer">
+              <button type="button" data-action="nested-form#add" class="experience-button">Ajouter un spiritueux</button>
+              <%= f.submit 'Générer mon profil aromatique', class:"launch-experience"%>
+            </div>
           <% end %>
         </div>
       <% end %>
