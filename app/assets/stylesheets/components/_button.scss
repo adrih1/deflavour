@@ -83,7 +83,9 @@
   color: white;
 
   &:hover{
-    color: black;
+    color: white;
+    background-color: #333759 ;
+    transition: 0.7s ease;
   }
 }
 
@@ -94,11 +96,12 @@
   margin-left: 5px;
   border: none;
   border-radius: 3px;
-  background-color: #F87060;
-  color: white;
+  background-color: transparent;
+  color: red;
 
   &:hover{
-    color: black;
+    transform: scale(1.1);
+    transition: 0.4s ease;
   }
 }
 
@@ -112,6 +115,7 @@
   margin: 0 auto;
 
   &:hover{
+    transition: 0.4s ease;
     background-color: gold;
     color: white;
   }

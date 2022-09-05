@@ -20,7 +20,6 @@
 }
 
 
-
 .form-select{
   background-color: transparent;
   border: none;
@@ -34,4 +33,10 @@
 
 #experiences_spirits_spirit-ts-label{
   display: none;
+}
+
+
+.form-footer{
+  display: flex;
+  justify-content: space-between;
 }
