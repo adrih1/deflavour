@@ -35,7 +35,7 @@
         <h1 class="text-center my-5" >Profil Aromatique </h1>
       </div>
       <div class="d-flex justify-content-around">
-        <div style="width: 500px; height: 500px;" class='<%= @affichaged %>'>
+        <div style="width: 500px; height: 500px;">
           <canvas  id="myChartd"></canvas>
           <div id="datad" class="d-none">
             <%= @datad  %>
@@ -65,24 +65,27 @@
 
       <div class="alcools-profile">
         <h1>Roue de vos liqueurs préférées</h1>
+
         <div class="aromatique-profile">
-          <div class=' m-1 <%= @affichagew %> grid-element'>
+
+          <div class='grid-element'>
             <canvas  id="myChartw"></canvas>
             <div id="dataw" class="d-none">
-              <%= @dataw  %>
-            </div>
-            <div id="valuew" class="d-none">
-              <%= @valuew  %>
-            </div>
-          </div>
-            <div class="<%= @demandew %> grid-element">
-              <h3> Vous n'avez pas de Whisky</h3>
-              <h2 class="btn-default-maindashboard">Commandez</h2>
+                <%= @dataw  %>
+              </div>
+              <div id="valuew" class="d-none">
+                <%= @valuew  %>
+              </div>
+
+              <div class="<%= @demandew %> grid-element">
+                <h3> Vous n'avez pas de Whisky</h3>
+                <h2 class="btn-default-maindashboard">Commandez</h2>
+              </div>
             </div>
 
 
 
-            <div class='<%= @affichageg %> grid-element'>
+            <div class='grid-element'>
               <canvas  id="myChartg"></canvas>
               <div id="datag" class="d-none">
                 <%= @datag  %>
@@ -90,14 +93,15 @@
               <div id="valueg" class="d-none">
                 <%= @valueg  %>
               </div>
-            </div>
-            <div class='<%= @demandeg %> grid-element'>
-              <h3> Vous n'avez pas de Gin</h3>
-             <h2 class="btn-default-maindashboard">Commandez</h2>
+
+              <div class='<%= @demandeg %> grid-element'>
+                <h3> Vous n'avez pas de Gin</h3>
+               <h2 class="btn-default-maindashboard">Commandez</h2>
+              </div>
             </div>
 
 
-          <div class='<%= @affichager %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartr"></canvas>
             <div id="datar" class="d-none">
               <%= @datar  %>
@@ -105,13 +109,13 @@
             <div id="valuer" class="d-none">
               <%= @valuer  %>
             </div>
-          </div>
-          <div class='<%= @demander %> grid-element'>
-            <h3> Vous n'avez pas de Rhum</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demander %> grid-element'>
+              <h3> Vous n'avez pas de Rhum</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichaget %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartt"></canvas>
             <div id="datat" class="d-none">
               <%= @datat  %>
@@ -119,13 +123,13 @@
             <div id="valuet" class="d-none">
               <%= @valuet  %>
             </div>
-          </div>
-          <div class='<%= @demandet %> grid-element'>
-            <h3> Vous n'avez pas de Tequila</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandet %> grid-element'>
+              <h3> Vous n'avez pas de Tequila</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagec %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartc"></canvas>
             <div id="datac" class="d-none">
               <%= @datac  %>
@@ -133,13 +137,13 @@
             <div id="valuec" class="d-none">
               <%= @valuec  %>
             </div>
-          </div>
-          <div class='<%= @demandec %> grid-element'>
-            <h3> Vous n'avez pas de Cognac</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandec %> grid-element'>
+              <h3> Vous n'avez pas de Cognac</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichageca %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartca"></canvas>
             <div id="dataca" class="d-none">
               <%= @dataca  %>
@@ -147,13 +151,13 @@
             <div id="valueca" class="d-none">
               <%= @valueca  %>
             </div>
-          </div>
-          <div class='<%= @demandeca %> grid-element'>
-            <h3> Vous n'avez pas de Calvados</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandeca %> grid-element'>
+              <h3> Vous n'avez pas de Calvados</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagem %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartm"></canvas>
             <div id="datam" class="d-none">
               <%= @datam  %>
@@ -161,14 +165,13 @@
             <div id="valuem" class="d-none">
               <%= @valuem  %>
             </div>
-          </div>
-          <div class='<%= @demandem %> grid-element'>
-            <h3> Vous n'avez pas de Mezcal</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandem %> grid-element'>
+              <h3> Vous n'avez pas de Mezcal</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-
-          <div class='<%= @affichagev %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myChartv"></canvas>
             <div id="datav" class="d-none">
               <%= @datav  %>
@@ -176,13 +179,13 @@
             <div id="valuev" class="d-none">
               <%= @valuev  %>
             </div>
-          </div>
-          <div class='<%= @demandev %> grid-element'>
-            <h3> Vous n'avez pas de Vodka</h3>
-          <h2 class="btn-default-maindashboard">Commandez</h2>
+            <div class='<%= @demandev %> grid-element'>
+              <h3> Vous n'avez pas de Vodka</h3>
+            <h2 class="btn-default-maindashboard">Commandez</h2>
+            </div>
           </div>
 
-          <div class='<%= @affichagea %> grid-element'>
+          <div class='grid-element'>
             <canvas  id="myCharta"></canvas>
             <div id="dataa" class="d-none">
               <%= @dataa  %>
@@ -190,13 +193,13 @@
             <div id="valuea" class="d-none">
               <%= @valuea  %>
             </div>
-          </div>
           <div class='<%= @demandea %> grid-element'>
             <h3> Vous n'avez pas d'Armagnac</h3>
           <h2 class="btn-default-maindashboard">Commandez</h2>
           </div>
         </div>
       </div>
+    </div>
 
 
       <div id="bar">
@@ -284,7 +287,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -339,7 +343,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -393,8 +398,10 @@
         },
       },
       scales: {
-         r: {
 
+         r: {
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -447,7 +454,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -500,7 +508,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -554,7 +563,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -607,7 +617,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -660,7 +671,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -713,7 +725,8 @@
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
@@ -768,7 +781,8 @@ let myCharta = new Chart(cta, {
       },
       scales: {
          r: {
-
+          min: 0,
+          max: 5,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
             }
