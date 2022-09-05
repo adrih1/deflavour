@@ -64,8 +64,6 @@ class PagesController < ApplicationController
     end
 
 
-
-
     epice = {
       clef: "epice",
       family: "Épice",
