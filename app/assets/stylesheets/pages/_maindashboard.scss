@@ -9,10 +9,10 @@
 
 .aromatique-profile{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   margin-top: 40px;
-  background-color: rgba(223, 223, 223, 0.7);
+  background-color: #f5efea;
   border-radius: 7px;
   padding-top: 10px;
 }
@@ -32,8 +32,9 @@
 
 
 .grid-element{
-  width: 350px;
-  height: 500px;
+  width: 250px;
+  height: 350px;
+
   display: flex;
   flex-direction: column;
   text-align: center;
