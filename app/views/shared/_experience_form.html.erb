@@ -1,5 +1,5 @@
 <div class="nested-form-wrapper" data-new-record="<%= true %>">
-  <%= f.input :spirit, class:"experience-label" , collection: Spirit.all, input_html: { multiple: true, data: { controller: "tom-select", tom_select_options_value: { tags: true } } } %>
+  <%= f.input :spirit, class:"experience-label", collection: Spirit.all, input_html: { multiple: true, data: { controller: "tom-select", tom_select_options_value: { tags: true }, nested_form_target:"field" } } %><i data-nested-form-target="tick" class="d-none tick-icon fa-solid fa-check"></i>
 
   <button type="button" class="experience-button-remove" data-action="nested-form#remove"><i class="fa-solid fa-trash"></i></button>
 
