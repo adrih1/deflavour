@@ -75,7 +75,7 @@ class PagesController < ApplicationController
     pour l’apprécier encore plus.",
     stars: "Les aventuriers célèbres : Jack Sparrow et Martial",
     photo_one: "https://www.effets-speciaux.info/img/photo/497-10.jpg",
-    photo_two: "https://files.slack.com/files-pri/T02NE0241-F040RE9SG2Z/martial.jpeg"
+    photo_two: "https://files.slack.com/files-pri/T02NE0241-F040RE9SG2Z/martial.jpeg",
 
   }
 
@@ -89,7 +89,7 @@ class PagesController < ApplicationController
     c’est vieux plus vous aimez.",
     stars: "Les Bucherons célèbres : Tyron et Sunny",
     photo_one: "https://www.lbvselection.com/img/cms/Tyrion%20Wine.png",
-    photo_two: "https://files.slack.com/files-pri/T02NE0241-F041J4KEMEU/sunny.png"
+    photo_two: "https://files.slack.com/files-pri/T02NE0241-F041J4KEMEU/sunny.png",
 
   }
 
@@ -102,7 +102,7 @@ class PagesController < ApplicationController
     ce qui est bestial.",
     stars: "Les Vétérinaires célèbres : Amy Winehouse et Thibaud",
     photo_one: "https://www.dailymail.co.uk/tvshowbiz/article-9817505/Amy-Winehouses-haunting-words-unearthed-tape.html",
-    photo_two: "https://files.slack.com/files-pri/T02NE0241-F041J4KMCLQ/thibaud.jpeg"
+    photo_two: "https://files.slack.com/files-pri/T02NE0241-F041J4KMCLQ/thibaud.jpeg",
 
   }
 
@@ -112,8 +112,8 @@ class PagesController < ApplicationController
     description: "Les vergers n’ont aucun secret pour vous, vous mangez des salades de
     fruits matin, midi et soir. Attention cependant à ne pas finir en compote.",
     stars: "Les Maraichers célèbres : Bitney Spears et Nadia",
-    photo_one:'https://medias.spotern.com/wanted/w640/74/74162-1658386405.jpg'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UAB60LB/nadia.jpeg'
+    photo_one:'https://medias.spotern.com/wanted/w640/74/74162-1658386405.jpg',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UAB60LB/nadia.jpeg',
   }
 
 
@@ -124,8 +124,8 @@ class PagesController < ApplicationController
     pas les prénoms les plus portés en 2022 mais bien les arômes que vous
     appréciez dans votre spiritueux. Quel beau bouquet",
     stars: "Les fleuristes célèbres : Gatsby et Laura",
-    photo_one:'https://static.750g.com/images/1200-630/1415cc2bf4fe458c6cb743714ac5a54e/gatsby-1024x576.jpg'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDP9Q1Y/laura.jpeg'
+    photo_one:'https://static.750g.com/images/1200-630/1415cc2bf4fe458c6cb743714ac5a54e/gatsby-1024x576.jpg',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDP9Q1Y/laura.jpeg',
 
   }
 
@@ -138,8 +138,8 @@ class PagesController < ApplicationController
     papilles vous rendent heureux, voire stone. Attention à ne pas en abuser
     car les herbes comme l’alcool est à consommer avec modération.",
     stars: "Les Dealers célèbres : Hemingway et Jérémy",
-    photo_one:'https://www.eataly.com/wp/wp-content/uploads/2015/07/Hemingway_drink.jpg'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDPJN5Q/je__re__my.jpeg'
+    photo_one:'https://www.eataly.com/wp/wp-content/uploads/2015/07/Hemingway_drink.jpg',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDPJN5Q/je__re__my.jpeg',
   }
 
   cereale = {
@@ -150,8 +150,8 @@ class PagesController < ApplicationController
     galipettes dans du foin... Cela vous rappelle cette bouteille de spiritueux
     aux arômes de biscuits et maïs qui vous met en extase",
     stars: "Les Agriculteurs célèbres : Daniel Craig et  Paul",
-    photo_one:'https://img.20mn.fr/pz_bMYKpSmq2NwrMv8lLCQ/768x492_capture-ecran-film-casino-royale-o-james-bond-incarne-daniel-craig-trinque-vodka-martini'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040DS2B7QX/paul.jpeg'
+    photo_one:'https://img.20mn.fr/pz_bMYKpSmq2NwrMv8lLCQ/768x492_capture-ecran-film-casino-royale-o-james-bond-incarne-daniel-craig-trinque-vodka-martini',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040DS2B7QX/paul.jpeg',
   }
 
   empyreumatique = {
@@ -161,8 +161,8 @@ class PagesController < ApplicationController
     êtes gourmands : chocolat, café, toast. Un verre de votre spiritueux
     préféré peut se prendre au petit déjeuner.",
     stars: "Les Incompréhensibles célèbres : Don Draper et Cécile",
-    photo_one:'https://pinkcorn.fr/wp-content/uploads/2021/11/Sans-titre-3.jpg'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDQSH42/cecile.jpeg'
+    photo_one:'https://pinkcorn.fr/wp-content/uploads/2021/11/Sans-titre-3.jpg',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDQSH42/cecile.jpeg',
   }
 
   tourbe = {
@@ -174,8 +174,8 @@ class PagesController < ApplicationController
     mousse d’arbre et qui se fait des masques d’algues lors de vos vacances à
     La Baule.",
     stars: "Les Fumistes célèbres : Barney et Diane",
-    photo_one:'https://www.simpsonspark.com/images/persos/contributions/barney-gumble-25364.jpg'
-    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDQ31A6/diane.jpeg'
+    photo_one:'https://www.simpsonspark.com/images/persos/contributions/barney-gumble-25364.jpg',
+    photo_two:'https://files.slack.com/files-pri/T02NE0241-F040UDQ31A6/diane.jpeg',
   }
 
 
@@ -185,7 +185,7 @@ class PagesController < ApplicationController
     description: "Dis-moi ce que tu bois, je te dirai qui tu es, » vous buvez du
     vinaigre, vous êtes donc acide. Mais personne ne vous juge, surtout pas nous.",
     stars: "Les acides célèbres : Romain et Roger",
-    photo_one: "https://phraseculte.files.wordpress.com/2017/05/f9395552e3c2c9175e614e9263eb8110.jpg?w=768"
+    photo_one: "https://phraseculte.files.wordpress.com/2017/05/f9395552e3c2c9175e614e9263eb8110.jpg?w=768",
     photo_two: "https://files.slack.com/files-pri/T02NE0241-F040WUCAVHS/romain.jpeg",
   }
 
