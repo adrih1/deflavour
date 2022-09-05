@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_02_124422) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_085221) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -126,10 +126,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_124422) do
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.integer "rating"
-    t.bigint "order_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_reviews_on_order_id"
+    t.bigint "spirit_id"
+    t.bigint "user_id"
+    t.index ["spirit_id"], name: "index_reviews_on_spirit_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "spirit_aromas", force: :cascade do |t|
@@ -191,7 +193,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_124422) do
   add_foreign_key "orders", "users"
   add_foreign_key "recommendations", "spirits"
   add_foreign_key "recommendations", "users"
-  add_foreign_key "reviews", "orders"
+  add_foreign_key "reviews", "spirits"
+  add_foreign_key "reviews", "users"
   add_foreign_key "spirit_aromas", "aromas"
   add_foreign_key "spirit_aromas", "spirits"
 end

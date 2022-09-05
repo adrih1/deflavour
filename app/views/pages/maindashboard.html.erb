@@ -205,22 +205,32 @@
           <h2>En attente de note</h2>
           <div class="spirit-card-grid">
             <% current_user.recommendations.each do |recomendation| %>
+              <% unless current_user.reviewed_spirits.include?(recomendation.spirit)%>
               <div class="spirit-card">
                 <img src="<%=recomendation.spirit.image_url%>">
-                <div class="spirit-card-content">
-                  <div class="spirit-card-header">
-                    <%= recomendation.spirit.name %>
-                     <button class='btn-default-maindashboard'> Review </button>
+                <div class="spirit-card-content-dash">
+                  <div class="spirit-card-header-dash">
+                    <div class="p-2 text-center">
+                      <%= recomendation.spirit.name %>
+                    </div>
+                     <!-- Button trigger modal -->
+                      <button type="button" class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Notez ce spiritueux
+                      </button>
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <%= render "shared/modal-reviews", spirit:recomendation.spirit %>
+                      </div>
                   </div>
                 </div>
               </div>
+              <%end %>
             <%end %>
           </div>
         </div>
         <div>
           <h2>Mes bouteilles</h2>
           <div class="spirit-card-grid">
-            <% current_user.spirits.each do |spirit| %>
+            <% (current_user.spirits + current_user.reviewed_spirits).each do |spirit| %>
               <div class="spirit-card">
                 <img src="<%=spirit.image_url%>">
                 <div class="spirit-card-content">
