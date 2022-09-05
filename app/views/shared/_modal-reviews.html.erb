@@ -5,10 +5,16 @@
   <div class="modal-content-reviews">
     <div class="modal-body-reviews">
 
-      <h5>Notez <%= spirit.name%></h5>
+      <h5 class="text-center p-4"><%= spirit.name%></h5>
+        <img class="d-flex justify-content-center" src="<%=spirit.image_url%>">
         <%= simple_form_for [spirit, Review.new] do |f| %>
+          <div data-controller="slider">
+            <div data-slider-target="number">
+            0
+            </div>
+            <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS, label: false, as: :range, include_blank: false, label_html: { class: 'form-label-review '}, input_html: { class: 'form-range', min:"0", max:"10", "data-action": "input->slider#change", "data-slider-target": "input" } %>
+          </div>
           <%= f.input :content, placeholder: 'Décrivez votre experience avec ce spiritueux', label: "Commentaire", label_html: { class: 'form-label-review ' }, input_html: { class: 'form-input-review' } %>
-          <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS, include_blank: false, label_html: { class: 'form-label-review '}, input_html: { class: 'form-input-review'  } %>
           <%= f.submit "Submit review", class: "btn btn-classic-new", data: { controller: 'alert', action: 'click->alert#hop'} %>
         <% end %>
     </div>

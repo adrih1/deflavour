@@ -28,5 +28,8 @@ application.register("nested-form", NestedFormController)
 import SearchToggleController from "./search_toggle_controller"
 application.register("search-toggle", SearchToggleController)
 
+import SliderController from "./slider_controller"
+application.register("slider", SliderController)
+
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)

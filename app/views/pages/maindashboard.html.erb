@@ -244,14 +244,14 @@
                 <img src="<%=recomendation.spirit.image_url%>">
                 <div class="spirit-card-content-dash">
                   <div class="spirit-card-header-dash">
-                    <div class="p-2 text-center">
+                    <div class="spirit-card-dash-title sp-2 text-center">
                       <%= recomendation.spirit.name %>
                     </div>
                      <!-- Button trigger modal -->
-                      <button type="button" class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <button type="button" class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal<%=recomendation.id%>">
                         Notez ce spiritueux
                       </button>
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="exampleModal<%=recomendation.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <%= render "shared/modal-reviews", spirit:recomendation.spirit %>
                       </div>
                   </div>
