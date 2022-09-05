@@ -241,6 +241,8 @@ class PagesController < ApplicationController
     @valued = @popo.join("-")
     @datad = @papa.join("-")
 
+
+
     #Pour le dashboard whisky
     @affichagew = "d-none"
     @demandew = ""
@@ -507,7 +509,35 @@ class PagesController < ApplicationController
     end
 
     @modal_whisky = reco_modal('Whisky')
+    @modal_armagnac = reco_modal('Armagnac')
+    @modal_vodka = reco_modal('Vodka')
+    @modal_gin = reco_modal('Gin')
+    @modal_cognac = reco_modal('Cognac')
+    @modal_calvados = reco_modal('Clavados')
+    @modal_rhum = reco_modal('Rhum')
+    @modal_tequila = reco_modal('Tequila')
+    @modal_mezcal = reco_modal('Mezcal')
 
+    def alcool_aromas(alcool_category)
+      sum = []
+      total = {}
+      spirits = []
+      User.last.experiences.each{ |recommendation| spirits << recommendation.spirit if recommendation.spirit.category == alcool_category }
+      spirits.each do |spirit|
+        spirit.aromas.each { |aroma| sum << aroma}
+      end
+      sum.each { |v| total.store(v, total[v].nil? ? total[v] = 0 : total[v] + 1) }
+      return total.sort_by { |_, v| -v }.first(4)
+    end
 
+    @aromas_whisky = alcool_aromas('Whisky')
+    @aromas_armagnac = alcool_aromas('Armagnac')
+    @aromas_vodka = alcool_aromas('Vodka')
+    @aromas_gin = alcool_aromas('Gin')
+    @aromas_cognac = alcool_aromas('Cognac')
+    @aromas_calvados = alcool_aromas('Clavados')
+    @aromas_rhum = alcool_aromas('Rhum')
+    @aromas_tequila = alcool_aromas('Tequila')
+    @aromas_mezcal = alcool_aromas('Mezcal')
   end
 end
