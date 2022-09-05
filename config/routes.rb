@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :spirits, only: [:index, :show] do
     resources :orders, only: [:new, :create]
+    resources :reviews
   end
 
   resources :recommendations, only: :index
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
     collection do
       get :order_recommendation
     end
-    resources :reviews
   end
 
 

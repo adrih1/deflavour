@@ -89,3 +89,17 @@
   width: 90%;
   border-radius: 7px;
 }
+
+.spirit-card-header-dash{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.spirit-card-content-dash{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  margin-top: 5px;
+}

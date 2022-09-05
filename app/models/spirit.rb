@@ -4,6 +4,7 @@ class Spirit < ApplicationRecord
   has_many :aromas, through: :spirit_aromas
   has_many :families, through: :aromas
   has_many :recommendations
+  has_many :reviews
 
 
   geocoded_by :country

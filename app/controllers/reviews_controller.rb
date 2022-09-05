@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
 
   before_action :skip_authorization
-  before_action :set_order, only: %i[new create]
+  before_action :set_spirit, only: %i[new create]
   def new
     @review = Review.new
+    @spirit = Spirit.find(params[:spirit_id])
   end
 
   def create
     @review = Review.new(review_params)
-    @order = Order.find(params[:order_id])
-    @review.order = @order
+    @spirit = Spirit.find(params[:spirit_id])
+    @review.spirit = @spirit
+    @review.user = current_user
     if @review.save
-      redirect_to dashboard_path
+      redirect_to maindashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,8 +21,8 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_order
-    @order = Order.find(params[:order_id])
+  def set_spirit
+    @spirit = Spirit.find(params[:spirit_id])
   end
   def review_params
     params.require(:review).permit(:content, :rating)

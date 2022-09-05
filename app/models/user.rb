@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :spirits, through: :experiences
   accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
   has_one :alcool_profile
+  has_many :reviews
+  has_many :reviewed_spirits, through: :reviews, source: :spirit
 
   def create_experiences(params)
     spirit_ids = params.dig(:experiences, :spirits, :spirit).reject(&:blank?)
