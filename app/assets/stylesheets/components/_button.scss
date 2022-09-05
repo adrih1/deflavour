@@ -86,7 +86,9 @@
   color: white;
 
   &:hover{
-    color: black;
+    color: white;
+    background-color: #ca5f53;
+    transition: 0.4s ease;
   }
 }
 
@@ -103,7 +105,7 @@
   &:hover{
     color: white;
     background-color: #333759 ;
-    transition: 0.7s ease;
+    transition: 0.4s ease;
   }
 }
 

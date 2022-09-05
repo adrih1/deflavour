@@ -1,6 +1,6 @@
 // FORM CONTAINER
 .experiences{
-  margin: 30px 25%;
+  margin: 3% 25%;
 }
 
 // TITLE
@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 7px;
+  position: relative;
 }
 
 .experiences_spirits_spirit{
@@ -31,9 +32,26 @@
   width: 100%;
 }
 
+
+.ts-control-valid{
+  border-radius: 7px;
+  border:3px solid #049004;
+  width: 100%;
+}
+
+
+
 #experiences_spirits_spirit-ts-label{
   display: none;
 }
+
+.tick-icon{
+  position:  absolute;
+  right: 65px;
+  z-index: 99999;
+  color:green;
+}
+
 
 
 .form-footer{
