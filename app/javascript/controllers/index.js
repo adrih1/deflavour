@@ -13,6 +13,9 @@ application.register("chart-bis", ChartBisController)
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
 
+import DeviseModalController from "./devise_modal_controller"
+application.register("devise-modal", DeviseModalController)
+
 import ExperienceController from "./experience_controller"
 application.register("experience", ExperienceController)
 
