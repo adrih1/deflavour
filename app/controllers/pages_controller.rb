@@ -21,12 +21,15 @@ class PagesController < ApplicationController
       tourbe: 0
     }
     # Recupérer les champs que le USER a rempli sur le form precedent
-    @user.experiences.each do |el|
+    @user.experiences.each do |experience|
+      Review.create(rating: 5, user: @user, spirit: experience.spirit) if @user.reviews.select{ |review| review.spirit.name.include?(experience.spirit.name) }.empty?
       @base.map do |key, value|
-        Review.create(rating: 5, user: @user, spirit: el.spirit)
-        @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+        @base[key] += ((experience.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
     end
+
+
+
     profile = @base
     AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
     profile.each { |k, v| @user.alcool_profile[:"#{k}"] = v } unless profile.reject { |k, v| v == @user.alcool_profile[:"#{k}"]}.empty?
@@ -47,7 +50,7 @@ class PagesController < ApplicationController
     Spirit.all.each do |spirit|
       difference = 0
       @base.each do |key, value|
-        diff = ((value - spirit[:"#{key}"]) * 3)
+        diff = ((value - spirit[:"#{key}"]))
         diff = diff * (-1) if diff < 0
         difference += diff
       end
@@ -228,7 +231,8 @@ class PagesController < ApplicationController
     @base = @test
     @user.experiences.each do |el|
       @base.map do |key, value|
-        @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+        multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+        @base[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
       end
     end
     @user.alcool_profile.nil? ? @affichage = "d-none" || @demande = "" : @affichage = "" || @demande = "d-none"
@@ -253,7 +257,10 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @whisky.map do |key, value|
         if el.spirit.category == "Whisky"
-          @whisky[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @whisky[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichagew = ""
           @demandew = "d-none"
         end
@@ -276,7 +283,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @gin.map do |key, value|
         if el.spirit.category == "Gin"
-          @gin[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @gin[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichageg = ""
           @demandeg = "d-none"
         end
@@ -300,7 +309,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @rhum.map do |key, value|
         if el.spirit.category == "Rhum"
-          @rhum[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @rhum[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichager = ""
           @demander = "d-none"
         end
@@ -324,7 +335,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @tequila.map do |key, value|
         if el.spirit.category == "Tequila"
-          @tequila[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @tequila[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichaget = ""
           @demandet = "d-none"
         end
@@ -347,8 +360,11 @@ class PagesController < ApplicationController
     @test.map { |k, _| @cognac[:"#{k}"] = 0 }
     @user.experiences.each do |el|
       @cognac.map do |key, value|
+
         if el.spirit.category == "Cognac"
-          @cognac[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @cognac[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichagec = ""
           @demandec = "d-none"
         end
@@ -372,7 +388,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @calvados.map do |key, value|
         if el.spirit.category == "Calvados"
-          @calvados[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @calvados[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichageca = ""
           @demandeca = "d-none"
         end
@@ -397,7 +415,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @mezcal.map do |key, value|
         if el.spirit.category == "Mezcal"
-          @mezcal[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @mezcal[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichagem = ""
           @demandem = "d-none"
         end
@@ -422,7 +442,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @vodka.map do |key, value|
         if el.spirit.category == "Vodka"
-          @vodka[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @vodka[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichagev = ""
           @demandev = "d-none"
         end
@@ -445,7 +467,9 @@ class PagesController < ApplicationController
     @user.experiences.each do |el|
       @armagnac.map do |key, value|
         if el.spirit.category == "Armagnac"
-          @armagnac[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+          multiple = (@user.reviews.select{ |review| review.spirit == el.spirit }[0].rating) / 5
+
+          @armagnac[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
           @affichagea = ""
           @demandea = "d-none"
         end

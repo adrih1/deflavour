@@ -13,6 +13,9 @@ class ReviewsController < ApplicationController
     @review.spirit = @spirit
     @review.user = current_user
     if @review.save
+      current_user.reviews.each do |review|
+        Experience.create(spirit: @spirit, user: current_user) if current_user.experiences.select{ |experience| experience.spirit.name.include?(review.spirit.name) }.empty?
+      end
       redirect_to maindashboard_path
     else
       render :new, status: :unprocessable_entity
