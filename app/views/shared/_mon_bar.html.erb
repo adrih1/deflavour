@@ -1,47 +1,46 @@
+
+<h1>Mon Bar</h1>
 <div>
-  <h1>Mon Bar</h1>
-  <div>
-    <h2>En attente de note</h2>
-    <div class="spirit-card-grid">
-      <% current_user.recommendations.each do |recomendation| %>
-        <% unless current_user.reviewed_spirits.include?(recomendation.spirit)%>
-        <div class="spirit-card">
-          <img src="<%=recomendation.spirit.image_url%>">
-          <div class="spirit-card-content-dash">
-            <div class="spirit-card-header-dash">
-              <div class="spirit-card-dash-title sp-2 text-center">
-                <%= recomendation.spirit.name %>
+  <h2>En attente de note</h2>
+  <div class="spirit-card-grid">
+    <% current_user.recommendations.each do |recomendation| %>
+      <% unless current_user.reviewed_spirits.include?(recomendation.spirit)%>
+      <div class="spirit-card">
+        <img src="<%=recomendation.spirit.image_url%>">
+        <div class="spirit-card-content-dash">
+          <div class="spirit-card-header-dash">
+            <div class="spirit-card-dash-title sp-2 text-center">
+              <%= recomendation.spirit.name %>
+            </div>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal<%=recomendation.id%>">
+                Notez ce spiritueux
+              </button>
+              <div class="modal fade" id="exampleModal<%=recomendation.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <%= render "shared/modal-reviews", spirit:recomendation.spirit %>
               </div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal<%=recomendation.id%>">
-                  Notez ce spiritueux
-                </button>
-                <div class="modal fade" id="exampleModal<%=recomendation.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <%= render "shared/modal-reviews", spirit:recomendation.spirit %>
-                </div>
-            </div>
           </div>
         </div>
-        <%end %>
+      </div>
       <%end %>
-    </div>
+    <%end %>
   </div>
-  <div>
-    <h2>Mes bouteilles</h2>
-    <div class="spirit-card-grid">
-      <% (current_user.spirits + current_user.reviewed_spirits).uniq.each do |spirit| %>
-        <% if Review.find_by(spirit: spirit, user: current_user) %>
-        <div class="spirit-card">
-          <img src="<%=spirit.image_url%>">
-          <div class="spirit-card-content">
-            <div class="spirit-card-header">
-              <%= spirit.name %>
-              <%= Review.find_by(spirit: spirit, user: current_user).rating %>
-            </div>
+</div>
+<div>
+  <h2>Mes bouteilles</h2>
+  <div class="spirit-card-grid">
+    <% (current_user.spirits + current_user.reviewed_spirits).uniq.each do |spirit| %>
+      <% if Review.find_by(spirit: spirit, user: current_user) %>
+      <div class="spirit-card">
+        <img src="<%=spirit.image_url%>">
+        <div class="spirit-card-content">
+          <div class="spirit-card-header">
+            <%= spirit.name %>
+            <%= Review.find_by(spirit: spirit, user: current_user).rating %>
           </div>
         </div>
-        <% end %>
-      <%end %>
-    </div>
+      </div>
+      <% end %>
+    <%end %>
   </div>
 </div>

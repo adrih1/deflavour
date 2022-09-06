@@ -1,5 +1,5 @@
 <div class="alcools-profile">
-  <h1>Roue de vos liqueurs préférées</h1>
+  <h1 class="text-center">Votre profil par alcool</h1>
 
   <div class="aromatique-profile">
     <div class='grid-element'>
@@ -78,25 +78,25 @@
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-body">
-                  <div class="spirit-card-grid-reco" style="position: relative">
-                    <% @modal_gin.each do |el| %>
-                    <div class="spirit-card">
-                      <img class="mt-2" src="<%=Spirit.find("#{el}").image_url%>">
-                      <div class="spirit-card-infos">
-                        <div class="spirit-card-content">
-                          <div class="spirit-card-header-reco">
-                            <h4 class="text-center"><%= Spirit.find("#{el}").name %></h4>
-                            <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
-                            <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
-                          </div>
-                          <button type="button" class="btn-default-maindashboard">
-                            Ajouter au panier
-                          </button>
+                <div class="spirit-card-grid-reco" style="position: relative">
+                  <% @modal_gin.each do |el| %>
+                  <div class="spirit-card">
+                    <img class="mt-2" src="<%=Spirit.find("#{el}").image_url%>">
+                    <div class="spirit-card-infos">
+                      <div class="spirit-card-content">
+                        <div class="spirit-card-header-reco">
+                          <h4 class="text-center"><%= Spirit.find("#{el}").name %></h4>
+                          <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
+                          <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                         </div>
+                        <button type="button" class="btn-default-maindashboard">
+                          Ajouter au panier
+                        </button>
                       </div>
                     </div>
-                    <%end %>
                   </div>
+                  <%end %>
+                </div>
               </div>
             </div>
           </div>
@@ -414,44 +414,45 @@
       <div id="valuea" class="d-none">
         <%= @valuea  %>
       </div>
-        <div class="alcool_grid">
-          <h3 class="<%= @demandea %> "> Vous n'avez pas d'Armagnac</h3>
-          <h3 class="<%= @affichageg%>">Aromes favoris</h3>
-          <% @aromas_armagnac.each do |aroma| %>
-            <%= aroma[0].name %>
-          <% end %>
-          <button type="button" class="btn-default-maindashboard" data-bs-toggle="modal" data-bs-target="#Modala">
-            Recommendations
-          </button>
+      <div class="alcool_grid">
+        <h3 class="<%= @demandea %> "> Vous n'avez pas d'Armagnac</h3>
+        <h3 class="<%= @affichageg%>">Aromes favoris</h3>
+        <% @aromas_armagnac.each do |aroma| %>
+          <%= aroma[0].name %>
+        <% end %>
+        <button type="button" class="btn-default-maindashboard" data-bs-toggle="modal" data-bs-target="#Modala">
+          Recommendations
+        </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="Modala" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                <div class="modal-body">
-                    <div class="spirit-card-grid-reco" style="position: relative">
-                      <% @modal_armagnac.each do |el| %>
-                      <div class="spirit-card">
-                        <img class="mt-2" src="<%=Spirit.find("#{el}").image_url%>">
-                        <div class="spirit-card-infos">
-                          <div class="spirit-card-content">
-                            <div class="spirit-card-header-reco">
-                              <h4 class="text-center"><%= Spirit.find("#{el}").name %></h4>
-                              <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
-                              <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
-                            </div>
-                            <button type="button" class="btn-default-maindashboard">
-                              Ajouter au panier
-                            </button>
-                          </div>
+        <!-- Modal -->
+        <div class="modal fade" id="Modala" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="spirit-card-grid-reco" style="position: relative">
+                  <% @modal_armagnac.each do |el| %>
+                  <div class="spirit-card">
+                    <img class="mt-2" src="<%=Spirit.find("#{el}").image_url%>">
+                    <div class="spirit-card-infos">
+                      <div class="spirit-card-content">
+                        <div class="spirit-card-header-reco">
+                          <h4 class="text-center"><%= Spirit.find("#{el}").name %></h4>
+                          <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
+                          <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                         </div>
+                        <button type="button" class="btn-default-maindashboard">
+                          Ajouter au panier
+                        </button>
                       </div>
-                      <%end %>
                     </div>
+                  </div>
+                  <%end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
 </div>

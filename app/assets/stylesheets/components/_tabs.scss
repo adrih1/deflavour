@@ -12,3 +12,11 @@
   color:black;
 
 }
+
+#myTab {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  --bs-nav-tabs-link-active-border-color: #dee2e6;
+}
