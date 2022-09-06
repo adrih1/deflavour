@@ -21,14 +21,17 @@ class PagesController < ApplicationController
       tourbe: 0
     }
     # Recupérer les champs que le USER a rempli sur le form precedent
-    @user.experiences.each do |experience|
-      Review.create(rating: 5, user: @user, spirit: experience.spirit) if @user.reviews.select{ |review| review.spirit.name.include?(experience.spirit.name) }.empty?
+
+    @user.experiences.each do |el|
+      Review.create(rating: 5, user: @user, spirit: el.spirit) if @user.reviews.select { |review| review.spirit.name.include?(el.spirit.name) }.empty?
+    end
+    @user.experiences.each do |el|
+
       @base.map do |key, value|
-        @base[key] += ((experience.spirit[:"#{key}"]).fdiv(@user.experiences.size))
+        multiple = Review.find_by(user: @user, spirit: el.spirit).rating / 5
+        @base[key] += (((el.spirit[:"#{key}"]) * multiple ).fdiv(@user.experiences.size + (multiple > 0 ? multiple : multiple * (-1) )))
       end
     end
-
-
 
     profile = @base
     AlcoolProfile.create(user: @user) if @user.alcool_profile.nil?
@@ -63,7 +66,7 @@ class PagesController < ApplicationController
       @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
       @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
       @result.reject{ |k, v| @forbidden.include?(("#{k}").to_i) }.sort_by { |_, v| v }.first(5).map(&:first).each do |k, v|
-        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round))
+        Recommendation.create(spirit: Spirit.find("#{k}"), user: @user, percentages: (100 - @result[k].round(2)))
       end
     end
 

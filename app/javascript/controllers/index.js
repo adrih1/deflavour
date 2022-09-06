@@ -28,6 +28,9 @@ application.register("map", MapController)
 import NestedFormController from "./nested_form_controller"
 application.register("nested-form", NestedFormController)
 
+import RecoCarouselController from "./reco_carousel_controller"
+application.register("reco-carousel", RecoCarouselController)
+
 import SearchToggleController from "./search_toggle_controller"
 application.register("search-toggle", SearchToggleController)
 
