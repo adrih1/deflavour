@@ -80,7 +80,7 @@ class PagesController < ApplicationController
       clef: "boise",
       family: "Boisé",
       accroche: "Vous êtes Bucheron",
-      description: "Ses saveurs de pin, de cire et de  lui donnent un côté très nature. Ces arômes acquis grâce à une maturation en fut de chêne permet d'obtenir un spiritueux de charactère et rond."
+      description: "Ses saveurs de pin, de cire et de  lui donnent un côté très nature. Ces arômes acquis grâce à une maturation en fut de chêne permet d'obtenir un spiritueux de charactère et rond.",
       stars: "Un Bucheron célèbre : Tyron Lannister",
       photo_one: "https://www.lbvselection.com/img/cms/Tyrion%20Wine.png",
 
