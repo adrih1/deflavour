@@ -1,20 +1,13 @@
 .modal-content{
-  background-color: transparent;
-  border-radius: 15px;
-}
-
-.modal-body {
-  background:  linear-gradient(#1c1f3376, #6d729359);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   backdrop-filter: blur(5px);
-  border-radius: 15px;
+  border-radius: 15px
 }
 
 
 .modal-footer {
   display: unset;
 }
-
 
 .alcools-profile{
   .modal-content{
@@ -31,16 +24,11 @@
 }
 
 
-
-
 .modal-body-reviews {
   border-color: #DDA532;
   border: 1px solid;
   padding: 27px;
 }
-
-
-
 
 .modal-content-reviews {
 
