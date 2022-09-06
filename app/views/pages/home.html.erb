@@ -1,42 +1,15 @@
 <div class="banner">
   <%if user_signed_in? %>
-      <% if current_user.experiences.length > 0%>
-        <div class="banner" data-controller='banner-change' >
-          <div  class="banner-subcontainer" data-banner-change-target='subcontainer'>
-            <%# <%= link_to "Créer de nouvelles expériences", maindashboard_path, class: "text-decoration-none btn-home mb-auto mt-auto", 'data-banner-change-target':"button", 'data-action':"click->banner-change#newexperience" %>
-            <button class="text-decoration-none btn-home mb-auto mt-auto" data-banner-change-target='button' data-action='click->banner-change#newexperience'>Créer de nouvelles expériences</button>
-            <%# FORMULAIRE CACHÉ %>
-            <div class="banner experience-form-container" data-banner-change-target='banner' style="width:100%">
-              <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
-                <h1>Quels spiritueux aimez-vous ?</h1>
-                <template data-nested-form-target="template">
-                  <%= f.fields_for :spirits, Experience.new, child_index: 'NEW_RECORD' do |experience_fields| %>
-                    <%= render "shared/experience_form",f: experience_fields %>
-                  <% end %>
-                </template>
-
-                <%= f.fields_for :spirits do |experience_fields|  %>
-                  <%= render "shared/experience_form", f: experience_fields %>
-                <% end %>
-
-                <!-- Inserted elements will be injected before that target. -->
-                <div data-nested-form-target="target"></div>
-
-                <div class="form-footer">
-                  <button type="button" data-action="nested-form#add"  class="experience-button">Ajouter un spiritueux</button>
-                  <%= f.submit 'Générer mon profil aromatique', class:"launch-experience"%>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <div class="banner banner-full">
+    <div class="banner" data-controller='banner-change' >
+      <div  class="banner-subcontainer" data-banner-change-target='subcontainer'>
+        <button class="text-decoration-none btn-home mb-auto mt-auto" data-banner-change-target='button' data-action='click->banner-change#newexperience'>Créer de nouvelles expériences</button>
+        <%# FORMULAIRE CACHÉ %>
+        <div class="banner experience-form-container" data-banner-change-target='banner' style="width:100%">
           <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
             <h1>Quels spiritueux aimez-vous ?</h1>
             <template data-nested-form-target="template">
               <%= f.fields_for :spirits, Experience.new, child_index: 'NEW_RECORD' do |experience_fields| %>
-                <%= render "shared/experience_form", f: experience_fields %>
+                <%= render "shared/experience_form",f: experience_fields %>
               <% end %>
             </template>
 
@@ -48,13 +21,13 @@
             <div data-nested-form-target="target"></div>
 
             <div class="form-footer">
-              <button type="button" data-action="nested-form#add" class="experience-button">Ajouter un spiritueux</button>
+              <button type="button" data-action="nested-form#add"  class="experience-button">Ajouter un spiritueux</button>
               <%= f.submit 'Générer mon profil aromatique', class:"launch-experience"%>
             </div>
           <% end %>
         </div>
-      <% end %>
-
+      </div>
+    </div>
   <% else %>
       <div style="height: 350px;" class="d-flex flex-column text-center justify-content-center">
         <div>
