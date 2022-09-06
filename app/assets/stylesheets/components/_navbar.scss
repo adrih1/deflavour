@@ -1,6 +1,6 @@
 .navbar-deflavour {
-  background: #1C1F33;
-  padding: 15px 5px
+  background: rgb(255, 255, 255); //#1C1F33;
+  padding: 9px 5px;
 }
 
 .navbar-content{
@@ -15,7 +15,7 @@
 }
 
 .nav-link{
-  color: white;
+  color: black;
   font-size: 14px;
   letter-spacing: 1px;
 
@@ -30,9 +30,10 @@
 }
 
 #DeFlavour-name{
-  color: rgb(255, 255, 255);
+  color: black;
   font-size: 30px;
-  font-weight: lighter;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 
   &:hover{
     transform: scale(1.07);
