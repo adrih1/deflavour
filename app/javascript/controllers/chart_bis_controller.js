@@ -8,7 +8,6 @@ export default class extends Controller {
     let ctd = document.getElementById('myChartd').getContext('2d');
     let value = document.getElementById("datad").innerHTML;
     value = value.split("-")
-    value = [1,2,0,4,2,5,9,6,5,2]
     let bobo = document.getElementById("valued").innerHTML;
     let data = bobo.split("-")
     console.log(value)
@@ -120,9 +119,7 @@ export default class extends Controller {
     let ctg = document.getElementById('myChartg').getContext('2d');
     value = document.getElementById("datag").innerHTML;
     console.log(value)
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valueg").innerHTML;
     console.log(bobo)
     data = bobo.split("-")
@@ -177,9 +174,7 @@ export default class extends Controller {
     console.log('rhum')
     let ctr = document.getElementById('myChartr').getContext('2d');
     value = document.getElementById("datar").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valuer").innerHTML;
     data = bobo.split("-")
 
@@ -232,9 +227,7 @@ export default class extends Controller {
     console.log('tequila')
     let ctt = document.getElementById('myChartt').getContext('2d');
     value = document.getElementById("datat").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valuet").innerHTML;
     data = bobo.split("-")
 
@@ -288,9 +281,7 @@ export default class extends Controller {
     console.log('cognac')
     let ctc = document.getElementById('myChartc').getContext('2d');
     value = document.getElementById("datac").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valuec").innerHTML;
     data = bobo.split("-")
 
@@ -343,9 +334,7 @@ export default class extends Controller {
     console.log('calvados')
     let ctca = document.getElementById('myChartca').getContext('2d');
     value = document.getElementById("dataca").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valueca").innerHTML;
     data = bobo.split("-")
 
@@ -398,9 +387,7 @@ export default class extends Controller {
     console.log('mezcal')
     let ctm = document.getElementById('myChartm').getContext('2d');
     value = document.getElementById("datam").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valuem").innerHTML;
     data = bobo.split("-")
 
@@ -453,9 +440,7 @@ export default class extends Controller {
     console.log('vodka')
     let ctv = document.getElementById('myChartv').getContext('2d');
     value = document.getElementById("datav").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
     bobo = document.getElementById("valuev").innerHTML;
     data = bobo.split("-")
 
@@ -510,9 +495,7 @@ export default class extends Controller {
     console.log('armagnac')
     let cta = document.getElementById('myCharta').getContext('2d');
     value = document.getElementById("dataa").innerHTML;
-    value = value.split("-").map((number)=>{
-      parseInt(number)
-    })
+    value = value.split("-")
 
     bobo = document.getElementById("valuea").innerHTML;
     data = bobo.split("-")
