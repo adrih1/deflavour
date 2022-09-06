@@ -1,9 +1,20 @@
 
 <div class="banner">
-    <div class="forms-container">
-      <%= render "shared/login" %>
-      <%= render "shared/signup" %>
+  <div class="forms-container" data-controller='devise-modal'>
+    <div style="display:flex; justify-content:space-between; width:55%; margin:0px auto; padding:20px 0px">
+      <button class="btn-home opacity-50" style="width:60%" data-devise-modal-target='buttonlogin' data-action='click->devise-modal#login'>Log In</button>
+      <button class="btn-home" style="width:60%" data-devise-modal-target='buttonsignup' data-action='click->devise-modal#signup'>Sign Up</button>
     </div>
+    <div style="display:flex; justify-content:center; width:55%; margin:0px auto;">
+      <p data-devise-modal-target='textlogin' class="d-none" style="color:white; font-size:20px; text-align:center">Welcome Back !</p>
+      <p data-devise-modal-target='textsignup' style="color:white; width:90%; font-size:20px; text-align:center">Sign Up</p>
+    </div>
+
+    <div style="display:flex; justify-content:center;">
+      <div class="d-none" data-devise-modal-target='loginform'><%= render "shared/login" %></div>
+      <div data-devise-modal-target='signupform'><%= render "shared/signup" %></div>
+    </div>
+  </div>
 </div>
 <%= render "shared/navbar" %>
 
