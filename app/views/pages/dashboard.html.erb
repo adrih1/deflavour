@@ -1,44 +1,61 @@
 <%= render "shared/navbar" %>
 
-<div class="container mb-5">
+<div class="container mb-5" data-controller='reco-carousel'>
   <h1 class="text-center my-5" >Profil Aromatique </h1>
-<div class="d-flex justify-content-around flex-row-reverse">
-  <div class="d-flex flex-column" style="width: 40%;">
-    <div class= "mb-5">
-    <h2>Synthese</h2>
-    <p><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
+  <div class="d-flex justify-content-around flex-row-reverse" data-reco-carousel-target='profile'>
+    <div class="d-flex flex-column" style="width: 40%;">
+      <div class= "mb-5">
+        <h2>Synthese</h2>
+        <p><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
+      </div>
+      <div class= "" style= "position: relative;">
+        <h3>Description</h3>
+        <p><strong><%= @choice.dig(:family) %></strong></p>
+        <p>Vous êtes <strong><%= @choice.dig(:accroche) %></strong></p>
+        <p><%= @choice.dig(:description) %></p>
+        <p><%= @choice.dig(:stars) %></p>
+      </div>
+      <div class="d-flex">
+        <img class="avatar-large photo1" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_one] %>" />
+        <img class="avatar-large photo2" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_two] %>" />
+      </div>
     </div>
-    <div class= "" style= "position: relative;">
-    <h3>Description</h3>
-    <p><strong><%= @choice.dig(:family) %></strong></p>
-    <p>Vous êtes <strong><%= @choice.dig(:accroche) %></strong></p>
-    <p><%= @choice.dig(:description) %></p>
-    <p><%= @choice.dig(:stars) %></p>
-    <div class="d-flex">
-      <img class="avatar-large photo1" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_one] %>" />
-      <img class="avatar-large photo2" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_two] %>" />
-    </div>
+
+    <div style="width: 500px; height: 500px;">
+      <canvas  id="myChart"></canvas>
     </div>
   </div>
 
-  <div style="width: 500px; height: 500px;">
-    <canvas  id="myChart"></canvas>
 
+  <%# LOADING SCREEN %>
+  <div class="icon-cards d-none" data-reco-carousel-target='carousel'>
+    <div class="icon-cards__content">
+      <%# <div class="icon-cards__item"><img src="https://www.spiritueux.fr/wp-content/uploads/2019/09/rhum-109x300.jpg" alt=""></div> %>
+      <%# <div class="icon-cards__item"><img src="https://www.spiritueux.fr/wp-content/uploads/2019/07/whisky-109x300.jpg" alt=""></div> %>
+      <%# <div class="icon-cards__item"><img src="https://www.spiritueux.fr/wp-content/uploads/2019/07/vodka-1-109x300.jpg" alt=""></div> %>
+      <%# <div class="icon-cards__item"><img src="https://www.spiritueux.fr/wp-content/uploads/2019/09/Tequila-1-109x300.jpg" alt=""></div> %>
+      <%# <div class="icon-cards__item"><img src="https://www.spiritueux.fr/wp-content/uploads/2019/07/gin-109x300.jpg" alt=""></div> %>
+      <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_98f49cd39c544636b2a8727347ffe9cd~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/cognac.png" alt=""></div>
+      <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_06f18fcc6d4e4f1b949b45882f72d285~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/gin2.png" alt=""></div>
+      <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_f8eb6086105d474cac72421087821703~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/absinthe.png" alt=""></div>
+      <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_ca9079a3a1fd4ac7a0add6de9ee36229~mv2.png/v1/crop/x_28,y_0,w_227,h_283/fill/w_318,h_366,al_c,lg_1,q_85,enc_auto/rhum.png" alt=""></div>
+      <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_06f18fcc6d4e4f1b949b45882f72d285~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/gin2.png" alt=""></div>
+    </div>
   </div>
-</div>
-<div class="text-center mt-4">
-  <%=link_to "Recommendation", recommendations_path, class:"btn-default" %>
-</div>
+
+
+  <div class="text-center mt-4">
+    <%=link_to "Recommendation", '#', class:"btn-default", 'data-reco-carousel-target':'buttonreco', 'data-action':'click->reco-carousel#loading' %>
+    <%=link_to "Recommendation", recommendations_path, class:"btn-default d-none", 'data-reco-carousel-target':'redirect', 'data-action':'click->reco-carousel#loading' %>
+  </div>
 
 </div>
 
-    <div id="data" class="d-none">
-      <%= @data  %>
-    </div>
-    <div id="value" class="d-none">
-      <%= @value  %>
-    </div>
-
+<div id="data" class="d-none">
+  <%= @data  %>
+</div>
+<div id="value" class="d-none">
+  <%= @value  %>
 </div>
 
 
