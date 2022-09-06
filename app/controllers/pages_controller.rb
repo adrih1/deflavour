@@ -74,12 +74,9 @@ class PagesController < ApplicationController
       clef: "epice",
       family: "Épice",
       accroche: "Vous êtes un Aventurier",
-      description: "Les aventuriers aiment avoir les papilles en feu et voyager lors d’une
-      dégustation, n’hésitez pas à rajouter un piment dans votre rhum arrangé
-      pour l’apprécier encore plus.",
-      stars: "Les aventuriers célèbres : Jack Sparrow et Martial",
+      description: "Les spiritueux épicés sont des spiritueux auxquels ont été associées des épices telles que la cannelle, la muscade, du poivre, de la vanille... Ce mariage heureux a pour effet de produire des spiritueux très doux et incroyablement ronds en bouche, qui sont également très appréciés comme base de cocktails",
+      stars: "Un Aventurier célèbre : Jack Sparrow",
       photo_one: "https://www.effets-speciaux.info/img/photo/497-10.jpg",
-      photo_two: "https://avatars.githubusercontent.com/u/10807969?v=4"
 
     }
 
@@ -88,13 +85,10 @@ class PagesController < ApplicationController
     boise = {
       clef: "boise",
       family: "Boisé",
-      accroche: "Vous êtes un Bucheron",
-      description: "Vous aimez les balades en forêt et sentir le sapin tout en appréciant la
-      force et le charactère d’un spiritueux provenant de fûts en chêne. Plus
-      c’est vieux plus vous aimez.",
-      stars: "Les Bucherons célèbres : Tyron et Sunny",
+      accroche: "Vous êtes Bucheron",
+      description: "Ses saveurs de pin, de cire et de  lui donnent un côté très nature. Ces arômes acquis grâce à une maturation en fut de chêne permet d'obtenir un spiritueux de charactère et rond.",
+      stars: "Un Bucheron célèbre : Tyron Lannister",
       photo_one: "https://www.lbvselection.com/img/cms/Tyrion%20Wine.png",
-      photo_two: "https://avatars.githubusercontent.com/u/132?v=4"
 
     }
 
@@ -102,39 +96,31 @@ class PagesController < ApplicationController
     animal = {
       clef: "animal",
       family: "Animal",
-      accroche: "Vétérinaires",
-      description: "Vous aimez monter des chevaux et nettoyer le crottin des écuries avec
-      votre sac en cuir. Ne vous mentez pas à vous-mêmes, vous préférez tout
-      ce qui est bestial.",
-      stars: "Les Vétérinaires célèbres : Amy Winehouse et Thibaud",
+      accroche: "Vous êtes Vétérinaire",
+      description: "Les spiritueux au profil animal procure un spiritueux très rond rappelant le cuir ou les écuries, un charactère unique qui reste en bouch",
+      stars: "Une Vétérinaire célèbre : Amy Winehouse",
       photo_one: "https://www.dailymail.co.uk/tvshowbiz/article-9817505/Amy-Winehouses-haunting-words-unearthed-tape.html",
-      photo_two: "https://avatars.githubusercontent.com/u/30435844?v=4"
-
     }
 
     fruite = {
       clef: "fruite",
       family: "Fruité",
-      accroche: "Maraicher",
-      description: "Les vergers n’ont aucun secret pour vous, vous mangez des salades de
-      fruits matin, midi et soir. Attention cependant à ne pas finir en compote.",
-      stars: "Les Maraichers célèbres : Britney Spears et Nadia",
+      accroche: "Vous êtes Maraicher",
+      description: "Que vous soyez plutôt fruits secs, fruits rouges, fruits exotiques ou agrumes,
+      un spiritueux fruité pourra vous offrir toutes ces saveurs en une seule gorgée. Cela lui donne un côté rond très apprécié par les gourmands",
+      stars: "Une Maraichere célèbre : Britney Spears",
       photo_one: 'https://www.dhnet.be/resizer/QpXlM-j5wwUosOJBo9Fbv3Tl5S0=/0x0:2192x1460/768x512/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/O53EYCBHXBEVJI6KGDXNKTULEY.jpg',
-      photo_two: 'https://avatars.githubusercontent.com/u/54894352?v=4'
     }
 
 
     floral = {
       clef: "floral",
       family: "Floral",
-      accroche: "Fleuristes",
-      description: "Marguerite, Rose, Tulipe, Jasmin, Lavande, Lilas, Lisianthus... Ce ne sont
-      pas les prénoms les plus portés en 2022 mais bien les arômes que vous
-      appréciez dans votre spiritueux. Quel beau bouquet",
-      stars: "Les fleuristes célèbres : Gatsby et Laura",
+      accroche: "Vous êtes Fleuriste",
+      description: "Ces spiritueux seront très appréciés par celles et ceux qui recherchent de la légèreté.
+      À la dégustation vous retrouverez des saveurs prinanières, non sans rappeler la lavande, la menthe ou encore la violette",
+      stars: "Un fleuriste célèbre : Gatsby",
       photo_one: 'https://static.750g.com/images/1200-630/1415cc2bf4fe458c6cb743714ac5a54e/gatsby-1024x576.jpg',
-      photo_two: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1633938231/ycpb4rool2hxfgvybtrj.jpg'
-
     }
 
 
@@ -142,64 +128,49 @@ class PagesController < ApplicationController
     herbace = {
       clef: "herbace",
       family: "Herbacé",
-      accroche: "Dealer",
-      description: "Nul besoin de décrire ce qu’est un dealer, toutes les herbes qui agitent vos
-      papilles vous rendent heureux, voire stone. Attention à ne pas en abuser
-      car les herbes comme l’alcool est à consommer avec modération.",
-      stars: "Les Dealers célèbres : Hemingway et Jérémy",
+      accroche: "Vous êtes Herboriste",
+      description: "Ces spiritueux sont un voyage sur les plaines alpines. En bouche, son bouquet aromatique procure une fraicheur inélgalée. Les Gin sont généralement les spiritueux les plus herbacés ",
+      stars: "Un Herboriste célèbre : Hemingway",
       photo_one: 'https://www.eataly.com/wp/wp-content/uploads/2015/07/Hemingway_drink.jpg',
-      photo_two: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1656901924/jzqmofhsooeqp40uwocw.jpg'
     }
 
     cereale = {
       clef: "cereale",
       family: "Céréale",
-      accroche: "Agriculteur",
-      description: "Vous êtes proches de la nature et récoltez ce que vous semez
-      (essentiellement du blé, de l’orge et du malt). Vous ne dites pas non à des
-      galipettes dans du foin... Cela vous rappelle cette bouteille de spiritueux
-      aux arômes de biscuits et maïs qui vous met en extase",
-      stars: "Les Agriculteurs célèbres : Daniel Craig et  Paul",
+      accroche: "Vous êtes Agriculteur",
+      description: "Ses arômes de malt, d'orge et de blé apportent douceur à ces spiritueux avec une légère aspérité. Les matières premieres utilisées sont la raison de ces saveurs champêtres.",
+      stars: "Un Agriculteur célèbre : Daniel Craig et  Paul",
       photo_one: 'https://img.20mn.fr/pz_bMYKpSmq2NwrMv8lLCQ/768x492_capture-ecran-film-casino-royale-o-james-bond-incarne-daniel-craig-trinque-vodka-martini',
-      photo_two: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1583704409/r5cbmwhshuvafp3v7jmm.jpg'
+
     }
 
     empyreumatique = {
       clef: "empyreumatique",
       family: "Empyreumatique",
-      accroche: "Incompréhensible",
-      description: "Personnes ne sait ce que ça veut dire, tout ce qu’on sait c’est que vous
-      êtes gourmands : chocolat, café, toast. Un verre de votre spiritueux
-      préféré peut se prendre au petit déjeuner.",
-      stars: "Les Incompréhensibles célèbres : Don Draper et Cécile",
+      accroche: "Vous êtes Enigmatique ",
+      description: "Sous ce mot savant se cachent des notes gourmandes, de chocolat, de café et de pain toasté. Ces spiritueux procurent un doux plaisir.",
+      stars: "Un Enigmatique célèbre : Don Draper",
       photo_one: 'https://pinkcorn.fr/wp-content/uploads/2021/11/Sans-titre-3.jpg',
-      photo_two: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1538141857/pqtix54ml90iabvewwsv.jpg'
     }
 
     tourbe = {
       clef: "tourbe",
       family: "Tourbé",
-      accroche: "Fumiste",
-      description: "Aucun rapport avec les arômes de coriandre mais soit on adore soit on
-      déteste la Tourbe ! Vous êtes un fumiste, une personnes aux gouts
-      hasardeux, qui mangeait de la terre étant jeune, qui met sa tête contre la
-      mousse d’arbre et qui se fait des masques d’algues lors de vos vacances à
-      La Baule.",
-      stars: "Les Fumistes célèbres : Barney et Diane",
-      photo_one:'https://www.simpsonspark.com/images/persos/contributions/barney-gumble-25364.jpg',
-      photo_two:'https://avatars.githubusercontent.com/u/43373459?v=4 '
+      accroche: "Vous êtes Connaisseur",
+      description: "On parle aussi de whisky fumé, dont les saveurs peuvent être associées à l’iode, à l’air marin, à de la mousse ou à des racines. On peut aussi l’associer à de l’encens, ce qui peut lui donner un petit côté médicinal",
+      stars: "Un Connaisseur célèbre : Winston Churchill",
+      photo_one:'https://www.generations-plus.ch/sites/default/files/styles/image_principal_article/public/article/field/image/winston.jpg?itok=xrh-Mhwp',
+
     }
 
 
     vineux = {
       clef: "vineux",
       family: "Vineux",
-      accroche: "Fumiste",
-      description: "Dis-moi ce que tu bois, je te dirai qui tu es, » vous buvez du
-      vinaigre, vous êtes donc acide. Mais personne ne vous juge, surtout pas nous.",
-      stars: "Les acides célèbres : Romain et Roger",
-      photo_one: "https://phraseculte.files.wordpress.com/2017/05/f9395552e3c2c9175e614e9263eb8110.jpg?w=768",
-      photo_two: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1544604383/pnqv3gmdpbtqrstpqgls.jpg",
+      accroche: "Vous êtes Surprenant",
+      description: "Les spiritueux vineux sont souvet mal associé au vinaigre, cette acidité que vous aimé provient des barrique contenant du Xérès ou du Porto, dans lequel a été maturé vos spiritueux préférés",
+      stars: "Les acides célèbres : Serge Gainsbourg",
+      photo_one: "https://img-3.journaldesfemmes.fr/gY6uYRUbjqNf3z7Os-ItWJeC5l8=/1500x/smart/4fe5699682ec4b40acda85cef5bff9a3/ccmcms-jdf/27506355.jpg",
     }
 
     @families = [epice, boise, animal, fruite, floral, herbace, cereale, empyreumatique, tourbe, vineux]
