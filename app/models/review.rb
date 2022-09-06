@@ -4,5 +4,4 @@ class Review < ApplicationRecord
   has_one :review
   AUTHORIZED_RATINGS = (1..10)
   validates :rating, inclusion: { in: AUTHORIZED_RATINGS }
-  validates :content, presence: true, length: { minimum: 5 }
 end

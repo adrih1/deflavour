@@ -23,6 +23,7 @@ class PagesController < ApplicationController
     # Recupérer les champs que le USER a rempli sur le form precedent
     @user.experiences.each do |el|
       @base.map do |key, value|
+        Review.create(rating: 5, user: @user, spirit: el.spirit)
         @base[key] += ((el.spirit[:"#{key}"]).fdiv(@user.experiences.size))
       end
     end

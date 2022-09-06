@@ -32,7 +32,7 @@ data = {
   "animale" => { description: "coucou",
     aromas:	["Cuir",	"Musc","Animale", "Foururre", "Ecurie"]},
   "fruite" =>	{ description: "coucou",
-    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade","Fruit","Baies"]},
+    aromas: ["Citron vert",	"Citron",	"Pamplemousse",	"Mandarine",	"Ecorce d'orange",	"Peau d'orange",	"Bergamotte",	"Goyave",	"Melon",	"Mangue",	"Banane",	"Ananas",	"Fruit de la passion",	"Kiwi",	"Poire ",	"Pomme verte",	"Pomme",	"Cerise",	"Peche",	"Prune",	"abricot",	"Framboise",	"Cassis",	"Müre",	"Fruis noirs",	"Fraises",	"Myrtille",	"Groseille",	"Canneberge",	"Pruneau",	"Figue sèche",	"abricot sec",	"Compote",	"Confiture",	"Marmelade", "Fruité","Fruit","Baies"]},
   "floral" =>	{ description: "coucou",
     aromas: ["Fleur d'oranger",	"Rose",	"Bruyère",	"Géranium",	"Lavande ",	"Violette",	"Marguerite",	"pétunia",	"fleur de vigne",	"Iris",	"Lilas",	"œillet",	"Jasmin",	"Fleur d'oranger",	"Chevrefeuille",	"Mentholé",	"Menthe",	"Cire d'abeille", "Floral", "Miel","Erable",]},
   "herbace"	=> { description: "coucou",
@@ -42,7 +42,7 @@ data = {
   "empyreumatique" =>	{ description: "coucou",
     aromas: ["Toast",	"Chocolat",	"Café",	"Pain grillé",	"Caramel",	"Cacao",	"Pain", "Empyreumatique", "Cacahuette",	"Vanille",	"Miel",	"Caramel","Sucré"]},
   "tourbe" =>	{ description: "coucou",
-    aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène", "Tourbé"]},
+    aromas: ["Terre",	"Mouse d'arbre",	"Fumé",	"Médicinal",	"Vieux bandage",	"Bacon",	"caoutchouc",	"goudron",	"silex",	"algues",	"iode",	"fruits de mer",	"Kérosène",	"Fumé", "Tourbé"]},
 }
 
 puts "Creating Families and Aromas"
@@ -203,13 +203,12 @@ while i <= 20
     test.each do |key, value|
       spirit[:"#{key}"] = (spirit[:"#{key}"].fdiv(max) * 5) unless max.zero?
     end
-    sleep 1
+    sleep 8
 #supprimer les différentes conte,ances pour un meme alcool et supprimer là où on a pas de données
     spirit.save!
 
 
-    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil? || spirit.degrees == 0
-
+    if spirit.name.include?("1L") || spirit.name.include?("1.5L") || spirit.name.include?("50cl") || spirit.name.include?("1.75L") || spirit.description.nil? || spirit.country.nil? || spirit.name.include?("3L") || spirit.image_url.nil? || spirit.image_url == ""
       spirit.destroy!
     elsif test.reject { |k, v| v == spirit[:"#{k}"] }.empty?
       spirit.destroy!

@@ -539,17 +539,18 @@
         <div>
           <h2>Mes bouteilles</h2>
           <div class="spirit-card-grid">
-            <% (current_user.spirits + current_user.reviewed_spirits).each do |spirit| %>
+            <% (current_user.spirits + current_user.reviewed_spirits).uniq.each do |spirit| %>
+              <% if Review.find_by(spirit: spirit, user: current_user) %>
               <div class="spirit-card">
                 <img src="<%=spirit.image_url%>">
                 <div class="spirit-card-content">
                   <div class="spirit-card-header">
                     <%= spirit.name %>
-                    <%= spirit.producer %>
                     <%= Review.find_by(spirit: spirit, user: current_user).rating %>
                   </div>
                 </div>
               </div>
+              <% end %>
             <%end %>
           </div>
         </div>
