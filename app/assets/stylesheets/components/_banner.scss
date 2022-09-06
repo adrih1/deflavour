@@ -6,7 +6,7 @@
   }
 
   margin: 0;
-  background: url('https://images.unsplash.com/photo-1534655882117-f9eff36a1574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3135&q=80') no-repeat center center fixed;
+  background: url('https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/06/17142112/Untitled-design-46-1600x900.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -15,14 +15,20 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
 }
 
 .banner h1{
+  opacity: 0.9;
   color: white;
-  font-weight: lighter;
-  font-size: 20px;
-  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 32px;
   text-align: center;
+  font-family: arial;
+  width: 500px;
+  margin: 20px auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0, 80%);
 }
 
 
@@ -36,7 +42,7 @@
 
 .banner-subcontainer{
   margin: 20px auto;
-  height: 350px;
+  height: 250px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -46,7 +52,7 @@
 
 .banner-subcontainer-full{
   margin: 20px auto;
-  height: 90vh;
+  height: 70vh;
   transition: 2s ease;
   display: flex;
   flex-direction: column;
