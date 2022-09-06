@@ -37,5 +37,8 @@ application.register("search-toggle", SearchToggleController)
 import SliderController from "./slider_controller"
 application.register("slider", SliderController)
 
+import TabsController from "./tabs_controller"
+application.register("tabs", TabsController)
+
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
