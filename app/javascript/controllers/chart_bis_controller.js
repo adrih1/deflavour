@@ -106,6 +106,7 @@ export default class extends Controller {
       },
       scales: {
         r: {
+
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
