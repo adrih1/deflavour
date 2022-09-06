@@ -36,3 +36,9 @@ application.register("slider", SliderController)
 
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+import { Application } from '@hotwired/stimulus'
+import Notification from 'stimulus-notification'
+
+const application = Application.start()
+application.register('notification', Notification)

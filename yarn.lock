@@ -465,6 +465,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hotkeys-js@>=3:
+  version "3.9.5"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.9.5.tgz#8314d0522bf2601e36003213047e9dc7d56d19fe"
+  integrity sha512-T0G8CUZ6Q1IOgPnLK1hDXR8DqgKF/VWEsHvZgi6CM7Ub9oOAzvWuJ3Qhc/9nFQaR26MfFOZSwULHrtCnsUX7zA==
+
 import-local@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-3.1.0.tgz#b4479df8a5fd44f6cdce24070675676063c95cb4"
@@ -710,6 +715,20 @@ stimulus-chartjs@^4.0.0:
   integrity sha512-eBPjdh+iyzUyBjDHns4dTUNlT5gvHXrL0b3/DX4RMWnzd2BfS5WHVOYY8sxbsabPXY5WgrzWOwJL0TTbN/6YFQ==
   dependencies:
     chart.js "^3.7.0"
+
+stimulus-notification@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/stimulus-notification/-/stimulus-notification-2.1.0.tgz#a6268bb52041a2d72e8cf55e98cb70e97c0f93f9"
+  integrity sha512-t7JjU8EJp7Qi2jM8xhJ7u2QXYXbw3UMxmPknlapWXikFObKcNLWsPMZoKBx8/vWQaHh4CacWmYXpqALtkWzneg==
+  dependencies:
+    stimulus-use "^0.50.0-2"
+
+stimulus-use@^0.50.0-2:
+  version "0.50.0"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.50.0.tgz#0bae92fbb1fd961cbb23569f9edd12ae642ce4a6"
+  integrity sha512-9NScZQiOycQdzh8VZ15pxk6ep/a22fgha2halOvZFpJITC4nsTbWlO7D1hm+9LspFxa5b28tQhm3XkbH/qAlGw==
+  dependencies:
+    hotkeys-js ">=3"
 
 supports-color@^8.0.0:
   version "8.1.1"

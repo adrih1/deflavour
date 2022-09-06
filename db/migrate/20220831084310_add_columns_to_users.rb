@@ -1,16 +1,16 @@
 class AddColumnsToUsers < ActiveRecord::Migration[7.0]
   def change
-    add_column :users, :vineux, :integer, default: 0
-    add_column :users, :epicee, :integer, default: 0
-    add_column :users, :boise, :integer, default: 0
-    add_column :users, :animale, :integer, default: 0
-    add_column :users, :noix, :integer, default: 0
-    add_column :users, :sucre, :integer, default: 0
-    add_column :users, :fruite, :integer, default: 0
-    add_column :users, :floral, :integer, default: 0
-    add_column :users, :herbace, :integer, default: 0
-    add_column :users, :cereale, :integer, default: 0
-    add_column :users, :empyreumatique, :integer, default: 0
-    add_column :users, :tourbe, :integer, default: 0
+    add_column :users, :vineux, :float, default: 0
+    add_column :users, :epicee, :float, default: 0
+    add_column :users, :boise, :float, default: 0
+    add_column :users, :animale, :float, default: 0
+    add_column :users, :noix, :float, default: 0
+    add_column :users, :sucre, :float, default: 0
+    add_column :users, :fruite, :float, default: 0
+    add_column :users, :floral, :float, default: 0
+    add_column :users, :herbace, :float, default: 0
+    add_column :users, :cereale, :float, default: 0
+    add_column :users, :empyreumatique, :float, default: 0
+    add_column :users, :tourbe, :float, default: 0
   end
 end
