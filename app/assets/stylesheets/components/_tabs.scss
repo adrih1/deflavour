@@ -20,3 +20,8 @@
   width: 300px;
   --bs-nav-tabs-link-active-border-color: #dee2e6;
 }
+
+.hidden-tab {
+  height: 0px;
+  overflow: hidden;
+}

@@ -9,6 +9,7 @@ export default class extends Controller {
     value = value.split("-")
     bobo = document.getElementById("value").innerHTML;
     data = bobo.split("-")
+    console.log(value)
 
     var myChart = new Chart(ctx, {
     type: 'radar',
