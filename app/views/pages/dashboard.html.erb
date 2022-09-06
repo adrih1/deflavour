@@ -15,8 +15,8 @@
     <p><%= @choice.dig(:description) %></p>
     <p><%= @choice.dig(:stars) %></p>
     <div class="d-flex">
-      <img class="avatar-large photo1" alt="avatar-large" src="<%= @choice[:photo_one] %>" />
-      <img class="avatar-large photo2" alt="avatar-large" src="<%= @choice[:photo_two] %>" />
+      <img class="avatar-large photo1" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_one] %>" />
+      <img class="avatar-large photo2" alt="avatar-large" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" src="<%= @choice[:photo_two] %>" />
     </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
 
   </div>
 </div>
-<div class="text-center">
+<div class="text-center mt-4">
   <%=link_to "Recommendation", recommendations_path, class:"btn-default" %>
 </div>
 
