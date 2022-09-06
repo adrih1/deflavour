@@ -16,3 +16,4 @@ export default class extends Controller {
     this.bannerTarget.classList.remove("experience-form-container")
   }
 }
+
