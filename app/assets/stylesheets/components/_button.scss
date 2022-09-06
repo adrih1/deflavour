@@ -87,15 +87,17 @@
 .btn-home{
   text-align: center;
   padding: 6px 14px;
-  background-color: #F0C086;
-  color: black;
+  background-color: black;
+  color: white;
   border-radius: 3px;
-  border: none;
+  border: 1px solid white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 
   &:hover{
-    background-color: #edac5d;
-    color: rgb(0, 0, 0);
+    transition: 0.5s ease;
+    border: 1px solid #edac5d;
+    color: #edac5d;
+
   }
 }
 
@@ -103,15 +105,15 @@
 .experience-button{
   padding: 5px 15px ;
   margin: 10px 0px;
-  border: none;
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: #F0C086;
+  background-color: black;
   color: white;
 
   &:hover{
-    color: white;
-    background-color: #ca5f53;
-    transition: 0.4s ease;
+    color: #edac5d;
+    border: 1px solid #edac5d;
+    transition: 0.3s ease;
   }
 }
 
@@ -122,12 +124,11 @@
   margin: 10px 0px;
   border: none;
   border-radius: 3px;
-  background-color: #F0C086;
+  background-color: #fbab4b;
   color: white;
 
   &:hover{
-    color: white;
-    background-color: #3b426e ;
+    color: black ;
     transition: 0.4s ease;
   }
 }
