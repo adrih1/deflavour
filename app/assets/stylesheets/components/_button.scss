@@ -182,3 +182,21 @@
     cursor: pointer;
   }
 }
+
+
+.btn-dash {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid;
+  position: absolute;
+  top: -100px;
+
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+}
