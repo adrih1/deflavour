@@ -1,7 +1,7 @@
 
-<h1>Mon Bar</h1>
+<h1 class="mon-bar-main-title">Mon Bar</h1>
 <div>
-  <h2>En attente de note</h2>
+  <h2 class="mon-bar-title">En attente de note</h2>
   <div class="spirit-card-grid">
     <% current_user.recommendations.each do |recomendation| %>
       <% unless current_user.reviewed_spirits.include?(recomendation.spirit)%>
@@ -27,7 +27,7 @@
   </div>
 </div>
 <div>
-  <h2>Mes bouteilles</h2>
+  <h2 class="mon-bar-title"><i class="fa-solid fa-wine-bottle"></i>  Mes bouteilles</h2>
   <div class="spirit-card-grid">
     <% (current_user.spirits + current_user.reviewed_spirits).uniq.each do |spirit| %>
       <% if Review.find_by(spirit: spirit, user: current_user) %>

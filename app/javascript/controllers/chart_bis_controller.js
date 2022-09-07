@@ -17,7 +17,7 @@ export default class extends Controller {
     let myChartd = new Chart(ctd, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'My alcoholic profile',
@@ -72,7 +72,7 @@ export default class extends Controller {
     let myChartw = new Chart(ctw, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Whisky',
@@ -106,7 +106,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
-
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -128,7 +133,7 @@ export default class extends Controller {
     let myChartg = new Chart(ctg, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Gin',
@@ -163,6 +168,12 @@ export default class extends Controller {
       scales: {
 
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -182,7 +193,7 @@ export default class extends Controller {
     let myChartr = new Chart(ctr, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Rhum',
@@ -216,6 +227,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -235,7 +252,7 @@ export default class extends Controller {
     let myChartt = new Chart(ctt, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Tequila',
@@ -269,6 +286,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -289,7 +312,7 @@ export default class extends Controller {
     let myChartc = new Chart(ctc, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Cognac',
@@ -323,6 +346,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -342,7 +371,7 @@ export default class extends Controller {
     let myChartca = new Chart(ctca, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Calvados',
@@ -376,6 +405,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -395,7 +430,7 @@ export default class extends Controller {
     let myChartm = new Chart(ctm, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Mezcal',
@@ -429,6 +464,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -448,7 +489,7 @@ export default class extends Controller {
     let myChartv = new Chart(ctv, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Vodka',
@@ -482,6 +523,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -504,7 +551,7 @@ export default class extends Controller {
     let myCharta = new Chart(cta, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Armagnac',
@@ -537,6 +584,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)

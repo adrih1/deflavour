@@ -1,6 +1,8 @@
 .navbar-deflavour {
   background: rgb(255, 255, 255); //#1C1F33;
   padding: 9px 5px;
+  border-bottom: 0.5px solid;
+  border-color: grey;
 }
 
 .navbar-content{
@@ -22,6 +24,7 @@
   &:hover{
     color: #ECAC5D;
     transition: 0.5s ease;
+    cursor: pointer;
   }
 
   &:active {

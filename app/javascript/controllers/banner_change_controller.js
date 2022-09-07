@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['button', 'banner', 'subcontainer', 'addspirit', 'field']
 
   connect() {
-    console.log('Hello')
+
   }
 
 
@@ -16,4 +16,3 @@ export default class extends Controller {
     this.bannerTarget.classList.remove("experience-form-container")
   }
 }
-
