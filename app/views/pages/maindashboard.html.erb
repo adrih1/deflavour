@@ -5,18 +5,18 @@
 <div data-controller="chart-bis">
 
   <div class="d-flex flex-row" data-controller="tabs">
-    <ul class="">
-      <li >
-        <button data-action="click->tabs#aromatique" >Profil Aromatique</button>
+    <ul class="list p-4">
+      <li class="nav-link" >
+        <p data-action="click->tabs#aromatique" >Profil Aromatique</p>
       </li>
-      <li>
-        <button data-action="click->tabs#alcool" >Profil par Alcool</button>
+      <li class="nav-link">
+        <p data-action="click->tabs#alcool" >Profil par Alcool</p>
       </li>
-      <li >
-        <button data-action="click->tabs#bar" >Mon bar</button>
+      <li class="nav-link" >
+        <p data-action="click->tabs#bar" >Mon bar</p>
       </li>
     </ul>
-    <div >
+    <div style = "width:100%;">
       <div data-tabs-target="aromatique" >
         <%= render "/shared/profil_aromatique" %>
       </div>
