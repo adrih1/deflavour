@@ -19,7 +19,7 @@ $easing: cubic-bezier(1,.015,.295,1.225);
 		height: 100%;
 		transform-style: preserve-3d;
 		transform: translateZ(-145px) rotateY(0);
-		animation: carousel 10s infinite cubic-bezier(1,.015,.295,1.225) forwards;
+		animation: carousel 15s infinite;
 	}
 
 	/* Individual cards */

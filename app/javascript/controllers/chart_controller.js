@@ -45,8 +45,11 @@ export default class extends Controller {
            r: {
             min: 0,
             ticks: {
-                display: false // Hides the labels in the middel (numbers)
-            }
+              display: false // Hides the labels in the middel (numbers)
+            },
+            grid: {
+              color: "lightgreen",
+            },
           }
         }
       },
