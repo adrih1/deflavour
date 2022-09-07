@@ -31,7 +31,7 @@
               <button type="button" data-action="nested-form#add"  class="experience-button">AJOUTER  <i class="fa-regular fa-plus"></i></button>
             </div>
             <%# Fake Button just to launch loader %>
-            <div style="width:100%; display:flex; justify-content:center;"><p class="launch-experience" data-action='click->loader#loading'>GÉNÉRÉR MON PROFIL AROMATIQUE</p></div>
+            <div style="width:100%; display:flex; justify-content:center;"><p class="launch-experience" data-action='click->loader#loading'>Générer mon profil aromatique</p></div>
             <%# Real button submit hidden but clicked after loading time with js controller %>
             <div style="width:100%; display:flex; justify-content:center;"><%= f.submit 'GÉNÉRÉR MON PROFIL AROMATIQUE', class:"d-none", 'data-loader-target':'submit' %></div>
           <% end %>
