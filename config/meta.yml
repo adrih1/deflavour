@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "DeFlavour"
+meta_title: "DeFlavour | Le spiritueux parfait en fonction de ses goûts, à offrir ou à déguster"
+meta_description: "Découvrez de nouveaux spiritueux adapatées à vos envies, et vos goûts"
+meta_image: "favicon-32x32.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

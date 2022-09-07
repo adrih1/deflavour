@@ -7,12 +7,15 @@ export default class extends Controller {
   connect() {
   }
 
-  loading(){
+  loading(event){
     this.carouselTarget.classList.remove('d-none')
     this.profileTarget.classList.add('d-none')
     this.buttonrecoTarget.classList.add('d-none')
-    setTimeout(() => {
+    event.preventDefault()
+    const timeout= setTimeout(() => {
+      clearTimeout(timeout)
       this.redirectTarget.click()
-    }, 3000);
+    }, 2500,);
+
   }
 }
