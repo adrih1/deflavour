@@ -125,11 +125,11 @@
   margin: 10px 0px;
   border: none;
   border-radius: 3px;
-  background-color: #fbab4b;
-  color: white;
+  background-color: #F0C086;
+  color: black;
 
   &:hover{
-    color: black ;
+    background-color: #edac5d;
     transition: 0.4s ease;
   }
 }

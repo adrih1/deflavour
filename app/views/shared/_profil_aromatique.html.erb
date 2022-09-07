@@ -1,16 +1,16 @@
 
-<div id="profil" class="d-flex flex-row">
+<div id="profil" class="d-flex flex-row" style="height: calc(100vh - 64px);">
   <div class="carre-gauche">
     <div class="d-flex justify-content-around">
       <div class="d-flex carre-text flex-column">
         <h1 class="mb-5" >Profil Aromatique - <span><em><%= @user.alcool_profile[:family] %></em></span> </h1>
-        <h2 class="mb-5">Synthese</h2>
-        <p><%="Famille : Vous aimez les spiritueux majoritairement #{@user.alcool_profile[:family]}."%></p>
+        <h2 class="mt-2">Synthese</h2>
+        <p class="mb-5"><%="Famille : Vous aimez les spiritueux majoritairement #{@user.alcool_profile[:family]}."%></p>
         <div class= "description" style= "position: relative;">
           <h3>Description</h3>
           <p>Vous êtes <strong><%= @user.alcool_profile[:accroche] %></strong></p>
           <p class="mb-4"> <%= @user.alcool_profile[:description] %></p>
-          <p class="mb-4"><%= @user.alcool_profile[:stars] %></p>
+          <p class="mb-2"><%= @user.alcool_profile[:stars] %></p>
           <div class="d-flex">
             <img class="avatar-big photo1" src="<%= @user.alcool_profile[:photo_one] %>" />
           </div>

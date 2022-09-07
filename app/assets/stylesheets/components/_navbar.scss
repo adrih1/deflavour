@@ -63,3 +63,21 @@
   margin: auto;
 
 }
+
+.nav-link-active{
+  color: black;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: rgb(255, 255, 255);
+  }
+}
