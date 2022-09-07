@@ -34,8 +34,8 @@
 .btn-modal-reviews{
   text-align: center;
   padding: 8px 15px;
-  background-color: #F0C086;
-  color: white;
+  background-color:#eddfd1;;
+  color: black;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: none;
@@ -43,12 +43,12 @@
 
   position: absolute;
   bottom: -3px;
-  right: 32px;
+  right: 63px;
 
 
   &:hover{
-    background-color: gold;
-    color: white;
+    background-color: #F0C086;
+    color: black;
     transition: 0.5s ease;
     cursor: pointer;
   }
@@ -92,7 +92,7 @@
   color: white;
   border-radius: 3px;
   border: 1px solid white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
 
   &:hover{
     transition: 0.5s ease;
