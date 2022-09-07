@@ -3,12 +3,14 @@
   padding: 10px 20px;
   background-color: #F0C086;
   color: white;
+  border: white;
   border-radius: 3px;
   border: none;
 
   &:hover{
-    background-color: #ca5f53;
-    color: white;
+    background-color: white;
+    color: #F0C086;
+    border: #F0C086;
     transition: 0.5s ease;
     cursor: pointer;
   }
@@ -17,16 +19,18 @@
 .btn-default-reviews{
   text-align: center;
   padding: 8px 15px;
-  background-color: #eddfd1;
-  color: black;
+  background-color: white;
+  color: #F0C086;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: none;
+  border: 1px solid #F0C086;
   font-size: 16px;
 
   &:hover{
     background-color: #F0C086;
+    color: white;
     transition: 0.5s ease;
+    border: 1px solid white;
     cursor: pointer;
   }
 }
@@ -66,8 +70,8 @@
   font-size: 16px;
 
   &:hover{
-    background-color: #ca5f53;
-    color: white;
+    background-color: white;
+    color: #F0C086;
     transition: 0.5s ease;
     cursor: pointer;
   }
@@ -78,7 +82,7 @@
 .btn-vivid{
   text-align: center;
   padding: 20px 10px;
-  background-color: gold;
+  background-color: #F0C086;
   color: white;
   border-radius: 3px;
 }
@@ -96,9 +100,8 @@
 
   &:hover{
     transition: 0.5s ease;
-    border: 1px solid #edac5d;
-    color: #edac5d;
-
+    border: 1px solid #F0C086;
+    color: #F0C086;
   }
 }
 
@@ -112,7 +115,7 @@
   color: white;
 
   &:hover{
-    color: #edac5d;
+    color: #F0C086;
     border: 1px solid #edac5d;
     transition: 0.3s ease;
   }
@@ -123,7 +126,6 @@
 .launch-experience{
   padding: 5px 15px ;
   margin: 10px 0px;
-  border: none;
   border-radius: 3px;
   background-color: #F0C086;
   color: black;
@@ -131,6 +133,7 @@
   &:hover{
     background-color: #edac5d;
     transition: 0.4s ease;
+    border: solid #F0C086
   }
 }
 
@@ -142,7 +145,7 @@
   border: none;
   border-radius: 3px;
   background-color: transparent;
-  color: red;
+  color: white;
 
   &:hover{
     transform: scale(1.1);
@@ -161,7 +164,7 @@
 
   &:hover{
     transition: 0.4s ease;
-    background-color: #3b426e;
+    background-color: white;
     color: white;
   }
 }
@@ -173,12 +176,12 @@
   background-color: #F0C086;
   color: white;
   border-radius: 3px;
-  border: none;
   width: 245px;
 
   &:hover{
-    background-color: #ca5f53;
-    color: white;
+    background-color: white;
+    color: #F0C086;
+    border: 1px solid #F0C086;
     transition: 0.5s ease;
     cursor: pointer;
   }
@@ -211,7 +214,27 @@
   border-radius: 3px;
   border: 1px solid;
   margin-top: 15px;
+  position: absolute;
+  bottom: -10px;
+  right:35px;
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+}
 
+.btn-profil-bis {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #EDDED1;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 1px;
+  right:35px;
   &:hover{
     color: #F0C086;
     transition: 0.5s ease;

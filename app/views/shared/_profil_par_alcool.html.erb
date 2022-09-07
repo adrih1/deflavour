@@ -1,5 +1,4 @@
-<div class="alcools-profile">
-  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:10px">Votre profil par alcool</h1>
+  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:20px 0px">Votre profil par alcool</h1>
 
 
     <div class="profile-cards">
@@ -7,7 +6,7 @@
         <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
             <h2>Whisky</h2>
-            <canvas  id="myChartw"></canvas>
+            <canvas  id="myChartw" style='width:500px; height:500px; margin-right:40px'></canvas>
             <div id="dataw" class="d-none">
               <%= @dataw  %>
             </div>
@@ -40,7 +39,7 @@
                                 <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                 <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                               </div>
-                              <button type="button" class="btn-default-maindashboard">
+                              <button type="button" class="btn-profil">
                               Ajouter au panier
                               </button>
                             </div>
@@ -60,7 +59,7 @@
         <div class="card-category" style="background-color: white">
           <div class='grid-element'>
             <h2>Gin</h2>
-            <canvas  id="myChartg"></canvas>
+            <canvas  id="myChartg" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datag" class="d-none">
               <%= @datag  %>
             </div>
@@ -73,7 +72,7 @@
               <% @aromas_gin.each do |aroma| %>
                 <%= aroma[0].name %>-
               <% end %>
-              <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalg">
+              <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalg">
                 Recommendations
               </button>
               <div class="modal fade" id="Modalg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,7 +90,7 @@
                                 <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                 <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                               </div>
-                              <button type="button" class="btn-default-maindashboard">
+                              <button type="button" class="btn-profil">
                                 Ajouter au panier
                               </button>
                             </div>
@@ -110,7 +109,7 @@
         <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
             <h2>Rhum</h2>
-            <canvas  id="myChartr"></canvas>
+            <canvas  id="myChartr" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datar" class="d-none">
               <%= @datar  %>
             </div>
@@ -142,7 +141,7 @@
                                     <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                     <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                   </div>
-                                  <button type="button" class="btn-default-maindashboard">
+                                  <button type="button" class="btn-profil">
                                     Ajouter au panier
                                   </button>
                                 </div>
@@ -161,7 +160,7 @@
         <div class="card-category" style="background-color: white">
           <div class='grid-element'>
             <h2>Tequila</h2>
-            <canvas  id="myChartt"></canvas>
+            <canvas  id="myChartt" style='width:00px; height:300px; margin-right:40px'></canvas>
             <div id="datat" class="d-none">
               <%= @datat  %>
             </div>
@@ -174,7 +173,7 @@
               <% @aromas_tequila.each do |aroma| %>
                 <%= aroma[0].name %>-
               <% end %>
-              <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalt">
+              <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalt">
                 Recommendations
               </button>
 
@@ -194,7 +193,7 @@
                                   <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                   <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                 </div>
-                                <button type="button" class="btn-default-maindashboard">
+                                <button type="button" class="btn-profil">
                                   Ajouter au panier
                                 </button>
                               </div>
@@ -214,7 +213,7 @@
           <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
             <h2>Cognac</h2>
-            <canvas  id="myChartc"></canvas>
+            <canvas  id="myChartc" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datac" class="d-none">
               <%= @datac  %>
             </div>
@@ -247,7 +246,7 @@
                                   <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                   <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                 </div>
-                                <button type="button" class="btn-profile">
+                                <button type="button" class="btn-profil">
                                   Ajouter au panier
                                 </button>
                               </div>
@@ -268,7 +267,7 @@
         <div class="card-category" style="background-color: white">
             <div class='grid-element'>
               <h4>Calvados</h4>
-              <canvas  id="myChartca"></canvas>
+              <canvas  id="myChartca" style='width:300px; height:300px; margin-right:40px'></canvas>
               <div id="dataca" class="d-none">
                 <%= @dataca  %>
               </div>
@@ -281,7 +280,7 @@
                 <% @aromas_calvados.each do |aroma| %>
                   <%= aroma[0].name %>-
                 <% end %>
-                <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalca">
+                <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalca">
                   Recommendations
                 </button>
 
@@ -321,7 +320,7 @@
             <div class="card-category" style="background-color: #EDDED1">
               <div class='grid-element'>
                 <h4>Mezcal</h4>
-                <canvas  id="myChartm"></canvas>
+                <canvas  id="myChartm" style='width:300px; height:300px; margin-right:40px'></canvas>
                 <div id="datam" class="d-none">
                   <%= @datam  %>
                 </div>
@@ -354,7 +353,7 @@
                                         <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                         <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                       </div>
-                                      <button type="button" class="btn-profile">
+                                      <button type="button" class="btn-profil">
                                       Ajouter au panier
                                       </button>
                                     </div>
@@ -374,7 +373,7 @@
         <div class="card-category" style="background-color: white">
           <div class='grid-element'>
             <h4>Vodka</h4>
-            <canvas id="myChartv"></canvas>
+            <canvas id="myChartv" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datav" class="d-none">
               <%= @datav  %>
             </div>
@@ -387,7 +386,7 @@
                 <% @aromas_vodka.each do |aroma| %>
                   <%= aroma[0].name %>-
                 <% end %>
-                <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalv">
+                <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalv">
                   Recommendations
                 </button>
 
@@ -428,7 +427,7 @@
         <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
             <h4>Armagnac</h4>
-            <canvas  id="myCharta"></canvas>
+            <canvas  id="myCharta" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="dataa" class="d-none">
               <%= @dataa  %>
             </div>
@@ -441,7 +440,7 @@
               <% @aromas_armagnac.each do |aroma| %>
                 <%= aroma[0].name %>
               <% end %>
-              <button type="button" class="btn-default-maindashboard" data-bs-toggle="modal" data-bs-target="#Modala">
+              <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modala">
                 Recommendations
               </button>
 
@@ -478,4 +477,3 @@
         </div>
       </div>
     </div>
-  </div>
