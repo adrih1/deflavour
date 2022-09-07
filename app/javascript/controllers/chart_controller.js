@@ -14,7 +14,7 @@ export default class extends Controller {
     let myChart = new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: data,
+      labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
         label: 'Your alcoholic profile',
