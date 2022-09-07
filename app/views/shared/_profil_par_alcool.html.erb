@@ -1,4 +1,4 @@
-  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:10px">Votre profil par alcool</h1>
+  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:20px 0px">Votre profil par alcool</h1>
 
 
     <div class="profile-cards">
@@ -39,7 +39,7 @@
                                 <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                 <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                               </div>
-                              <button type="button" class="btn-default-maindashboard">
+                              <button type="button" class="btn-profil">
                               Ajouter au panier
                               </button>
                             </div>
@@ -72,7 +72,7 @@
               <% @aromas_gin.each do |aroma| %>
                 <%= aroma[0].name %>-
               <% end %>
-              <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalg">
+              <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalg">
                 Recommendations
               </button>
               <div class="modal fade" id="Modalg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -90,7 +90,7 @@
                                 <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                 <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                               </div>
-                              <button type="button" class="btn-default-maindashboard">
+                              <button type="button" class="btn-profil">
                                 Ajouter au panier
                               </button>
                             </div>
@@ -141,7 +141,7 @@
                                     <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                     <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                   </div>
-                                  <button type="button" class="btn-default-maindashboard">
+                                  <button type="button" class="btn-profil">
                                     Ajouter au panier
                                   </button>
                                 </div>
@@ -173,7 +173,7 @@
               <% @aromas_tequila.each do |aroma| %>
                 <%= aroma[0].name %>-
               <% end %>
-              <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalt">
+              <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalt">
                 Recommendations
               </button>
 
@@ -193,7 +193,7 @@
                                   <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                   <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                 </div>
-                                <button type="button" class="btn-default-maindashboard">
+                                <button type="button" class="btn-profil">
                                   Ajouter au panier
                                 </button>
                               </div>
@@ -246,7 +246,7 @@
                                   <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                   <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                 </div>
-                                <button type="button" class="btn-profile">
+                                <button type="button" class="btn-profil">
                                   Ajouter au panier
                                 </button>
                               </div>
@@ -280,7 +280,7 @@
                 <% @aromas_calvados.each do |aroma| %>
                   <%= aroma[0].name %>-
                 <% end %>
-                <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalca">
+                <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalca">
                   Recommendations
                 </button>
 
@@ -353,7 +353,7 @@
                                         <p class="text-center"><%= Spirit.find("#{el}").producer %></p>
                                         <p class="text-center"><%= Spirit.find("#{el}").price %> €</p>
                                       </div>
-                                      <button type="button" class="btn-profile">
+                                      <button type="button" class="btn-profil">
                                       Ajouter au panier
                                       </button>
                                     </div>
@@ -386,7 +386,7 @@
                 <% @aromas_vodka.each do |aroma| %>
                   <%= aroma[0].name %>-
                 <% end %>
-                <button type="button" class="btn-profil" data-bs-toggle="modal" data-bs-target="#Modalv">
+                <button type="button" class="btn-profil-bis" data-bs-toggle="modal" data-bs-target="#Modalv">
                   Recommendations
                 </button>
 
