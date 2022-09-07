@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import { preventDefault } from "tom-select/dist/types/utils"
 
 // Connects to data-controller="reco-carousel"
 export default class extends Controller {
