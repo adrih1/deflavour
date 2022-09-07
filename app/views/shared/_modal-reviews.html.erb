@@ -21,7 +21,7 @@
           </div>
           <%= f.input :content, placeholder: 'Décrivez votre experience avec ce spiritueux', label: "Commentaire", label_html: { class: 'form-label-review ' }, input_html: { class: 'form-input-review' } %>
           <div class="review-cache">
-            <%= f.submit "Submit review", class: "btn btn-modal-reviews", data: { controller: 'alert', action: 'click->alert#hop'} %>
+            <%= f.submit "Noter", class: "btn btn-modal-reviews", data: { controller: 'alert', action: 'click->alert#hop'} %>
           </div>
         <% end %>
     </div>
