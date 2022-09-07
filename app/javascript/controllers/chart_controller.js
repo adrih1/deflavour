@@ -48,7 +48,10 @@ export default class extends Controller {
               display: false // Hides the labels in the middel (numbers)
             },
             grid: {
-              color: "lightgreen",
+              color: "rgb(81, 74, 74)",
+            },
+            pointLabels: {
+              color: "rgb(20, 20, 20)",
             },
           }
         }

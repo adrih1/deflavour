@@ -106,7 +106,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
-
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -163,6 +168,12 @@ export default class extends Controller {
       scales: {
 
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -216,6 +227,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -269,6 +286,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -323,6 +346,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -376,6 +405,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -429,6 +464,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -482,6 +523,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
@@ -537,6 +584,12 @@ export default class extends Controller {
       },
       scales: {
         r: {
+          grid: {
+            color: "rgb(81, 74, 74)",
+          },
+          pointLabels: {
+            color: "rgb(20, 20, 20)",
+          },
           min: 0,
             ticks: {
                 display: false // Hides the labels in the middel (numbers)
