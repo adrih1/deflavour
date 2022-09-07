@@ -6,8 +6,8 @@
       <div class=" carre-text d-flex flex-column">
         <h1 class="mb-5" >Profil Aromatique - <span><em><%= @choice.dig(:family) %></em></span> </h1>
         <div>
-          <h2 class="mb-5">Synthese</h2>
-          <p><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
+          <h2 class="mt-2">Synthese</h2>
+          <p class="mb-5"><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
         </div>
         <div class= "description" style= "position: relative;">
           <h3>Description</h3>
@@ -29,6 +29,10 @@
     </div>
   </div>
 
+    <div class="text-center btn-position">
+      <%=link_to "Recommandations", '#', class:"btn-dash", 'data-reco-carousel-target':'buttonreco', 'data-action':'click->reco-carousel#loading' %>
+      <%=link_to "Recommandations", recommendations_path, class:"btn-dash d-none", 'data-reco-carousel-target':'redirect'%>
+    </div>
 
   <%# LOADING SCREEN %>
   <div class="carousel-container d-none" style="height:100vh; display:flex; flex-direction: column; align-items: center; justify-content: center;" data-reco-carousel-target='carousel'>
@@ -46,10 +50,6 @@
   </div>
 
 
-  <div class="text-center btn-position mt-4">
-    <%=link_to "Recommandations", '#', class:"btn-dash", 'data-reco-carousel-target':'buttonreco', 'data-action':'click->reco-carousel#loading' %>
-    <%=link_to "Recommandations", recommendations_path, class:"btn-dash d-none", 'data-reco-carousel-target':'redirect'%>
-  </div>
 
 </div>
 

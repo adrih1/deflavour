@@ -127,13 +127,11 @@
   padding: 5px 15px ;
   margin: 10px 0px;
   border-radius: 3px;
-  background-color: white;
+  background-color: #F0C086;
   color: black;
-  border: solid black;
 
   &:hover{
-    color: #F0C086;
-    background-color: white;
+    background-color: #edac5d;
     transition: 0.4s ease;
     border: solid #F0C086
   }

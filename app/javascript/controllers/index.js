@@ -28,6 +28,9 @@ application.register("loader", LoaderController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import NavlinkController from "./navlink_controller"
+application.register("navlink", NavlinkController)
+
 import NestedFormController from "./nested_form_controller"
 application.register("nested-form", NestedFormController)
 

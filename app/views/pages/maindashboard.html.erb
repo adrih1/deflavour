@@ -1,16 +1,16 @@
 <%= render "shared/navbar" %>
 
 
-<div data-controller="chart-bis">
+<div data-controller="chart-bis navlink">
   <div class="d-flex flex-row" data-controller="tabs">
     <ul class="list p-4">
-      <li class="nav-link" >
+      <li class="nav-link-active" data-action="click->navlink#aromatique" data-navlink-target="aromatique" >
         <p data-action="click->tabs#aromatique" >Profil Aromatique</p>
       </li>
-      <li class="nav-link">
+      <li class="nav-link" data-action="click->navlink#alcool" data-navlink-target="alcool">
         <p data-action="click->tabs#alcool" >Profil par Alcool</p>
       </li>
-      <li class="nav-link" >
+      <li class="nav-link" data-action="click->navlink#bar" data-navlink-target="bar">
         <p data-action="click->tabs#bar" >Mon bar</p>
       </li>
     </ul>
