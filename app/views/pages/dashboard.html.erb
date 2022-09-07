@@ -36,6 +36,7 @@
         <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_f8eb6086105d474cac72421087821703~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/absinthe.png" alt=""></div>
         <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_ca9079a3a1fd4ac7a0add6de9ee36229~mv2.png/v1/crop/x_28,y_0,w_227,h_283/fill/w_318,h_366,al_c,lg_1,q_85,enc_auto/rhum.png" alt=""></div>
         <div class="icon-cards__item"><img src="https://static.wixstatic.com/media/356965_06f18fcc6d4e4f1b949b45882f72d285~mv2.png/v1/crop/x_27,y_0,w_229,h_283/fill/w_321,h_370,al_c,lg_1,q_85,enc_auto/gin2.png" alt=""></div>
+
       </div>
     </div>
     <div class="progress"></div>
@@ -43,7 +44,7 @@
 
   <div class="text-center mt-4">
     <%=link_to "Recommendations", '#', class:"btn-default", 'data-reco-carousel-target':'buttonreco', 'data-action':'click->reco-carousel#loading' %>
-    <%=link_to "Recommendations", recommendations_path, class:"btn-default d-none", 'data-reco-carousel-target':'redirect', 'data-action':'click->reco-carousel#loading' %>
+    <%=link_to "Recommendations", recommendations_path, class:"btn-default d-none", 'data-reco-carousel-target':'redirect'%>
   </div>
 
 </div>

@@ -498,11 +498,14 @@ class PagesController < ApplicationController
     def reco_modal(alcool_category)
       unless @user.experiences.empty?
         @forbidden = []
-        resueach = @result
-        @user.orders.each { |el| @forbidden << el.spirit.id } unless @user.orders.empty?
-        @user.experiences.each { |el| @forbidden << el.spirit.id } unless @user.experiences.empty?
-        @user.recommendations.each { |el| @forbidden << el.spirit.id } unless @user.recommendations.empty?
-        return resueach.reject{ |k, v| @forbidden.include?(k) }.select { |k, v| Spirit.find("#{k}").category == alcool_category }.sort_by { |_, v| v }.first(3).map(&:first).each do |k, v|
+        @resueach = @result
+        @user.orders.each { |el| @forbidden << el.spirit } unless @user.orders.empty?
+        @user.experiences.each { |el| @forbidden << el.spirit } unless @user.experiences.empty?
+        @user.recommendations.each { |el| @forbidden << el.spirit } unless @user.recommendations.empty?
+        @user.spirits.each { |el| @forbidden << el } unless @user.spirits.empty?
+        @user.reviews.each { |el| @forbidden << el.spirit } unless @user.reviews.empty?
+        @forbidden = @forbidden.uniq
+        return @resueach.reject{ |k, v| @forbidden.include?(Spirit.find("#{k}")) }.select { |k, v| Spirit.find("#{k}").category == alcool_category }.sort_by { |_, v| v }.first(3).map(&:first).each do |k, v|
         end
       end
     end
