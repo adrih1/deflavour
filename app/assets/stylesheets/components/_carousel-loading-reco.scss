@@ -54,3 +54,33 @@ $easing: cubic-bezier(1,.015,.295,1.225);
 	25%, 40% { transform: translateZ(0px) rotateY(360deg); }
 	25%, 40% { transform: translateZ(0px) rotateY(360deg); }
 }
+
+// LOADING BAR
+
+.loading-text{
+  font-size: 20px;
+  text-align: center;
+}
+
+.progress{
+  width: 50%;
+  margin: 0px auto;
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(white, .5);
+  overflow :hidden;
+
+  &:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: rgba(#edac5d,0.7);
+    animation: load 2s linear;
+  }
+}
+
+@keyframes load {
+  0% {width:0};
+  100% {width:100%};
+}

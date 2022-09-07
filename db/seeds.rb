@@ -209,7 +209,7 @@ while i <= 20
 
       spirit[:"#{key}"] = ((spirit[:"#{key}"].fdiv(max) * 5) + random) unless max.zero?
     end
-    sleep 15
+    sleep 20
 #supprimer les différentes conte,ances pour un meme alcool et supprimer là où on a pas de données
     spirit.save!
 
