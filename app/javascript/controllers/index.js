@@ -22,6 +22,9 @@ application.register("experience", ExperienceController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import LoaderController from "./loader_controller"
+application.register("loader", LoaderController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)
 
