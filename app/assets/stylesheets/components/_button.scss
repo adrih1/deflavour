@@ -19,18 +19,20 @@
 .btn-default-reviews{
   text-align: center;
   padding: 8px 15px;
-  background-color: white;
-  color: #F0C086;
+  background-color: #f5efea;
+  color: black;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: 1px solid #F0C086;
+  border: 1px solid #f5efea;
   font-size: 16px;
 
   &:hover{
     background-color: #F0C086;
-    color: white;
+    color: black;
     transition: 0.5s ease;
-    border: 1px solid white;
+    border: 1px solid #F0C086;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     cursor: pointer;
   }
 }
@@ -131,8 +133,8 @@
   color: black;
 
   &:hover{
+    cursor: pointer;
     background-color: #edac5d;
-    transition: 0.4s ease;
     border: solid #F0C086
   }
 }
@@ -140,16 +142,18 @@
 
 
 .experience-button-remove{
+  margin-left: 10px !important;
   padding: 5px 15px ;
-  margin-left: 5px;
-  border: none;
+  margin: 10px 0px;
+  border: 1px solid white;
   border-radius: 3px;
-  background-color: transparent;
+  background-color: black;
   color: white;
 
   &:hover{
-    transform: scale(1.1);
-    transition: 0.4s ease;
+    color: #F0C086;
+    border: 1px solid #edac5d;
+    transition: 0.3s ease;
   }
 }
 
