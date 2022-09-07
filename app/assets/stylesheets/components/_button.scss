@@ -19,18 +19,18 @@
 .btn-default-reviews{
   text-align: center;
   padding: 8px 15px;
-  background-color: #eddfd1;
-  color: black;
+  background-color: white;
+  color: #F0C086;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border: none;
+  border: 1px solid #F0C086;
   font-size: 16px;
 
   &:hover{
-    background-color: white;
-    color: black;
     background-color: #F0C086;
+    color: white;
     transition: 0.5s ease;
+    border: 1px solid white;
     cursor: pointer;
   }
 }
