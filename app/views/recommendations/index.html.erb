@@ -79,3 +79,42 @@
     </div>
   </div>
 </div>
+
+
+<% @count = 1 %>
+<div class="reco">
+<main class="spirit-card-grid-reco">
+  <% current_user.recommendations.each do |reco| %>
+
+    <div class="card card<%=@count%> spirit-card" >
+        <div class="content ">
+            <h2 class="title"><%= reco.spirit.name  %></h2>
+            <p class="copy"><%= reco.spirit.description.chars.first(170).join  %></p><button class="btn">View Trips</button>
+        </div>
+    </div>
+    <% @count += 1 %>
+  <% end %>
+</main>
+
+
+<style>
+  .card1:before {
+      background-image: url(<%= current_user.recommendations[0].spirit.image_url %>);
+    }
+
+  .card2:before {
+      background-image: url(<%= current_user.recommendations[1].spirit.image_url %>);
+    }
+
+  .card3:before {
+  background-image: url(<%= current_user.recommendations[2].spirit.image_url %>);
+  }
+  .card4:before {
+  background-image: url(<%= current_user.recommendations[3].spirit.image_url %>);
+  }
+  .card5:before {
+  background-image: url(<%= current_user.recommendations[4].spirit.image_url %>);
+  }
+
+
+</style>
