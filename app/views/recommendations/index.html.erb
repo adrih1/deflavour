@@ -7,34 +7,35 @@
 
   <div class="spirit-card-grid-reco" style="position: relative">
     <% current_user.recommendations.each do |reco| %>
-    <div class="spirit-card">
-      <img class="mt-2" src="<%=reco.spirit.image_url%>">
+    <div class="spirit-card"style="padding-top:20px; position: relative">
+
+      <div class="spirit-card-content-percentage">
+    <div class="single-chart" style="z-index: 3; position:absolute; top: 5px; left:5px">
+      <svg viewbox="0 0 36 36" class="circular-chart green">
+        <path class="circle-bg"
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />=
+        <path class="circle"
+        <%@environ = rand(-4..4)%>
+          stroke-dasharray="<%= @result = reco.percentages.round + @environ %>, 100"
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+        <text x="18" y="20.35" class="percentage"><%= @result %>%</text>
+      </svg>
+    </div>
+  </div>
+      <img class="mt-2" src="<%=reco.spirit.image_url%>" >
       <div class="spirit-card-infos">
         <div class="spirit-card-content-reco" >
           <div class="spirit-card-header-reco">
             <h4 class="text-center"><%= reco.spirit.name %></h4>
             <p class="text-center"><%= reco.spirit.producer %></p>
+            <button class="btn-category" style="margin-top: 10px"><%=reco.spirit.category%></button>
           </div>
-          <div class="spirit-card-content-percentage">
-            <div class="single-chart">
-              <svg viewbox="0 0 36 36" class="circular-chart green">
-                <path class="circle-bg"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                />=
-                <path class="circle"
-                <%@environ = rand(-4..4)%>
-                  stroke-dasharray="<%= @result = reco.percentages.round + @environ %>, 100"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text x="18" y="20.35" class="percentage"><%= @result %>%</text>
-              </svg>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -79,42 +80,3 @@
     </div>
   </div>
 </div>
-
-
-<% @count = 1 %>
-<div class="reco">
-<main class="spirit-card-grid-reco">
-  <% current_user.recommendations.each do |reco| %>
-
-    <div class="card card<%=@count%> spirit-card" >
-        <div class="content ">
-            <h2 class="title"><%= reco.spirit.name  %></h2>
-            <p class="copy"><%= reco.spirit.description.chars.first(170).join  %></p><button class="btn">View Trips</button>
-        </div>
-    </div>
-    <% @count += 1 %>
-  <% end %>
-</main>
-
-
-<style>
-  .card1:before {
-      background-image: url(<%= current_user.recommendations[0].spirit.image_url %>);
-    }
-
-  .card2:before {
-      background-image: url(<%= current_user.recommendations[1].spirit.image_url %>);
-    }
-
-  .card3:before {
-  background-image: url(<%= current_user.recommendations[2].spirit.image_url %>);
-  }
-  .card4:before {
-  background-image: url(<%= current_user.recommendations[3].spirit.image_url %>);
-  }
-  .card5:before {
-  background-image: url(<%= current_user.recommendations[4].spirit.image_url %>);
-  }
-
-
-</style>
