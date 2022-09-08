@@ -1,11 +1,19 @@
-  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:20px 0px">Votre profil par alcool</h1>
+  <style>
+    a,p,h1,h2,h3{
+  font-family: Helvetica, sans-serif;
+}
+  </style>
+
+
+
+  <h1 class="text-center" style="background-color: #EDDED1; width: 100%; margin:0px; padding:20px 0px; font-family: Helvetica, sans-serif">Votre profil par alcool</h1>
 
 
     <div class="profile-cards">
       <div class="cards">
         <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
-            <h2>Whisky</h2>
+            <h4 style="font-family: font-family: Helvetica, sans-serif;" >Whisky</h4>
             <canvas  id="myChartw" style='width:500px; height:500px; margin-right:40px'></canvas>
             <div id="dataw" class="d-none">
               <%= @dataw  %>
@@ -58,7 +66,7 @@
 
         <div class="card-category" style="background-color: white">
           <div class='grid-element'>
-            <h2>Gin</h2>
+            <h4>Gin</h4>
             <canvas  id="myChartg" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datag" class="d-none">
               <%= @datag  %>
@@ -108,7 +116,7 @@
 
         <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
-            <h2>Rhum</h2>
+            <h4>Rhum</h4>
             <canvas  id="myChartr" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datar" class="d-none">
               <%= @datar  %>
@@ -159,7 +167,7 @@
 
         <div class="card-category" style="background-color: white">
           <div class='grid-element'>
-            <h2>Tequila</h2>
+            <h4>Tequila</h4>
             <canvas  id="myChartt" style='width:00px; height:300px; margin-right:40px'></canvas>
             <div id="datat" class="d-none">
               <%= @datat  %>
@@ -212,7 +220,7 @@
         <div class="card-category" style="background-color: #EDDED1">
           <div class="card-category" style="background-color: #EDDED1">
           <div class='grid-element'>
-            <h2>Cognac</h2>
+            <h4>Cognac</h4>
             <canvas  id="myChartc" style='width:300px; height:300px; margin-right:40px'></canvas>
             <div id="datac" class="d-none">
               <%= @datac  %>
