@@ -109,12 +109,15 @@
 
 
 .experience-button{
-  padding: 5px 15px ;
-  margin: 10px 0px;
+  padding: 5px 8px;
+  margin: 9px 0px;
+  font-size: 14px;
   border: 1px solid white;
   border-radius: 3px;
   background-color: black;
   color: white;
+  letter-spacing: 2px;
+  font-weight: 300;
 
   &:hover{
     color: #F0C086;
@@ -126,16 +129,17 @@
 
 
 .launch-experience{
-  padding: 5px 15px ;
+  padding: 5px 15px;
   margin: 10px 0px;
   border-radius: 3px;
-  background-color: #F0C086;
-  color: black;
+  background-color: #edac5d;
+  color: white;
   border: 1px solid transparent;
+  font-weight: 500;
 
   &:hover{
     cursor: pointer;
-    background-color: #edac5d;
+    background-color: #F0C086;
     border: 1px solid #F0C086;
   }
 }
@@ -144,7 +148,6 @@
 
 .experience-button-remove{
   margin-left: 10px !important;
-  padding: 5px 15px ;
   margin: 10px 0px;
   border: 1px solid white;
   border-radius: 3px;
@@ -245,6 +248,26 @@
 }
 
 
+.btn-blanc-reco {
+  text-align: center;
+  width: 235px;
+  padding: 8px 20px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-top: 15px;
+  position: absolute;
+  bottom: -10px;
+  right:35px;
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+
+}
+
 
 .btn-category {
   text-align: center;
@@ -264,25 +287,6 @@
   text-align: center;
   margin: auto;
   padding: 10px;
-
-.btn-blanc-reco {
-  text-align: center;
-  width: 235px;
-  padding: 8px 20px;
-  background-color: #ffffff;
-  color: black;
-  border-radius: 3px;
-  border: 1px solid;
-  margin-top: 15px;
-  position: absolute;
-  bottom: -10px;
-  right:35px;
-  &:hover{
-    color: #F0C086;
-    transition: 0.5s ease;
-    cursor: pointer;
-  }
-
 }
 
 .btn-blanc-modal {
