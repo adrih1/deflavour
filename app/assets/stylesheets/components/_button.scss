@@ -284,3 +284,40 @@
   }
 
 }
+
+.btn-blanc-modal {
+  text-align: center;
+  width: 100px;
+  padding: 8px 20px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-top: 15px;
+  position: absolute;
+  bottom: -10px;
+  right:35px;
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+}
+
+.btn-modal{
+  width: 20%;
+  margin: 0px auto;
+  text-align: center;
+  padding: 6px 14px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
+  border: 1px solid rgb(0, 0, 0);
+
+
+  &:hover{
+    transition: 0.5s ease;
+    border: 1px solid #F0C086;
+    color: #F0C086;
+  }
+}

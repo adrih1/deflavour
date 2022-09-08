@@ -59,14 +59,14 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Mon panier</h5>
+      <div class="modal-header modal-background">
+        <h5 class="modal-title " id="exampleModalLabel">Mon panier</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="d-flex justify-content-between">
-          <p> <strong>Coffret Deflavour</strong></p>
-          <p><strong>25€</strong></p>
+          <p style="font-weight: 400"> Coffret Dégustation Deflavour</p>
+          <p style="font-weight: 400">25€</p>
         </div>
         <ul class="list-unstyled">
           <% current_user.recommendations.each do |reco| %>
@@ -77,7 +77,7 @@
       <div class="modal-footer ">
         <div class="d-flex justify-content-between">
           <p>Sous-total du panier: 25€<p>
-          <%= link_to "Payer", order_recommendation_orders_path(spirits: current_user.recommendations.pluck(:spirit_id)), class:"btn-home" %>
+          <%= link_to "Payer", order_recommendation_orders_path(spirits: current_user.recommendations.pluck(:spirit_id)), class:"btn-modal" %>
         </div>
       </div>
     </div>
