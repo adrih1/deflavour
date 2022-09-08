@@ -219,9 +219,6 @@
   border-radius: 3px;
   border: 1px solid;
   margin-top: 15px;
-  position: absolute;
-  bottom: -10px;
-  right:35px;
   &:hover{
     color: #F0C086;
     transition: 0.5s ease;
@@ -248,6 +245,7 @@
 }
 
 
+
 .btn-category {
   text-align: center;
   padding: 5px 10px;
@@ -266,4 +264,23 @@
   text-align: center;
   margin: auto;
   padding: 10px;
+
+.btn-blanc-reco {
+  text-align: center;
+  width: 235px;
+  padding: 8px 20px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-top: 15px;
+  position: absolute;
+  bottom: -10px;
+  right:35px;
+  &:hover{
+    color: #F0C086;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+
 }

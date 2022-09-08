@@ -1,0 +1,31 @@
+.reco-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin: 20px 0px;
+  position: absolute;
+  top: -44px;
+  background: white;
+  opacity: 1;
+  padding: 9px 61px;
+}
+
+.btn-reco-position {
+
+  position: absolute;
+  bottom: -24px;
+  padding: 22px 153px;
+  background: #ffffff;
+}
+
+.pourtour-reco {
+
+  border: 1px solid #eddfd1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 20px 32px 45px;
+}

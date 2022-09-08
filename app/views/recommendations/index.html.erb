@@ -1,8 +1,10 @@
 <%= render "shared/navbar" %>
 
-<div class="container">
+<div style="padding:65px;">
+  <div class="pourtour-reco d-flex flex-column">
 
-  <h3 class="text-center mt-4 mb-5" style="font-family: Helvetica">Voici vos recommendations</h3>
+    <h3 class="text-center mt-4 mb-5 reco-title " >Voici vos recommendations</h3>
+
 
 
   <div class="spirit-card-grid-reco" style="position: relative">
@@ -32,19 +34,20 @@
       <div class="spirit-card-infos">
         <div class="spirit-card-content-reco" >
           <div class="spirit-card-header-reco">
-            <h4 class="text-center"><%= reco.spirit.name %></h4>
+            <h4 class="text-center"><%= reco.spirit.name.truncate(27, separator: ' ') %></h4>
             <p class="text-center"><%= reco.spirit.producer %></p>
             <button class="btn-category" style="margin-top: 10px"><%=reco.spirit.category%></button>
+
           </div>
         </div>
       </div>
+      <%end %>
     </div>
-    <%end %>
-  </div>
     <p class= "text-center">Commandez vos 5 échantillons (12cl) correspondant à vos goûts pour 25€. <br> Les 25€ vous seront remboursés lors de votre prochain achat.</p>
-    <div class="d-flex justify-content-center my-5">
-    <p class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Commandez votre coffret</p>
+    <div class="d-flex justify-content-center align-items-center btn-reco-position ">
+      <p class="btn-blanc-reco" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Commandez votre coffret</p>
     </div>
+  </div>
 </div>
 
 
