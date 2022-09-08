@@ -3,5 +3,5 @@
 meta_product_name: "DeFlavour"
 meta_title: "DeFlavour | Le spiritueux parfait en fonction de ses goûts, à offrir ou à déguster"
 meta_description: "Découvrez de nouveaux spiritueux adapatées à vos envies, et vos goûts"
-meta_image: "favicon-32x32.png" # should exist in `app/assets/images/`
+meta_image: "https://www.neonmag.fr/imgre/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fneo.2F2021.2F05.2F19.2Fac96f8c4-ebea-4624-8039-7b17d1f62e57.2Ejpeg/1200x630/quality/80/la-france-lance-un-cocktail-inspire-du-spritz-litalie-sinsurge.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
