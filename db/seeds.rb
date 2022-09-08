@@ -56,7 +56,7 @@ end
 puts "Families and Aromas created"
 
 puts 'Scraping spirits'
-i = 11
+i = 13
 # permet de changer de page
 while i <= 16
 
