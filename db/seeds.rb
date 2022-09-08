@@ -8,17 +8,17 @@
 require "open-uri"
 require "nokogiri"
 
-puts "Cleaning DB"
-SpiritAroma.destroy_all
-Aroma.destroy_all
-Family.destroy_all
-AlcoolProfile.destroy_all
-Recommendation.destroy_all
-Experience.destroy_all
-Review.destroy_all
-Order.destroy_all
-Spirit.destroy_all
-puts "DB cleaned"
+# puts "Cleaning DB"
+# SpiritAroma.destroy_all
+# Aroma.destroy_all
+# Family.destroy_all
+# AlcoolProfile.destroy_all
+# Recommendation.destroy_all
+# Experience.destroy_all
+# Review.destroy_all
+# Order.destroy_all
+# Spirit.destroy_all
+# puts "DB cleaned"
 
 # Hash data regroupant toute les données. Clefs: Nom de la famille, Valueurs: un hash qui pour clefs: descriptions et aromes. Respectivement pour valeur string et array.
 
@@ -56,9 +56,9 @@ end
 puts "Families and Aromas created"
 
 puts 'Scraping spirits'
-i = 1
+i = 8
 # permet de changer de page
-while i <= 20
+while i <= 14
 
   # find image url
   def liquor_image(element)
