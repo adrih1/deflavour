@@ -73,6 +73,7 @@ class PagesController < ApplicationController
     epice = {
       clef: "epice",
       family: "Épice",
+      text1:"épicés",
       accroche: "un Aventurier",
       description: "Les spiritueux épicés sont des spiritueux auxquels ont été associées des épices telles que la cannelle, la muscade, du poivre, de la vanille... Ce mariage heureux a pour effet de produire des spiritueux très doux et incroyablement ronds en bouche, qui sont également très appréciés comme base de cocktails",
       stars: "Un Aventurier célèbre : Jack Sparrow",
@@ -85,8 +86,9 @@ class PagesController < ApplicationController
     boise = {
       clef: "boise",
       family: "Boisé",
+      text1: "boisés",
       accroche: "Bucheron",
-      description: "Ses saveurs de pin, de cire et de  lui donnent un côté très nature. Ces arômes acquis grâce à une maturation en fut de chêne permet d'obtenir un spiritueux de charactère et rond.",
+      description: "Ses saveurs de pin et de cire lui donnent un côté très nature. Ces arômes acquis grâce à une maturation en fut de chêne permettent d'obtenir un spiritueux de charactère et rond.",
       stars: "Un Bucheron célèbre : Tyron Lannister",
       photo_one: "https://www.lbvselection.com/img/cms/Tyrion%20Wine.png",
 
@@ -96,8 +98,9 @@ class PagesController < ApplicationController
     animal = {
       clef: "animal",
       family: "Animal",
+      text1:"céréales",
       accroche: "Vétérinaire",
-      description: "Les spiritueux au profil animal procure un spiritueux très rond rappelant le cuir ou les écuries, un charactère unique qui reste en bouch",
+      description: "Les spiritueux au profil animal procurent un spiritueux très rond rappelant le cuir ou les écuries, un charactère unique qui reste en bouche",
       stars: "Une Vétérinaire célèbre : Amy Winehouse",
       photo_one: "https://www.dailymail.co.uk/tvshowbiz/article-9817505/Amy-Winehouses-haunting-words-unearthed-tape.html",
     }
@@ -105,6 +108,7 @@ class PagesController < ApplicationController
     fruite = {
       clef: "fruite",
       family: "Fruité",
+      text1:"fruités",
       accroche: "Maraicher",
       description: "Que vous soyez plutôt fruits secs, fruits rouges, fruits exotiques ou agrumes,
       un spiritueux fruité pourra vous offrir toutes ces saveurs en une seule gorgée. Cela lui donne un côté rond très apprécié par les gourmands",
@@ -116,9 +120,10 @@ class PagesController < ApplicationController
     floral = {
       clef: "floral",
       family: "Floral",
+      text:"floraux",
       accroche: "Fleuriste",
       description: "Ces spiritueux seront très appréciés par celles et ceux qui recherchent de la légèreté.
-      À la dégustation vous retrouverez des saveurs prinanières, non sans rappeler la lavande, la menthe ou encore la violette",
+      À la dégustation vous retrouverez des saveurs printanières, non sans rappeler la lavande, la menthe ou encore la violette",
       stars: "Un fleuriste célèbre : Gatsby",
       photo_one: 'https://static.750g.com/images/1200-630/1415cc2bf4fe458c6cb743714ac5a54e/gatsby-1024x576.jpg',
     }
@@ -128,8 +133,9 @@ class PagesController < ApplicationController
     herbace = {
       clef: "herbace",
       family: "Herbacé",
+      text1:"herbacés",
       accroche: "Herboriste",
-      description: "Ces spiritueux sont un voyage sur les plaines alpines. En bouche, son bouquet aromatique procure une fraicheur inélgalée. Les Gin sont généralement les spiritueux les plus herbacés ",
+      description: "Ces spiritueux sont un voyage sur les plaines alpines. En bouche, son bouquet aromatique procure une fraicheur inégalée. Les Gin sont généralement les spiritueux les plus herbacés ",
       stars: "Un Herboriste célèbre : Hemingway",
       photo_one: 'https://www.eataly.com/wp/wp-content/uploads/2015/07/Hemingway_drink.jpg',
     }
@@ -137,9 +143,10 @@ class PagesController < ApplicationController
     cereale = {
       clef: "cereale",
       family: "Céréale",
+      text1:"céréales",
       accroche: "Agriculteur",
-      description: "Ses arômes de malt, d'orge et de blé apportent douceur à ces spiritueux avec une légère aspérité. Les matières premieres utilisées sont la raison de ces saveurs champêtres.",
-      stars: "Un Agriculteur célèbre : Daniel Craig et  Paul",
+      description: "Les arômes de malt, d'orge et de blé apportent douceur à ces spiritueux avec une légère aspérité. Les matières premières utilisées sont les raisons de ces saveurs champêtres.",
+      stars: "Un Agriculteur célèbre : Daniel Craig",
       photo_one: 'https://img.20mn.fr/pz_bMYKpSmq2NwrMv8lLCQ/768x492_capture-ecran-film-casino-royale-o-james-bond-incarne-daniel-craig-trinque-vodka-martini',
 
     }
@@ -147,6 +154,7 @@ class PagesController < ApplicationController
     empyreumatique = {
       clef: "empyreumatique",
       family: "Empyreumatique",
+      text1:"empyreumatiques",
       accroche: "Enigmatique ",
       description: "Sous ce mot savant se cachent des notes gourmandes, de chocolat, de café et de pain toasté. Ces spiritueux procurent un doux plaisir.",
       stars: "Un Enigmatique célèbre : Don Draper",
@@ -156,6 +164,7 @@ class PagesController < ApplicationController
     tourbe = {
       clef: "tourbe",
       family: "Tourbé",
+      text1:"tourbés",
       accroche: "Connaisseur",
       description: "On parle aussi de whisky fumé, dont les saveurs peuvent être associées à l’iode, à l’air marin, à de la mousse ou à des racines. On peut aussi l’associer à de l’encens, ce qui peut lui donner un petit côté médicinal",
       stars: "Un Connaisseur célèbre : Winston Churchill",
@@ -163,12 +172,12 @@ class PagesController < ApplicationController
 
     }
 
-
     vineux = {
       clef: "vineux",
       family: "Vineux",
+      text1:"vineux",
       accroche: "Surprenant",
-      description: "Les spiritueux vineux sont souvet mal associé au vinaigre, cette acidité que vous aimé provient des barrique contenant du Xérès ou du Porto, dans lequel a été maturé vos spiritueux préférés",
+      description: "Les spiritueux vineux sont souvet associés au vinaigre, cette acidité que vous aimé provient des barrique contenant du Xérès ou du Porto, dans lequel a été maturé vos spiritueux préférés",
       stars: "Les acides célèbres : Serge Gainsbourg",
       photo_one: "https://img-3.journaldesfemmes.fr/gY6uYRUbjqNf3z7Os-ItWJeC5l8=/1500x/smart/4fe5699682ec4b40acda85cef5bff9a3/ccmcms-jdf/27506355.jpg",
     }
