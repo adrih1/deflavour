@@ -46,5 +46,8 @@ application.register("slider", SliderController)
 import TabsController from "./tabs_controller"
 application.register("tabs", TabsController)
 
+import TestController from "./test_controller"
+application.register("test", TestController)
+
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
