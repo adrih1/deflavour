@@ -56,9 +56,9 @@ end
 puts "Families and Aromas created"
 
 puts 'Scraping spirits'
-i = 13
+i = 17
 # permet de changer de page
-while i <= 16
+while i <= 21
 
   # find image url
   def liquor_image(element)
