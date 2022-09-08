@@ -1,49 +1,51 @@
 <%= render "shared/navbar" %>
 
-<div class="container">
+<div style="padding:65px;">
+  <div class="pourtour-reco d-flex flex-column">
 
-  <h3 class="text-center mt-4 mb-5" style="font-family: Helvetica">Voici vos recommendations</h3>
+    <h3 class="text-center mt-4 mb-5 reco-title " >Voici vos recommendations</h3>
 
 
-  <div class="spirit-card-grid-reco" style="position: relative">
-    <% current_user.recommendations.each do |reco| %>
-    <div class="spirit-card">
-      <img class="mt-2" src="<%=reco.spirit.image_url%>">
-      <div class="spirit-card-infos">
-        <div class="spirit-card-content-reco" >
-          <div class="spirit-card-header-reco">
-            <h4 class="text-center"><%= reco.spirit.name %></h4>
-            <p class="text-center"><%= reco.spirit.producer %></p>
-          </div>
-          <div class="spirit-card-content-percentage">
-            <div class="single-chart">
-              <svg viewbox="0 0 36 36" class="circular-chart green">
-                <path class="circle-bg"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                />=
-                <path class="circle"
-                <%@environ = rand(-4..4)%>
-                  stroke-dasharray="<%= @result = reco.percentages.round + @environ %>, 100"
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text x="18" y="20.35" class="percentage"><%= @result %>%</text>
-              </svg>
+    <div class="spirit-card-grid-reco" style="position: relative">
+      <% current_user.recommendations.each do |reco| %>
+      <div class="spirit-card">
+        <img class="mt-2" src="<%=reco.spirit.image_url%>">
+        <div class="spirit-card-infos" style="height: 150px;">
+          <div class="spirit-card-content-reco" >
+            <div class="spirit-card-header-reco">
+              <h4 class="text-center"><%= reco.spirit.name.truncate(27, separator: ' ') %></h4>
+              <p class="text-center"><%= reco.spirit.producer %></p>
             </div>
-          </div>
+            <div class="spirit-card-content-percentage">
+              <div class="single-chart">
+                <svg viewbox="0 0 36 36" class="circular-chart green">
+                  <path class="circle-bg"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />=
+                  <path class="circle"
+                  <%@environ = rand(-4..4)%>
+                    stroke-dasharray="<%= @result = reco.percentages.round + @environ %>, 100"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <text x="18" y="20.35" class="percentage"><%= @result %>%</text>
+                </svg>
+              </div>
+            </div>
 
+          </div>
         </div>
       </div>
+      <%end %>
     </div>
-    <%end %>
-  </div>
     <p class= "text-center">Commandez vos 5 échantillons (12cl) correspondant à vos goûts pour 25€. <br> Les 25€ vous seront remboursés lors de votre prochain achat.</p>
-    <div class="d-flex justify-content-center my-5">
-    <p class="btn-default-reviews" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Commandez votre coffret</p>
+    <div class="d-flex justify-content-center align-items-center btn-reco-position ">
+      <p class="btn-blanc-reco" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Commandez votre coffret</p>
     </div>
+  </div>
 </div>
 
 
