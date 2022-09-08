@@ -7,7 +7,7 @@
         <h1 class="mb-5" >Profil Aromatique - <span><em><%= @choice.dig(:family) %></em></span> </h1>
         <div>
           <h2 class="mt-2">Synthese</h2>
-          <p class="mb-5"><%="Famille : Vous aimez les spiritueux majoritairement #{@familie_order[0]} avec des arômes #{@familie_order[1]}."%></p>
+          <p class="mb-5"><%="Famille : Vous aimez les spiritueux majoritairement #{@user.alcool_profile[:text1]} avec des arômes #{@families.select{|x| x[:clef] == @familie_order[1].to_s}.first[:text1] unless @families.select{|x| x[:clef] == @familie_order[1].to_s}.empty?}."%></p>
         </div>
         <div class= "description" style= "position: relative;">
           <h3>Description</h3>
