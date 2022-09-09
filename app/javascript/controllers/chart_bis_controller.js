@@ -20,7 +20,7 @@ export default class extends Controller {
       labels: ['Vineux', 'Epicé', 'Boisé', 'Animal', 'Fruité', 'Floral', 'Herbacé', 'Céréale', 'Empyreumatique', 'Tourbé'],
 
       datasets: [{
-        label: 'My alcoholic profile',
+        label: 'Mon profil',
         data: value,
         fill: true,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
