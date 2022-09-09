@@ -71,6 +71,15 @@
           <% current_user.recommendations.each do |reco| %>
           <li>1 x <%= reco.spirit.name %>; 12cl</li>
           <% end %>
+          <li>
+            <p></p>
+          </li>
+          <li>
+            <div>
+              <input type="checkbox" id="livraison" name="livraison">
+              <label for="livraison">Livraison express (uniquement valable au 16 villa Gaudelet)</label>
+            </div>
+          </li>
         </ul>
       </div>
       <div class="modal-footer ">
