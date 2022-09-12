@@ -11,7 +11,7 @@
         <h1 data-loader-target='title'>Découvrez les spiritueux conçus pour vous.</h1>
         <button class="text-decoration-none btn-home" data-banner-change-target='button' data-action='click->banner-change#newexperience'>Commencer</button>
         <%# FORMULAIRE CACHÉ %>
-        <div class="banner experience-form-container" data-banner-change-target='banner' data-loader-target='experiences' style="width:100%">
+        <div class="banner experience-form-container scroll-banner" data-banner-change-target='banner' data-loader-target='experiences' style="width:100%">
           <%= simple_form_for :experiences, url: experiences_path, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
             <h1>Quels spiritueux aimez-vous ?</h1>
             <template data-nested-form-target="template">

@@ -12,7 +12,9 @@ export default class extends Controller {
   newexperience(){
     this.subcontainerTarget.classList.remove("banner-subcontainer")
     this.subcontainerTarget.classList.add("banner-subcontainer-full")
+    this.subcontainerTarget.classList.add("scroll-banner")
     this.buttonTarget.classList.add("d-none")
     this.bannerTarget.classList.remove("experience-form-container")
+
   }
 }

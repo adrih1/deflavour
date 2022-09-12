@@ -18,6 +18,11 @@
 
 }
 
+.scroll-banner{
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
 .banner h1{
   opacity: 0.9;
   color: white;
