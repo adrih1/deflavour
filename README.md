@@ -93,9 +93,13 @@ DeFlavour est un site web proposant une expérience à ses utilisateurs. Ce dern
 ## Contact
 
 Adrien Hors - adrienhors1@gmail.com
+<br>
 Jules Defrancq
+<br>
 Antoine Serval
+<br>
 Paul Fournier
+<br>
 
 Project Link: [https://github.com/adrih1/deflavour](https://github.com/adrih1/deflavour)
 
