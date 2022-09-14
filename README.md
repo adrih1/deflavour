@@ -22,6 +22,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#contributors">Contributors</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -41,6 +42,12 @@ DeFlavour est un site web proposant une expérience à ses utilisateurs. Ce dern
 </div
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Contributors
+<a href="https://github.com/adrih1/deflavour/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=adrih1/deflavour" />
+</a>
+
 
 
 
