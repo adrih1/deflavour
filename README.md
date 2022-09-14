@@ -11,7 +11,7 @@
   <h1 align="center">DeFlavour</h1>
 
   <h3 align="center">
-    Spirits made for you 
+   Find the spirits made for you ! 🥃
   </h3>
 </div>
 
