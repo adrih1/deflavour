@@ -4,10 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
+  <img src="app/assets/images/favicon.ico" alt="Logo" width="80" height="80">
   <h1 align="center">DeFlavour</h1>
 
   <h3 align="center">
@@ -36,10 +33,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 DeFlavour est un site web proposant une expérience à ses utilisateurs. Ce dernier, grâce à un alogorithme est en mesure de proposer de nouveaux spiritueux aux utlisateurs en fonctions des goûts passés de ces personnes. 
 
+
+<div align="center">
+  <img src="app/assets/images/Home.png" alt="Logo">
+</div
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
